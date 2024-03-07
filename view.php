@@ -49,7 +49,7 @@
              </div>
              <p><?=$fetchProduct["productDescription"]?></p>
              <div class="bold">
-             <p><a href="<?=$fetchProduct["productLink"]?>">Kunjungi</a></p> 
+             <p><a target="_blank" href="<?=$fetchProduct["productLink"]?>">Kunjungi</a></p> 
          </div>
          </div>
         </div>

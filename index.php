@@ -14,7 +14,7 @@
         <ul>
             <li><a href="#home">Home</a></li>
             <li><a href="#profile">Profile</a></li>
-            <!-- <li><a href="insert.php">Tambah</a></li>     -->
+            <li><a href="insert.php">Tambah</a></li>    
             <li><a href="view.php">Produk</a></li>
             <li><a href="login.php" class="active">Login</a></li>
         </ul>
