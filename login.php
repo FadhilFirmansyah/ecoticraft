@@ -1,5 +1,8 @@
 <?php
+ob_start();
     session_start();
+    include 'prosesLogin.php';
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,7 +24,7 @@
         <a href="index.php">< Kembali</a>
                     
     
-        <form action="doAddProduct.php" method="POST" enctype="multipart/form-data"class="form">
+        <form method="POST" enctype="multipart/form-data" class="form">
             <p class="judulweb" style="font-size: 2rem; font-weight: 800;">Login</p>
 		        <div class="username">
 			        <td> Username: <input type="text" placeholder="Username..." name="username" required> </td>
@@ -31,7 +34,10 @@
 		        </div>
                 
                 <div class="tombol-submit">
-			        <button name="submit" class="btn">Simpan</button>
+                    <?php if(isset($salah_password)){ ?>
+                        <p>Username atau Password salah</p>
+                        <?php } ?>
+			        <button name="login" class="btn">Login</button>
 		        </div>
                 
         

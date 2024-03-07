@@ -1,5 +1,11 @@
 <?php
 session_start();
+
+// cek apakah sudah login
+if(!isset($_SESSION["login"])){
+    header("Location: login.php");
+}
+
 if(isset($_POST["productName"])){
     include 'connect.php';
 

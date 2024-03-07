@@ -1,7 +1,7 @@
 <?php
-$connection = new mysqli("localhost", "root", "", "ecoticraft");
+$con = new mysqli("localhost", "root", "", "ecoticraft");
 
-if(!$connection){
+if(!$con){
     echo "Server not found";
     exit();
 }
