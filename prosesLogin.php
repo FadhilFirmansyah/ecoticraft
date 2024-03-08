@@ -14,7 +14,6 @@ if (isset($_POST['login'])) {
         $array = mysqli_fetch_assoc($cekdata);
 
         if (password_verify($password, $array['password'])) {
-            $_SESSION['login'] = true;
             $_SESSION['login'] = $username;
             header("Location: doAddProduct.php");
             exit;
