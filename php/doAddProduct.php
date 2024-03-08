@@ -9,9 +9,9 @@ if(!isset($_SESSION["login"])){
 if(isset($_POST["productName"])){
     include 'connect.php';
 
-    $productName =  $_POST["productName"];
-    $productDescription = $_POST["productDescription"];
-    $productLink = $_POST["productLink"];
+    $productName = htmlspecialchars($_POST["productName"]);
+    $productDescription = htmlspecialchars($_POST["productDescription"]);
+    $productLink = htmlspecialchars($_POST["productLink"]);
     $productImage = $_FILES["productImage"];
 
     $message = "";
@@ -28,7 +28,7 @@ if(isset($_POST["productName"])){
         $namaFile = str_shuffle(uniqid()) . "_" . basename($productImage["name"]);
         move_uploaded_file($productImage["tmp_name"], "../upload/" . $namaFile);
 
-        $con->query("INSERT INTO product VALUES(null, '".$productName."', '".$productDescription."', '".$productLink."', '".$namaFile."')" );
+        $con->query("INSERT INTO product VALUES(null, '" . $productName."', '".$productDescription."', '".$productLink."', '".$namaFile."')" );
 
         $message = "Product berhasil ditambahkan";
     }

@@ -15,7 +15,7 @@ if (isset($_POST['login'])) {
 
         if (password_verify($password, $array['password'])) {
             $_SESSION['login'] = $username;
-            header("Location: doAddProduct.php");
+            header("Location: insert.php");
             exit;
         }
     }

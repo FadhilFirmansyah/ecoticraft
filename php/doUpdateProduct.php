@@ -3,10 +3,10 @@ session_start();
 if(isset($_POST["productName"])){
     include 'connect.php';
 
-    $productID = $_POST["id"];
-    $productName =  $_POST["productName"];
-    $productDescription = $_POST["productDescription"];
-    $productLink = $_POST["productLink"];
+    $productID = htmlspecialchars($_POST["id"]);
+    $productName =  htmlspecialchars($_POST["productName"]);
+    $productDescription = htmlspecialchars($_POST["productDescription"]);
+    $productLink = htmlspecialchars($_POST["productLink"]);
     $productImage = $_FILES["productImage"];
 
     $message = "";
@@ -23,23 +23,23 @@ if(isset($_POST["productName"])){
             $filePath = "upload/".basename($productImage["name"]);
             move_uploaded_file($productImage["tmp_name"], $filePath);
 
-            $connection -> query("UPDATE product SET productImage='".$filePath."' WHERE productID= ".$productID);
+            $con -> query("UPDATE product SET productImage='".$filePath."' WHERE productID= ".$productID);
 
         }
 
-        $connection -> query("UPDATE product SET productName='".$productName."', productDescription='".$productDescription."', productLink='".$productLink."' WHERE productID=".$productID);
+        $con -> query("UPDATE product SET productName='".$productName."', productDescription='".$productDescription."', productLink='".$productLink."' WHERE productID=".$productID);
 
         $message = "Barang berhasil diperbarui";
     }
 
     $_SESSION["message"] = $message;
 
-    header("location:update.php?id=".$productID);
+    header("location:../update.php?id=".$productID);
     exit();
 
 }
 
-    header("location:insert.php");
+    header("location:../insert.php");
     exit()
 
 ?>
