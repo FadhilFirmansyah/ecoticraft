@@ -1,7 +1,6 @@
 <?php 
 ob_start();
 session_start();
-
 ?>
 
 <!DOCTYPE html>
@@ -27,7 +26,7 @@ session_start();
             <?php if (!isset($_SESSION['login'])) { ?>
                 <li><a href="login.php" class="active">Login</a></li>
             <?php } else { ?>
-                <li><a href="logout.php" class="active">Logout</a></li>
+                <li><a href="php/logout.php" class="active">Logout</a></li>
             <?php } ?>
         </ul>
     </header>

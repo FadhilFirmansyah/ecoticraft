@@ -2,17 +2,17 @@
     session_start();
 
     if(!isset($_GET["id"])){
-        header("location:view.php");
+        header("location: view.php");
         exit();
     }
 
-    include 'connect.php';
+    include 'php/connect.php';
 
     $id = $_GET["id"];
 
-    $getData = $connection->query("SELECT * from product WHERE productID = ".$id);
+    $getData = $connection->query("SELECT * FROM product WHERE productID = " . $id);
 
-    if($getData->num_rows==0){
+    if($getData->num_rows == 0){
         header("location:view.php");
         exit();
     }
