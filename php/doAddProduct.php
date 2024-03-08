@@ -25,10 +25,10 @@ if(isset($_POST["productName"])){
     }elseif(!isset($productImage["tmp_name"]) && $productImage["tmp_name"]=""){
         $message = "Gambar product perlu diisi";
     }else {
-        $filePath = "upload/".basename($productImage["name"]);
-        move_uploaded_file($productImage["tmp_name"], $filePath);
+        $namaFile = str_shuffle(uniqid()) . "_" . basename($productImage["name"]);
+        move_uploaded_file($productImage["tmp_name"], "../upload/" . $namaFile);
 
-        $connection->query("INSERT INTO product VALUES(null, '".$productName."', '".$productDescription."', '".$productLink."', '".$filePath."')" );
+        $con->query("INSERT INTO product VALUES(null, '".$productName."', '".$productDescription."', '".$productLink."', '".$namaFile."')" );
 
         $message = "Product berhasil ditambahkan";
     }
@@ -37,7 +37,7 @@ if(isset($_POST["productName"])){
 
 }
 
-    header("location:insert.php");
+    header("location:../insert.php");
     exit()
 
 ?>

@@ -10,7 +10,7 @@
 
     $id = $_GET["id"];
 
-    $getData = $connection->query("SELECT * FROM product WHERE productID = " . $id);
+    $getData = $con->query("SELECT * FROM product WHERE productID = " . $id);
 
     if($getData->num_rows == 0){
         header("location:view.php");
@@ -34,7 +34,7 @@
   
     <div class="kotak">
     <a href="view.php" >< Kembali</a>
-    <form action="doUpdateProduct.php" method="POST" enctype="multipart/form-data">
+    <form action="php/doUpdateProduct.php" method="POST" enctype="multipart/form-data">
     <input type="hidden" name="id" value="<?=$_GET["id"]?>">
             <p class="judulweb" style="font-size: 2rem; font-weight: 800;">Perbarui Product</p>
 		        <div class="productName">

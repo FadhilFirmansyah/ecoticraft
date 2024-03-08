@@ -40,7 +40,7 @@
                             <?= $fetchProduct["productName"] ?>
                         </div>
                         <div class="image">
-                            <img src="<?= $fetchProduct["productImage"] ?>">
+                            <img src="upload/<?= $fetchProduct["productImage"] ?>">
                         </div>
                         <div>
                             <p></p>
@@ -62,12 +62,11 @@
                         <a href="update.php?id=<?= $fetchProduct["productID"] ?>">
                             <button class="btn">Perbarui</button>
                         </a>
-                        <div>
-                            <p></p>
-                        </div>
-                        <a href="delete.php?id=<?= $fetchProduct["productID"] ?>">
-                            <button class="btn">Hapus</button>
-                        </a>
+
+                        <br>
+                        <!-- Kasih margin ya, <br> nya hapus aja ntar wkwk -->
+
+                        <button onclick="confirm('Yakin ingin menghapus?') ? window.location.href = 'php/delete.php?id=<?= $fetchProduct['productID'] ?>' : false" class="btn">Hapus</button>
 
 
                     </div>

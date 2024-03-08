@@ -26,7 +26,7 @@ session_start();
         <a href="index.php">< Kembali</a>
 
 
-                <form action="doAddProduct.php" method="POST" enctype="multipart/form-data" class="form">
+                <form action="php/doAddProduct.php" method="POST" enctype="multipart/form-data" class="form">
                     <p class="judulweb" style="font-size: 2rem; font-weight: 800;">Menambahkan Produk Eceng Gondok</p>
                     <div class="productName">
                         <td> Nama Product: <input type="text" placeholder="Nama Product" name="productName" required> </td>
