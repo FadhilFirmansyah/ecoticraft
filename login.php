@@ -1,6 +1,12 @@
 <?php
 ob_start();
 session_start();
+
+// cek apakah sudah login
+if(isset($_SESSION["login"])){
+    header("Location: index.php");
+}
+
 include 'php/prosesLogin.php';
 
 ?>
@@ -18,8 +24,6 @@ include 'php/prosesLogin.php';
 </head>
 
 <body>
-
-
 
     <div class="kotak">
 

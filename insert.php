@@ -1,6 +1,11 @@
 <?php
 ob_start();
 session_start();
+
+// cek apakah sudah login
+if (!isset($_SESSION["login"])) {
+    header("Location: login.php");
+}
 ?>
 
 
@@ -23,25 +28,35 @@ session_start();
 
     <div class="kotak">
 
-        <a href="index.php">< Kembali</a>
+        <a href="index.php">
+            < Kembali</a>
 
 
                 <form action="php/doAddProduct.php" method="POST" enctype="multipart/form-data" class="form">
+
                     <p class="judulweb" style="font-size: 2rem; font-weight: 800;">Menambahkan Produk Eceng Gondok</p>
+
                     <div class="productName">
                         <td> Nama Product: <input type="text" placeholder="Nama Product" name="productName" required> </td>
                     </div>
-                    <div class="productDescription">
 
+                    <div class="productDescription">
                         <td>Deskripsi Product: </td>
                         <td><textarea type="text" placeholder="Deskripsi Product" name="productDescription" id="" cols="22" rows="5"> </textarea></td>
                     </div>
+
                     <div class="productLink">
                         <td>Tautan Product: <input type="text" placeholder="Tautan Product" name="productLink" required> </td>
                     </div>
+
                     <div class="productImage">
-                        <td>Gambar Product: <input type="file" name="productImage" required> </td>
+                        <td>
+                            <label for="img_input" class="label-foto">Gambar Product: </label>
+                            <input type="file" id="img_input" name="productImage" onchange="preview()" required>
+                        </td>
+                        <img src="" alt="img preview" width="100" id="previewImg">
                     </div>
+
                     <div class="tombol-submit">
                         <button name="submit" class="btn">Simpan</button>
                     </div>
@@ -58,6 +73,7 @@ session_start();
 
 
     </div>
+    <script src="js/script.js"></script>
 </body>
 
 </html>
