@@ -18,6 +18,8 @@ session_start();
 
 <body>
     <img class="header-bg-component" src="assets/components/header-component.png">
+
+    <!-- JUDUL WEBSITE - KERAJINAN TUNTANG -->
     <div class="hero">
         <header style="position: relative; z-index: 1">
             <div class="left-header">
@@ -47,6 +49,8 @@ session_start();
         </section>
     </div>
 
+
+    <!-- PENJELASAN ECENG GONDOK -->
     <div class="sub-hero">
         <!-- Penamaan id pada tiap div sesuai backend keinginan backend, wkwk -->
         <div class="circle" id="circle-sub-hero">
@@ -63,8 +67,33 @@ session_start();
             </p>
             <hr>
         </div>
-        
+
     </div>
+
+
+    <!-- PRODUK ECENG GONDOK -->
+    <section class="product-section">
+        <h2>PRODUK ECENG GONDOK</h2>
+
+        <div class="products-wrap">
+
+            <div class="card-product">
+
+                <div style="background-image: url('assets/products/topi.jpg');" class="img-product"></div>
+
+                <div class="title-product">
+                    <h4>Topi</h4>
+                    <h5>Eceng Gondok</h5>
+                </div>
+
+                <div class="option-product">
+                    <h4>Rp. 50.000</h4>
+                    <button>BUY</button>
+                </div>
+            </div>
+
+        </div>
+    </section>
 
 
     <script src="js/index.js"></script>

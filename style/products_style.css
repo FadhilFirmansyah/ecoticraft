@@ -1,0 +1,78 @@
+/* ========== TEMPAT UNTUK STYLING BAGIAN PRODUK ========== */
+
+:root{
+    --basic-color: #244602;
+    --basic-color-hover: #6d8a4f;
+    --width-card: 260px;
+}
+
+.product-section{
+    padding: 50px 0;
+    display: block;
+}
+
+.product-section .products-wrap{
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+}
+
+.card-product{
+    display: flex;
+    flex-direction: column;
+    width: var(--width-card);
+    height: auto;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+    justify-content: space-between;
+}
+
+.img-product{
+    width: var(--width-card);
+    height: auto;
+    aspect-ratio: 16/11;
+    object-fit: cover;
+    border-radius: 4px 4px 0 0;
+    background-size: cover;
+    background-position: center;
+}
+
+.title-product{
+    display: block;
+    padding: 12px 18px;
+}
+
+.title-product h4{
+    font-size: 1rem;
+}
+
+.title-product h5{
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.option-product{
+    display: flex;
+    flex-direction: row;
+    padding: 12px 18px;
+    align-items: center;
+}
+
+.option-product h4{
+    font-size: 1rem;
+    width: 100%;
+}
+
+.option-product button{
+    background-color: var(--basic-color);
+    color: #fff;
+    font-size: 0.9rem;
+    padding: 6px 28px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+}
+.option-product button:hover{
+    background-color: var(--basic-color-hover);
+    transition-duration: 250ms;
+}

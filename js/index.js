@@ -30,3 +30,27 @@ window.addEventListener('scroll', function() {
         }
     }
 })
+
+
+
+// DUMMY
+
+let card = `<div class="card-product">
+
+                <div style="background-image: url('assets/products/topi.jpg');" class="img-product"></div>
+
+                <div class="title-product">
+                    <h4>Topi</h4>
+                    <h5>Eceng Gondok</h5>
+                </div>
+
+                <div class="option-product">
+                    <h4>Rp. 50.000</h4>
+                    <button>BUY</button>
+                </div>
+            </div>`;
+let card_wrap = document.getElementsByClassName("products-wrap")[0];
+
+for(let i = 0; i < 10; i++){
+    card_wrap.innerHTML += card;
+}
