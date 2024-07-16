@@ -3,18 +3,36 @@
 :root{
     --basic-color: #244602;
     --basic-color-hover: #6d8a4f;
-    --width-card: 260px;
+    --width-card: 300px;
 }
+
 
 .product-section{
     padding: 50px 0;
     display: block;
 }
 
+.product-section h2{
+    width: 100%;
+    margin: 16px 46px;
+}
+
 .product-section .products-wrap{
     display: flex;
     flex-direction: row;
     gap: 24px;
+    overflow-x: auto;
+    padding: 8px 46px;
+    margin: 0 0 100px 0;
+}
+.product-section .products-wrap::-webkit-scrollbar{
+    height: 2px;
+}
+.product-section .products-wrap::-webkit-scrollbar-thumb{
+    background-color: transparent;
+}
+.product-section .products-wrap::-webkit-scrollbar-track {
+    box-shadow: none;
 }
 
 .card-product{
@@ -22,6 +40,7 @@
     flex-direction: column;
     width: var(--width-card);
     height: auto;
+    aspect-ratio: 8/6;
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.3);
     border-radius: 4px;
     justify-content: space-between;

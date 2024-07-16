@@ -72,27 +72,19 @@ session_start();
 
 
     <!-- PRODUK ECENG GONDOK -->
-    <section class="product-section">
+    <section class="product-section" id="product_sect">
         <h2>PRODUK ECENG GONDOK</h2>
 
         <div class="products-wrap">
-
-            <div class="card-product">
-
-                <div style="background-image: url('assets/products/topi.jpg');" class="img-product"></div>
-
-                <div class="title-product">
-                    <h4>Topi</h4>
-                    <h5>Eceng Gondok</h5>
-                </div>
-
-                <div class="option-product">
-                    <h4>Rp. 50.000</h4>
-                    <button>BUY</button>
-                </div>
-            </div>
+        <!-- TEMPAT KARTU PRODUK [DATA NYA MENGGUNAKAN JSON], UBAH HTML nya ADA DI js/index.js -->
 
         </div>
+
+        <div class="products-wrap">
+        <!-- TEMPAT KARTU PRODUK [DATA NYA MENGGUNAKAN JSON], UBAH HTML nya ADA DI js/index.js -->
+
+        </div>
+
     </section>
 
 
