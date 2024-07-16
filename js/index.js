@@ -36,7 +36,7 @@ window.addEventListener('scroll', function () {
         }
     }
 
-    
+
 })
 
 
@@ -69,7 +69,7 @@ fetch('https://haydar-hilmy.github.io/ecoticraft/products-data.json')
                     </div>
                     <div class="option-product">
                         <h4>${getHarga}</h4>
-                        <button>BUY</button>
+                        <a href"${product.link}" target="_blank"><button>BUY</button></a>
                     </div>
                 </div>`;
                 card_wrap.insertAdjacentHTML('beforeend', card); // Tambahkan elemen ke dalam 'card_wrap'
@@ -79,3 +79,5 @@ fetch('https://haydar-hilmy.github.io/ecoticraft/products-data.json')
     .catch(error => {
         console.error('There has been a problem with your fetch operation:', error);
     });
+
+

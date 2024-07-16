@@ -24,7 +24,8 @@ session_start();
         <header style="position: relative; z-index: 1">
             <div class="left-header">
                 <img class="logo-header" src="assets/logo/logo.png">
-                <button class="btn-header">ECOTICRAFT</button>
+                <button class="btn-header"><span id="btn-header"></span></button>
+                <!-- <button class="btn-header">ECOTICRAFT</button> -->
             </div>
             <div class="right-header">
                 <i class="menu-icon fa-solid fa-bars"></i>
@@ -76,19 +77,49 @@ session_start();
         <h2>PRODUK ECENG GONDOK</h2>
 
         <div class="products-wrap">
-        <!-- TEMPAT KARTU PRODUK [DATA NYA MENGGUNAKAN JSON], UBAH HTML nya ADA DI js/index.js -->
+            <!-- TEMPAT KARTU PRODUK [DATA NYA MENGGUNAKAN JSON], UBAH HTML nya ADA DI js/index.js -->
 
         </div>
 
         <div class="products-wrap">
-        <!-- TEMPAT KARTU PRODUK [DATA NYA MENGGUNAKAN JSON], UBAH HTML nya ADA DI js/index.js -->
+            <!-- TEMPAT KARTU PRODUK [DATA NYA MENGGUNAKAN JSON], UBAH HTML nya ADA DI js/index.js -->
 
         </div>
 
     </section>
 
 
+    <!-- PROGRAM DIKEMBANGKAN OLEH -->
+    <section class="about-section">
+
+        <h2>PROGRAM <br>DIKEMBANGKAN
+            <span>OLEH</span>
+        </h2>
+
+        <div class="carousel-wrap">
+
+            <div class="carousel-inner">
+
+                <div style="background-image: url('assets/image/fotbar.png')" class="item-carousel">
+                    <button>TIM PPKO</button>
+                </div>
+
+                <div style="background-image: url('assets/image/img-ibuibu.jpg')" class="item-carousel">
+                    <button>TIM PPKO</button>
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script src="js/typed.js"></script>
     <script src="js/index.js"></script>
+    <script src="js/swiper.js"></script>
 </body>
 
 </html>

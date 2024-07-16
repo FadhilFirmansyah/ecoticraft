@@ -1,0 +1,75 @@
+/* ========================================= */
+/* =========== RESPONSIVE ONLY ============= */
+/* ========================================= */
+
+@media screen and (max-width: 600px){
+    .title-hero-wrap #title {
+      font-size: 4.5rem;
+    }
+  }
+  
+  @media (max-width: 430px) {
+    #moon {
+      width: 80%;
+      height: 80%;
+      align-items: center;
+      margin-left: 50px;
+      margin-top: 60px;
+    }
+    header.logo {
+      font-size: 0.5em;
+    }
+    .active {
+      padding-right: -100px;
+    }
+    header {
+      padding-right: 20px;
+      padding-left: 20px;
+      font-size: 1em;
+    }
+    #btn,
+    #btn2 {
+      align-items: center;
+      font-size: 1em;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+    .sec p {
+      font-size: 1em;
+    }
+    .sec h2 {
+      font-size: 1.2em;
+    }
+    .sec {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+  
+  @media (max-width: 890px) {
+    .textlogo {
+      font-size: 24px !important;
+    }
+    .imglogo {
+      width: 200px !important;
+    }
+    header ul {
+      display: none;
+    }
+    .responsif {
+      display: flex !important;
+      margin-right: 20px;
+    }
+  }
+  @media (min-width: 891px) {
+    header ul {
+      display: flex;
+    }
+    .menu-icon {
+      display: none !important;
+    }
+  }
+  
+  /* ========================================= */
+  /* ============ END RESPONSIVE ============= */
+  /* ========================================= */
