@@ -29,7 +29,7 @@ session_start();
                 <!-- <button class="btn-header">ECOTICRAFT</button> -->
             </div>
             <div class="right-header">
-                <i class="menu-icon fa-solid fa-bars"></i>
+                <!-- <i class="menu-icon fa-solid fa-bars"></i> -->
             </div>
         </header>
 
