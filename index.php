@@ -141,7 +141,7 @@ session_start();
     <script src="js/index.js"></script>
     <script src="js/swiper.js"></script>
 
-    <!-- <script src="js/live_view.js"></script> -->
+    <script src="js/live_view.js"></script>
 </body>
 
 </html>
