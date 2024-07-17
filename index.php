@@ -14,6 +14,7 @@ session_start();
     <link rel="stylesheet" type="text/css" href="style/opening.css">
     <link rel="icon" href="assets/logo/logo.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script src="https://kit.fontawesome.com/a502a8bc22.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -105,7 +106,7 @@ session_start();
                 </div>
 
                 <div style="background-image: url('assets/image/img-ibuibu.jpg')" class="item-carousel">
-                    <button>TIM PPKO</button>
+                    <button>KOMUNITAS</button>
                 </div>
 
 
@@ -116,10 +117,31 @@ session_start();
     </section>
 
 
+    <footer>
+        <div class="aside-wrap">
+            <aside>
+                <span><img src="assets/icon/maps.png" alt="icon"> Cikal RT05 RW07 Gang Manggar 7</span>
+                <span><img src="assets/icon/call.png" alt="icon"> +62 857-2932-0717</span>
+                <span><img src="assets/icon/instagram.png" alt="icon"> @cikidul077</span>
+                <span><img src="assets/icon/email.png" alt="icon"> cikidul07@gmail.com</span>
+            </aside>
+            <aside>
+                <a href="https://goo.gl/maps/4SFE6SCtnJPw8MpN7?g_st=aw" target="_blank"><img src="assets/components/maps.jpg" alt="maps"></a>
+            </aside>
+        </div>
+        <div>
+            <hr>
+            <h4>Hak Cipta ©2024 Kerajinan Tuntang-Seluruh Hak Cipta</h4>
+        </div>
+    </footer>
+
+
     <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
     <script src="js/typed.js"></script>
     <script src="js/index.js"></script>
     <script src="js/swiper.js"></script>
+
+    <!-- <script src="js/live_view.js"></script> -->
 </body>
 
 </html>

@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("products_style.css");
 @import url("scrollbar.css");
-@import url("opening_responsive.css");
+/* @import url("opening_responsive.css"); */
 
 * {
   margin: 0;
@@ -12,10 +12,12 @@
 }
 
 :root {
-  --basic-color: #244602;
   /* warna ijo nya ecoticraft */
-  --bg-component: url("../assets/components/header-component.png");
+  --basic-color: #244602;
+  --basic-color-hover: #6d8a4f;
+
   /* URL mengarah ke file */
+  --bg-component: url("../assets/components/header-component.png");
 }
 
 body,
@@ -170,6 +172,8 @@ html {
 .about-section {
   margin: 50px 0;
   display: block;
+  padding: 0 0 300px 0;
+  background: linear-gradient(0deg, var(--basic-color) -100px, transparent);
 
   h2 {
     padding: 24px 46px;
@@ -189,7 +193,7 @@ html {
 
 
     .carousel-inner {
-      width: 70%;
+      width: 90%;
       box-sizing: border-box;
       display: flex;
       gap: 24px;
@@ -205,9 +209,10 @@ html {
         justify-content: center;
         align-items: flex-end;
 
-        button{
+        button {
           background: var(--basic-color);
           color: #fff;
+          width: 250px;
           padding: 8px 28px;
           border-radius: 8px;
           border: none;
@@ -215,6 +220,11 @@ html {
           font-weight: 500;
           margin: 0 0 24px 0;
           cursor: pointer;
+        }
+
+        button:hover {
+          background-color: var(--basic-color-hover);
+          transition-duration: 150ms;
         }
       }
     }
@@ -244,23 +254,122 @@ html {
 
 
 
+/* ========== FOOTER ========== */
 footer {
-  background-color: #103837;
-  color: #ffffff;
-  padding: 20px;
-  text-align: center;
+  width: 100%;
+  display: block;
+
+  .aside-wrap {
+    display: flex;
+    flex-direction: row;
+    margin: 50px 46px;
+
+    aside {
+      width: auto;
+    }
+
+    aside:nth-child(1) {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      gap: 12px;
+      justify-content: center;
+    }
+
+    aside:nth-child(1) span {
+      font-size: 0.95rem;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+
+      img {
+        width: 20px;
+      }
+    }
+
+    aside:nth-child(2) img {
+      width: 300px;
+    }
+  }
+
+  div:nth-child(2) {
+    width: 100%;
+    text-align: center;
+  }
+
+  div:nth-child(2) h4 {
+    padding: 20px 0;
+    font-weight: 500;
+  }
+
 }
 
-footer p {
-  margin: 5px 0;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ========================================= */
+/* =========== RESPONSIVE ONLY ============= */
+/* ========================================= */
+
+@media (max-width: 600px) {
+  .title-hero-wrap {
+    #title {
+      font-size: 5rem;
+    }
+
+    .sub-title {
+      font-size: 1.4rem;
+    }
+  }
+
+
+  .hero section {
+    justify-content: center;
+  }
+
+  .sub-hero {
+    flex-direction: column;
+    align-items: center;
+    padding: 100px 50px;
+  }
+
+  .sub-hero .circle {
+    width: 60%;
+  }
+
+
+  footer {
+    .aside-wrap {
+      flex-direction: column;
+      align-items: center;
+      gap: 24px
+    }
+  }
+
+  .carousel-wrap {
+    padding: 8px 20px;
+  }
+
 }
 
-footer .contact-info {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
+@media (max-width: 1150px) {
+  .header-bg-component {
+    display: none;
+  }
 }
 
-footer .contact-info div {
-  margin: 10px;
-}
+/* ========================================= */
+/* ============ END RESPONSIVE ============= */
+/* ========================================= */

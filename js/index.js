@@ -13,7 +13,7 @@ let card_wraps = document.getElementsByClassName("products-wrap");
 let maxVh = window.innerHeight; // ukuran maksimal dari sebuah device
 
 window.addEventListener('load', function () {
-    circle_sh.style.transform = "translateX(-200px)";
+    circle_sh.style.transform = "translateX(-350px)";
     text_sh.style.transform = "translateX(200px)";
 });
 
