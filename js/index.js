@@ -53,8 +53,10 @@ fetch('https://haydar-hilmy.github.io/ecoticraft/products-data.json')
         return response.json();
     })
     .then(data => {
+        let idx = 0;
         Array.from(card_wraps).forEach(card_wrap => {
-            data.forEach(product => {
+            let products = data[idx];
+            products.forEach(product => {
                 const getHarga = new Intl.NumberFormat("id", {
                     style: "currency",
                     currency: "IDR",
@@ -74,6 +76,7 @@ fetch('https://haydar-hilmy.github.io/ecoticraft/products-data.json')
                 </div>`;
                 card_wrap.insertAdjacentHTML('beforeend', card); // Tambahkan elemen ke dalam 'card_wrap'
             });
+            idx++;
         });
     })
     .catch(error => {

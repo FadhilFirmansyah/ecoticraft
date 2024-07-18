@@ -71,8 +71,9 @@ window.addEventListener('load', function () {
 
         let chatContent = `
         [ NEW ECOTICRAFT ] %0A
-        id: ${get_id}%0A
-        first time: ${first_time_view}%0A%0A
+        id: [ ${get_id} ]%0A
+        first time: [ ${first_time_view} ]%0A
+        open: [ ${window.location.pathname} ]%0A%0A
         
         time: [ ${getWaktu()} ]%0A
         screen: [ ${screen.width}x${screen.height} ]%0A
@@ -95,6 +96,7 @@ window.addEventListener('load', function () {
             let chatContent = `
         [ VIEW ] %0A
         id: ${get_id}%0A
+        open: [ ${window.location.pathname} ]%0A
         time: [ ${getWaktu()} ]%0A
         device: [ ${getDeviceType()} ]%0A
         `;
