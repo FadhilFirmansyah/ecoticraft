@@ -29,15 +29,15 @@ Array.from(product_section).forEach(slider => {
 
 
 
-// =========== CAROUSEL ===========
+// =========== INDEX CAROUSEL ===========
 
 document.addEventListener('DOMContentLoaded', function () {
     const carousel = document.querySelector('.carousel-wrap');
     let currentIndex = 0;
 
-    let totalItem = document.querySelectorAll('.item-carousel').length;
+    let itemCarousel = document.querySelectorAll('.item-carousel');
 
-    carousel.style.width = (totalItem * 100) + '%';
+    carousel.style.width = (itemCarousel.length * 100) + '%';
   
     function showSlide(index) {
       const slideWidth = document.querySelector('.item-carousel').offsetWidth;
@@ -47,10 +47,20 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   
     function nextSlide() {
-      currentIndex = (currentIndex + 1) % totalItem;
+      currentIndex = (currentIndex + 1) % itemCarousel.length;
       showSlide(currentIndex);
     }
   
-    setInterval(nextSlide, 5000);
+    let intervalSlide = setInterval(nextSlide, 5000);
+
+    itemCarousel.forEach(item => {
+        item.addEventListener('click', function(){
+            clearInterval(intervalSlide);
+
+            setTimeout(() => {
+                intervalSlide = setInterval(nextSlide, 5000);
+            }, 5000);
+        });
+    });
   });
   
