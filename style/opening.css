@@ -326,6 +326,21 @@ footer {
 /* ========================================= */
 
 @media (max-width: 600px) {
+
+  .about-section {
+
+    .carousel-wrap {
+      padding: 8px 0;
+
+      .carousel-inner {
+        width: 100%;
+        gap: 0;
+      }
+
+    }
+
+  }
+
   .title-hero-wrap {
     #title {
       font-size: 3.7rem;
@@ -336,7 +351,7 @@ footer {
     }
   }
 
-  .hero header{
+  .hero header {
     justify-content: center;
   }
 
