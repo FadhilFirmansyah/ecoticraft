@@ -1,3 +1,71 @@
 @import url("../default.css");
 
+.hero {
+    background: linear-gradient(0deg, var(--basic-color) -120px, #fff);
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
 
+    .banner{
+        margin: auto;
+        width: 90%;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.3);
+
+        header{
+            padding: 18px;
+            div{
+                display: flex;
+                align-items: center;
+                gap: 8px;
+    
+                img.logo-header{
+                    width: 60px;
+                    filter: drop-shadow(5px 5px 5px #4e4e4e);
+                }
+                h4{
+                    font-size: 1.2rem;
+                }
+            }
+        }
+
+        .title-banner{
+            position: absolute;
+            bottom: 0;
+            margin: 72px 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+
+            h1{
+                font-size: 5.5rem;
+                line-height: 120%;
+            }
+
+            /* TULISAN TIM PPKO */
+            h1:nth-child(1){
+                -webkit-text-stroke: 3px white;
+            }
+
+            /* TULISAN HM DKV */
+            h1:nth-child(2){
+                font-weight: 400;
+            }
+
+            .jargon{
+                background-color: rgba(255, 255, 255, 0.4);
+                padding: 6px 12px;
+                width: auto;
+                font-size: 1.1rem;
+                font-weight: 600;
+                box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.3);
+                border-radius: 4px;
+            }
+
+        }
+    }
+
+}

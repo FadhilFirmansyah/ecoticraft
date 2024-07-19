@@ -2,10 +2,6 @@
 @import url("products_style.css");
 
 :root {
-  /* warna ijo nya ecoticraft */
-  --basic-color: #244602;
-  --basic-color-hover: #6d8a4f;
-
   /* URL mengarah ke file */
   --bg-component: url("../assets/components/header-component.png");
 }
@@ -319,7 +315,7 @@ footer {
 
   .about-section {
 
-    h2{
+    h2 {
       font-size: 2rem;
     }
 

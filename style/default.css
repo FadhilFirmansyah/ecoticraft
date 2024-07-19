@@ -5,6 +5,12 @@
 /* TEMPAT KONFIGURASI SECARA DEFAULT */
 /* TERMASUK IMPORT FONT, CUSTOM SCROLLBAR DAN LAIN LAIN */
 
+:root{
+    /* warna ijo nya ecoticraft */
+    --basic-color: #244602;
+    --basic-color-hover: #6d8a4f;
+}
+
 * {
   margin: 0;
   padding: 0;
