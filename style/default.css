@@ -8,6 +8,7 @@
 :root{
     /* warna ijo nya ecoticraft */
     --basic-color: #244602;
+    --basic-color-lighter: #3d5d1c;
     --basic-color-hover: #6d8a4f;
 }
 
@@ -17,4 +18,56 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
   scroll-behavior: smooth;
+}
+
+
+/* ========== FOOTER ========== */
+footer {
+  width: 100%;
+  display: block;
+
+  .aside-wrap {
+    display: flex;
+    flex-direction: row;
+    margin: 50px 46px;
+
+    aside {
+      width: auto;
+    }
+
+    aside:nth-child(1) {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      gap: 12px;
+      justify-content: center;
+    }
+
+    aside:nth-child(1) span {
+      font-size: 0.95rem;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+
+      img {
+        width: 20px;
+      }
+    }
+
+    aside:nth-child(2) img {
+      width: 300px;
+    }
+  }
+
+  div:nth-child(2) {
+    width: 100%;
+    text-align: center;
+  }
+
+  div:nth-child(2) h4 {
+    padding: 20px 0;
+    font-weight: 500;
+  }
+
 }

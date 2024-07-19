@@ -6,7 +6,7 @@
     height: 100vh;
     overflow: hidden;
 
-    .banner{
+    .banner {
         margin: auto;
         width: 90%;
         height: 100%;
@@ -15,24 +15,26 @@
         background-size: cover;
         box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.3);
 
-        header{
+        header {
             padding: 18px;
-            div{
+
+            div {
                 display: flex;
                 align-items: center;
                 gap: 8px;
-    
-                img.logo-header{
+
+                img.logo-header {
                     width: 60px;
                     filter: drop-shadow(5px 5px 5px #4e4e4e);
                 }
-                h4{
+
+                h4 {
                     font-size: 1.2rem;
                 }
             }
         }
 
-        .title-banner{
+        .title-banner {
             position: absolute;
             bottom: 0;
             margin: 72px 24px;
@@ -40,24 +42,24 @@
             flex-direction: column;
             align-items: flex-start;
 
-            h1{
+            h1 {
                 font-size: 5.5rem;
                 line-height: 120%;
             }
 
             /* TULISAN TIM PPKO */
-            h1:nth-child(1){
+            h1:nth-child(1) {
                 -webkit-text-stroke: 3px white;
             }
 
             /* TULISAN HM DKV */
-            h1:nth-child(2){
+            h1:nth-child(2) {
                 font-weight: 400;
             }
 
-            .jargon{
+            .jargon {
                 background-color: rgba(255, 255, 255, 0.4);
-                padding: 6px 12px;
+                padding: 6px 24px;
                 width: auto;
                 font-size: 1.1rem;
                 font-weight: 600;
@@ -68,4 +70,213 @@
         }
     }
 
+}
+
+
+
+main {
+    background: linear-gradient(180deg, var(--basic-color) -150px, #fff);
+    padding: 184px 0 0 0;
+
+    article {
+        padding: 28px 56px;
+        background-color: var(--basic-color);
+        color: #fff;
+        width: 80%;
+        border-radius: 0 6px 6px 0;
+        text-align: justify;
+        line-height: 165%;
+        font-size: 1.05rem;
+    }
+
+    /* WADAH UNTUK FOTO-FOTO */
+    section {
+        width: 100%;
+        margin: 200px 0 300px 0;
+        display: grid;
+        justify-items: center;
+        gap: 44px;
+        grid-template-columns: auto auto auto auto;
+        justify-content: center;
+
+        div {
+            width: 260px;
+            aspect-ratio: 4/6;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition-duration: 100ms;
+
+            img {
+                opacity: 0;
+                height: 100%;
+                transition-duration: 100ms;
+            }
+        }
+
+        div:hover img {
+            transition-duration: 200ms;
+            opacity: 1;
+        }
+
+        div:nth-child(1):hover {
+            background-size: 110%;
+            transition-duration: 200ms;
+        }
+
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ========================================= */
+/* =========== RESPONSIVE ONLY ============= */
+/* ========================================= */
+
+@media (max-width: 1350px) {
+    .hero {
+        .banner {
+            width: 100%;
+            height: auto;
+            padding: 20px;
+
+            .title-banner {
+                position: relative;
+                margin: 100px 24px 0 24px;
+            }
+        }
+    }
+}
+
+@media (max-width: 1185px) {
+    main {
+        section {
+            grid-template-columns: auto auto auto;
+        }
+    }
+}
+
+@media (max-width: 860px) {
+    .hero {
+        .banner {
+            .title-banner {
+                h1 {
+                    font-size: 3.5rem;
+                }
+            }
+        }
+    }
+
+    main {
+        article {
+            width: 100%;
+        }
+
+        section {
+            grid-template-columns: auto auto;
+
+            div {
+                width: 320px;
+            }
+        }
+    }
+}
+
+@media (max-width: 740px) {
+    .hero{
+        height: 100%;
+    }
+
+    main {
+        background: linear-gradient(180deg, var(--basic-color-lighter) -50px, #fff);
+
+        section {
+            div {
+                width: 260px;
+            }
+        }
+    }
+}
+
+@media (max-width: 620px){
+    .hero{
+        .banner{
+            .title-banner{
+                h1{
+                    font-size: 2.5rem;
+                }
+                .jargon{
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+    main{
+        section{
+            div{
+                width: 200px;
+            }
+        }
+    }
+}
+
+@media (max-width: 550px){
+    main{
+        padding: 0;
+        article{
+            padding: 56px 32px;
+            font-size: 0.97rem;
+            line-height: 175%;
+        }
+    }
+    .hero{
+        .banner{
+            .title-banner{
+                margin: 24px 24px 0 24px;
+            }
+        }
+    }
+}
+
+@media (max-width: 450px){
+    .hero{
+        .banner{
+            padding-top: 6px;
+            margin-top: 6px;
+            .title-banner{
+                h1{
+                    font-size: 1.5rem;
+                }
+                h1:nth-child(1){
+                    -webkit-text-stroke: 1px white;
+                }
+                .jargon{
+                    font-size: 0.9rem;
+                    padding: 6px 12px;
+                }
+            }
+        }
+    }
+    main{
+        section{
+            gap: 24px;
+            div{
+                width: 150px;
+            }
+        }
+    }
 }
