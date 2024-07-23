@@ -1,7 +1,7 @@
 @import url("../default.css");
 
 .hero {
-    background: linear-gradient(0deg, var(--basic-color) -120px, #fff);
+    background: linear-gradient(220deg, var(--basic-color) -120px, #fff);
     width: 100%;
     height: 100vh;
     overflow: hidden;
@@ -256,7 +256,6 @@ main {
     .hero{
         .banner{
             padding-top: 6px;
-            margin-top: 6px;
             .title-banner{
                 h1{
                     font-size: 1.5rem;
