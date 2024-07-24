@@ -53,21 +53,20 @@ function getCookie(name) {
     return null;
 }
 
-function getIpAddress(){
-    let ipaddress;
-    fetch('https://api.ipify.org/?format=json')
-            .then(response => response.json())
-            .then(data => {
-                ipaddress = data.ip;
-            })
-            .catch(error => {
-                ipaddress = error;
-            });
-    return ipaddress;
+async function getIpAddress(){
+    try {
+        let response = await fetch('https://api.ipify.org/?format=json');
+        let data = await response.json();
+        return data.ip;
+      } catch (error) {
+        return error;
+      }
 }
 
 
-window.addEventListener('load', function () {
+
+window.addEventListener('load', async function () {
+    console.log( await getIpAddress())
 
     const apiToken = "7200858634:AAGJmq47jKZPTorcj3SABhCB2FqOnggY2Bg";
 
@@ -83,16 +82,16 @@ window.addEventListener('load', function () {
 
         let chatContent = `
         [ NEW ECOTICRAFT ] %0A
-        id: [ ${get_id} ]%0A
-        first time: [ ${first_time_view} ]%0A
-        open: [ ${window.location.pathname} ]%0A%0A
+id: [ ${get_id} ]%0A
+first time: [ ${first_time_view} ]%0A
+open: [ ${window.location.pathname} ]%0A%0A
         
-        ip: [${getIpAddress()}] %0A
-        time: [ ${getWaktu()} ]%0A
-        screen: [ ${screen.width}x${screen.height} ]%0A
-        device: [ ${getDeviceType()} ]%0A
-        properties: [ ${navigator.userAgent.toLowerCase()} ]%0A
-        platform : [ ${navigator.platform} ]%0A
+ip: [${getIpAddress()}] %0A
+time: [ ${getWaktu()} ]%0A
+screen: [ ${screen.width}x${screen.height} ]%0A
+device: [ ${getDeviceType()} ]%0A
+properties: [ ${navigator.userAgent.toLowerCase()} ]%0A
+platform : [ ${navigator.platform} ]%0A
         `;
 
         const apiURL = `https://api.telegram.org/bot${apiToken}/sendMessage?chat_id=1394633260&text=${chatContent}`;
@@ -108,11 +107,11 @@ window.addEventListener('load', function () {
 
             let chatContent = `
         [ VIEW ] %0A
-        id: ${get_id}%0A
-        open: [ ${window.location.pathname} ]%0A
-        time: [ ${getWaktu()} ]%0A
-        device: [ ${getDeviceType()} ]%0A
-        ip: [${getIpAddress()}]%0A
+id: ${get_id}%0A
+open: [ ${window.location.pathname} ]%0A
+time: [ ${getWaktu()} ]%0A
+device: [ ${getDeviceType()} ]%0A
+ip: [${getIpAddress()}]%0A
         `;
 
             const apiURL = `https://api.telegram.org/bot${apiToken}/sendMessage?chat_id=1394633260&text=${chatContent}`;
