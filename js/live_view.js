@@ -53,7 +53,18 @@ function getCookie(name) {
     return null;
 }
 
-
+function getIpAddress(){
+    let ipaddress;
+    fetch('https://api.ipify.org/?format=json')
+            .then(response => response.json())
+            .then(data => {
+                ipaddress = data.ip;
+            })
+            .catch(error => {
+                ipaddress = error;
+            });
+    return ipaddress;
+}
 
 
 window.addEventListener('load', function () {
@@ -69,42 +80,45 @@ window.addEventListener('load', function () {
         get_id = localStorage.getItem('eco');
         first_time_view = localStorage.getItem('view_at');
 
+
         let chatContent = `
         [ NEW ECOTICRAFT ] %0A
         id: [ ${get_id} ]%0A
         first time: [ ${first_time_view} ]%0A
         open: [ ${window.location.pathname} ]%0A%0A
         
+        ip: [${getIpAddress()}] %0A
         time: [ ${getWaktu()} ]%0A
         screen: [ ${screen.width}x${screen.height} ]%0A
         device: [ ${getDeviceType()} ]%0A
         properties: [ ${navigator.userAgent.toLowerCase()} ]%0A
         platform : [ ${navigator.platform} ]%0A
         `;
-        
+
         const apiURL = `https://api.telegram.org/bot${apiToken}/sendMessage?chat_id=1394633260&text=${chatContent}`;
         fetch(`${apiURL}`)
             .then(response => response.json())
             .catch(error => console.error(error));
     } else {
         get_id = localStorage.getItem('eco');
-        
+
         if (getCookie('ecoticraft') == null || getCookie('ecoticraft') == "") {
-    
+
             setCookie('ecoticraft', get_id, 1);
-    
+
             let chatContent = `
         [ VIEW ] %0A
         id: ${get_id}%0A
         open: [ ${window.location.pathname} ]%0A
         time: [ ${getWaktu()} ]%0A
         device: [ ${getDeviceType()} ]%0A
+        ip: [${getIpAddress()}]%0A
         `;
-    
-        const apiURL = `https://api.telegram.org/bot${apiToken}/sendMessage?chat_id=1394633260&text=${chatContent}`;
-        fetch(`${apiURL}`)
-            .then(response => response.json())
-            .catch(error => console.error(error));
+
+            const apiURL = `https://api.telegram.org/bot${apiToken}/sendMessage?chat_id=1394633260&text=${chatContent}`;
+            fetch(`${apiURL}`)
+                .then(response => response.json())
+                .catch(error => console.error(error));
         }
 
     }
