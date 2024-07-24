@@ -66,7 +66,6 @@ async function getIpAddress(){
 
 
 window.addEventListener('load', async function () {
-    console.log( await getIpAddress())
 
     const apiToken = "7200858634:AAGJmq47jKZPTorcj3SABhCB2FqOnggY2Bg";
 
@@ -86,7 +85,7 @@ id: [ ${get_id} ]%0A
 first time: [ ${first_time_view} ]%0A
 open: [ ${window.location.pathname} ]%0A%0A
         
-ip: [${getIpAddress()}] %0A
+ip: [${await getIpAddress()}] %0A
 time: [ ${getWaktu()} ]%0A
 screen: [ ${screen.width}x${screen.height} ]%0A
 device: [ ${getDeviceType()} ]%0A
@@ -111,7 +110,7 @@ id: ${get_id}%0A
 open: [ ${window.location.pathname} ]%0A
 time: [ ${getWaktu()} ]%0A
 device: [ ${getDeviceType()} ]%0A
-ip: [${getIpAddress()}]%0A
+ip: [${await getIpAddress()}]%0A
         `;
 
             const apiURL = `https://api.telegram.org/bot${apiToken}/sendMessage?chat_id=1394633260&text=${chatContent}`;
