@@ -162,7 +162,7 @@ html {
   margin: 50px 0;
   display: block;
   padding: 0 0 300px 0;
-  background: linear-gradient(0deg, var(--basic-color) -100px, transparent);
+  background: linear-gradient(0deg, var(--basic-color) -400px, transparent);
 
   h2 {
     padding: 24px 46px;
@@ -260,6 +260,11 @@ html {
 /* ========================================= */
 /* =========== RESPONSIVE ONLY ============= */
 /* ========================================= */
+@media (max-width: 1150px) {
+  .header-bg-component {
+    display: none;
+  }
+}
 
 @media (max-width: 600px) {
 
@@ -316,11 +321,25 @@ html {
 
 }
 
-@media (max-width: 1150px) {
-  .header-bg-component {
-    display: none;
+@media (max-width: 350px){
+  .sub-hero .text h2{
+    font-size: 2rem;
+  }
+  .sub-hero .text p{
+    font-size: 0.85rem;
+  }
+
+  .title-hero-wrap{
+    #title{
+      font-size: 2.7rem;
+    }
+    .sub-title{
+      font-size: 1rem;
+    }
   }
 }
+
+
 
 /* ========================================= */
 /* ============ END RESPONSIVE ============= */

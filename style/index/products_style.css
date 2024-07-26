@@ -13,7 +13,7 @@
 }
 
 .product-section h2{
-    width: 100%;
+    width: auto;
     margin: 16px 46px;
 }
 
@@ -108,4 +108,13 @@
     -moz-user-select: none; /* Firefox */
     -ms-user-select: none; /* Internet Explorer/Edge */
     user-select: none; /* Standard */
+}
+
+
+/* RESPONSIVE ONLY */
+
+@media (max-width: 350px) {
+    :root {
+        --width-card: 250px;
+    }
 }
