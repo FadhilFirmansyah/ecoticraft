@@ -119,6 +119,7 @@ html {
   display: flex;
   flex-direction: row;
   gap: 70px;
+  align-items: center;
 }
 
 .sub-hero .circle {

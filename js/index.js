@@ -39,12 +39,12 @@ window.addEventListener('scroll', function () {
 
 })
 
+// END OF SISTEM PARALLAX
 
 
 
-
-// ==== PRODUCTS DATA ==== //
-
+// ==== QUERY PRODUCTS DATA ==== //
+// NGAMBIL JSON DARI GITHUB HAYDAR
 fetch('https://haydar-hilmy.github.io/ecoticraft/products-data.json')
     .then(response => {
         if (!response.ok) {
@@ -84,3 +84,4 @@ fetch('https://haydar-hilmy.github.io/ecoticraft/products-data.json')
     });
 
 
+    // END OF PRODUCTS DATA

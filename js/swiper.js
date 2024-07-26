@@ -3,6 +3,8 @@ let isDown = false;
 let startX;
 let scrollLeft;
 
+// ========= PRODUK CAROUSEL =========
+
 Array.from(product_section).forEach(slider => {
     slider.addEventListener('mousedown', (e) => {
         isDown = true;
@@ -53,14 +55,5 @@ document.addEventListener('DOMContentLoaded', function () {
   
     let intervalSlide = setInterval(nextSlide, 5000);
 
-    itemCarousel.forEach(item => {
-        item.addEventListener('click', function(){
-            clearInterval(intervalSlide);
-
-            setTimeout(() => {
-                intervalSlide = setInterval(nextSlide, 5000);
-            }, 5000);
-        });
-    });
   });
   
