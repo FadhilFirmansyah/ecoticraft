@@ -22,7 +22,7 @@
     flex-direction: row;
     gap: 24px;
     overflow-x: auto;
-    padding: 8px 46px;
+    padding: 8px 35px;
     margin: 0 0 100px 0;
 }
 .product-section .products-wrap::-webkit-scrollbar{

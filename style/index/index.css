@@ -41,6 +41,24 @@ html {
   justify-content: space-between;
   z-index: 4;
 }
+header {
+    padding: 12px 26px;
+
+    div {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        img.logo-header {
+            width: 45px;
+            filter: drop-shadow(5px 5px 5px #4e4e4e);
+        }
+
+        h4 {
+            font-size: 1.1rem;
+        }
+    }
+}
 
 .left-header {
   display: flex;
@@ -91,13 +109,13 @@ html {
   z-index: 1;
 }
 
-.title-hero-wrap #title {
+.title-hero-wrap .title {
   color: #000000;
   font-size: 12.5vh;
   line-height: 100%;
 }
 
-.title-hero-wrap #title span {
+.title-hero-wrap .title span {
   color: #103837;
 }
 
@@ -287,7 +305,7 @@ html {
   }
 
   .title-hero-wrap {
-    #title {
+    .title {
       font-size: 3.7rem;
     }
 
@@ -307,7 +325,7 @@ html {
   .sub-hero {
     flex-direction: column;
     align-items: center;
-    padding: 100px 50px;
+    padding: 100px 30px;
   }
 
   .sub-hero .circle {
@@ -327,10 +345,11 @@ html {
   }
   .sub-hero .text p{
     font-size: 0.85rem;
+    word-spacing: -1px;
   }
 
   .title-hero-wrap{
-    #title{
+    .title{
       font-size: 2.7rem;
     }
     .sub-title{

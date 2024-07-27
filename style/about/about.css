@@ -6,25 +6,6 @@
     height: 100vh;
     overflow: hidden;
 
-    header {
-        padding: 12px 26px;
-
-        div {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-
-            img.logo-header {
-                width: 45px;
-                filter: drop-shadow(5px 5px 5px #4e4e4e);
-            }
-
-            h4 {
-                font-size: 1.1rem;
-            }
-        }
-    }
-
     .banner {
         margin: auto;
         width: 100%;
@@ -109,11 +90,13 @@ main {
             align-items: center;
             justify-content: center;
             transition-duration: 100ms;
+            border-radius: 8px;
 
             img {
                 opacity: 0;
                 height: 100%;
                 transition-duration: 100ms;
+                border-radius: 8px;
             }
         }
 
@@ -192,6 +175,7 @@ main {
     main {
         article {
             width: 100%;
+            border-radius: 0;
         }
 
         section {

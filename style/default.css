@@ -22,11 +22,15 @@
 
 /* TOMBOL KEMBALI */
 .back-btn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: sticky;
-  bottom: 5%;
+  bottom: -10%;
   left: 5%;
   padding: 8px 12px;
   width: 130px;
+  font-size: 0.9rem;
   background-color: #fff;
   border-radius: 40px;
   border: none;
@@ -36,7 +40,35 @@
   cursor: pointer;
   text-decoration: none;
   color: #000;
+  gap: 4px;
 }
+
+.back-btn img{
+  width: 17px;
+}
+
+/* ============ HEADER ============ */
+/* HEADER: tulisan Ecotictaft dan logo eceng gondoknya */
+header {
+  padding: 12px 26px;
+  width: 100%;
+
+  div {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      img.logo-header {
+          width: 45px;
+          filter: drop-shadow(5px 5px 5px #4e4e4e);
+      }
+
+      h4 {
+          font-size: 1.1rem;
+      }
+  }
+}
+
 
 /* ========== FOOTER ========== */
 footer {
@@ -99,6 +131,7 @@ footer {
   .back-btn{
     padding: 5px 12px;
     width: 110px;
+    font-size: 0.85rem;
   }
 
   footer {
