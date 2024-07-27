@@ -63,6 +63,9 @@ main article {
     line-height: 165%;
     font-size: 1.05rem;
 }
+main article p{
+    text-indent: 2rem;
+}
 
 
 
@@ -94,7 +97,7 @@ main article {
             position: relative;
             width: 100%;
             height: auto;
-            aspect-ratio: 1/1;
+            aspect-ratio: 16/9;
             right: unset;
             bottom: unset;
             background-size: cover;
@@ -105,6 +108,10 @@ main article {
 }
 
 @media (max-width: 860px) {
+    main{
+        height: 100%;
+        padding: 150px 0;
+    }
     main article {
         width: 100%;
         border-radius: 0;
@@ -112,12 +119,30 @@ main article {
 }
 
 @media (max-width: 600px){
+    main article{
+        word-spacing: -1px;
+        padding: 26px;
+    }
     .hero{
+        section{
+            padding: 100px 30px;
+        }
         section .title-hero-wrap .title{
             font-size: 3.7rem;
         }
         section .title-hero-wrap .sub-title{
             font-size: 1.2rem;
+        }
+    }
+}
+
+@media (max-width: 460px){
+    .hero{
+        section .title-hero-wrap .title{
+            font-size: 2.7rem;
+        }
+        section .title-hero-wrap .sub-title{
+            font-size: 1rem;       
         }
     }
 }
