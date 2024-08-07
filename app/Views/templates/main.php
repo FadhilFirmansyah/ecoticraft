@@ -9,11 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <!-- <script src="https://kit.fontawesome.com/a502a8bc22.js" crossorigin="anonymous"></script> -->
 
-    <link rel="stylesheet" type="text/css" href="style/community/community.css">
-
-    <link rel="stylesheet" type="text/css" href="style/about/about.css">
-
-    <link rel="stylesheet" type="text/css" href="style/index/index.css">
+    <link rel="stylesheet" type="text/css" href="<?= base_url($css) ?>">
      
     <title><?= $title; ?></title>
 </head>

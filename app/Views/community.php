@@ -1,0 +1,64 @@
+<?= $this->extend('templates/main') ?>
+
+<?= $this->section('content') ?>
+<div class="hero">
+
+        <header>
+            <div>
+                <img src="<?= base_url('assets/logo/logo.png') ?>" alt="logo" class="logo-header">
+                <h4>ECOTICRAFT</h4>
+            </div>
+        </header>
+
+        <section>
+            
+            <div class="title-hero-wrap" id="title-hero-wrap">
+                <h2 class="title">
+                    KOMUNITAS<br>
+                    <span>
+                        TUNTANG
+                    </span>
+                </h2>
+                <h3 class="sub-title">
+                    Inspirasi Lokal Ekspor Global
+                </h3>
+            </div>
+
+            <div class="img-banner" style="background-image: url('assets/image/img-ibuibu.jpg');"></div>
+        </section>    
+        
+    </div>
+
+    <main>
+
+        <article>
+            <p>Cikidul Eceng Gondok, merupakan komunitas desa Tuntang, Dusun cikal, yang memiliki kepanjangan Cikal Kidul Eceng Gondok. Cikal Kidul ini sudah lama berdiri dari sebelum covid dan berlanjut hingga sekarang. Kegiatan Cikidul Community sendiri adalah mengolah kerajinan dan budaya yang berada di Desa Tuntang, Ambarawa, Dusun Cikal. Kerajinan dan budaya tersebut meliputi pembuatan singkong, sayur-sayuran segar dan besar, dan Eceng Gondok.</p>
+            <p>Namun Cikidul Eceng Gondok Community lebih berfokus kepada kerajinan Eceng Gondok yang marketing nya bisa mencapai penjualan antar kota bahkan antar provinsi. Pengrajin-pengrajin dari Cikidul Community pun berasal dari Desa Tuntang, beberapa kalangan muda taruna desa juga mengikuti komunitas tersebut.</p>
+        </article>
+
+    </main>
+
+    <a href="/" class="back-btn" id="flow_btn"><img src="assets/icon/left-arrow.png">Kembali</a>
+
+    <footer>
+        <div class="aside-wrap">
+            <aside>
+                <a href="https://goo.gl/maps/4SFE6SCtnJPw8MpN7?g_st=aw" target="_blank"><span><img src="assets/icon/maps.png" alt="icon"> Cikal RT05 RW07 Gang Manggar 7</span></a>
+                <a href="https://wa.me/6285729320717" target="_blank"><span><img src="assets/icon/call.png" alt="icon"> +62 857-2932-0717</span></a>
+                <a href="https://www.instagram.com/cikidul077/" target="_blank"><span><img src="assets/icon/instagram.png" alt="icon"> @cikidul077</span></a>
+                <a href="mailto:cikidul07@gmail.com"><span><img src="assets/icon/email.png" alt="icon"> cikidul07@gmail.com</span></a>
+            </aside>
+            <aside>
+                <a href="https://goo.gl/maps/4SFE6SCtnJPw8MpN7?g_st=aw" target="_blank"><img src="assets/components/maps.jpg" alt="maps"></a>
+            </aside>
+        </div>
+        <div>
+            <hr>
+            <h4>Hak Cipta ©2024 Kerajinan Tuntang-Seluruh Hak Cipta</h4>
+        </div>
+    </footer>
+    
+    <script src="js/library/live_view.js"></script>
+    <script src="js/library/btn_animation.js"></script>
+
+    <?= $this->endSection() ?>

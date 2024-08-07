@@ -87,11 +87,11 @@
             <div class="carousel-inner">
 
                 <div style="background-image: url('assets/image/fotbar.png')" class="item-carousel">
-                    <a href="about.html" target="_self"><button>TIM PPKO</button></a>
+                    <a href="about" target="_self"><button>TIM PPKO</button></a>
                 </div>
 
                 <div style="background-image: url('assets/image/img-ibuibu.jpg')" class="item-carousel">
-                    <a href="community.html" target="_self"><button>KOMUNITAS</button></a>
+                    <a href="community" target="_self"><button>KOMUNITAS</button></a>
                 </div>
 
 
