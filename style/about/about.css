@@ -80,35 +80,143 @@ main {
         grid-template-columns: auto auto auto auto;
         justify-content: center;
 
-        div {
+        /* PER FOTO */
+        div,
+        div div {
             width: 260px;
             aspect-ratio: 4/6;
             background-position: center;
             background-size: cover;
             background-repeat: no-repeat;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
-            transition-duration: 100ms;
+            transition-duration: 300ms;
+            transition-timing-function: ease-in-out;
             border-radius: 8px;
-
-            img {
-                opacity: 0;
-                height: 100%;
-                transition-duration: 100ms;
-                border-radius: 8px;
-            }
+            position: relative;
         }
 
-        div:hover img {
-            transition-duration: 200ms;
+        /* TULISAN NAMA DAN KET */
+        div span {
+            position: absolute;
+            bottom: 16px;
+            padding: 0 24px;
+            width: 100%;
+        }
+
+        div span h3,
+        div span h5 {
+            color: #fff;
+            opacity: 0;
+        }
+
+        div span h3 {
+            font-size: 1.4rem;
+        }
+
+        div span h5 {
+            font-size: 1.1rem;
+            font-weight: 400;
+        }
+
+        div:hover span h3, div:hover span h5 {
             opacity: 1;
-        }
-
-        div:nth-child(1):hover {
-            background-size: 110%;
             transition-duration: 200ms;
         }
+
+        
+        
+        /* MS LUSI */
+        div:nth-child(1):hover {
+            background-size: 120%;
+            transition-duration: 200ms;
+        }
+        div:nth-child(1):hover div{
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+
+        /* TIM ANGGOTA */
+        div div:hover{
+            filter: brightness(50%) blur(1px) contrast(120%);
+        }
+
+        div:nth-child(2) div:hover {
+            transition-duration: 200ms;
+            background-image: url('../../assets/image/pp/pose/ody.jpg') !important;
+        }
+
+        div:nth-child(3) div:hover {
+            transition-duration: 200ms;
+            background-image: url('../../assets/image/pp/pose/nata.jpg') !important;
+        }
+
+        div:nth-child(4) div:hover {
+            transition-duration: 200ms;
+            background-image: url('../../assets/image/pp/pose/silva.jpg') !important;
+        }
+
+        div:nth-child(5) div:hover {
+            transition-duration: 200ms;
+            background-image: url('../../assets/image/pp/pose/risma.jpg') !important;
+        }
+
+        div:nth-child(6) div:hover {
+            transition-duration: 200ms;
+            background-image: url('../../assets/image/pp/pose/jevon.jpg') !important;
+        }
+
+        div:nth-child(7) div:hover {
+            transition-duration: 200ms;
+            background-image: url('../../assets/image/pp/pose/nur.jpg') !important;
+        }
+
+        div:nth-child(8) div:hover {
+            transition-duration: 200ms;
+            background-image: url('../../assets/image/pp/pose/reyhan.jpg') !important;
+        }
+
+        div:nth-child(9) div:hover {
+            transition-duration: 200ms;
+            background-image: url('../../assets/image/pp/pose/nida.jpg') !important;
+        }
+
+        div:nth-child(10) div:hover {
+            transition-duration: 200ms;
+            background-image: url('../../assets/image/pp/pose/wawan.jpg') !important;
+        }
+
+        div:nth-child(11) div:hover {
+            transition-duration: 200ms;
+            background-image: url('../../assets/image/pp/pose/nina.jpg') !important;
+        }
+
+        div:nth-child(12) div:hover {
+            transition-duration: 200ms;
+            background-image: url('../../assets/image/pp/pose/arul.jpg') !important;
+        }
+
+        div:nth-child(13) div:hover {
+            transition-duration: 200ms;
+            background-image: url('../../assets/image/pp/pose/haydar.jpg') !important;
+        }
+
+        div:nth-child(14) div:hover {
+            transition-duration: 200ms;
+            background-image: url('../../assets/image/pp/pose/fadhil.jpg') !important;
+        }
+
+        div:nth-child(15) div:hover {
+            transition-duration: 200ms;
+            background-image: url('../../assets/image/pp/pose/daiyan.jpg') !important;
+        }
+
+        div:nth-child(16) div:hover {
+            transition-duration: 200ms;
+            background-image: url('../../assets/image/pp/pose/anggi.jpg') !important;
+        }
+
 
     }
 
@@ -183,6 +291,9 @@ main {
 
             div {
                 width: 320px;
+            }
+            div div{
+                width: 100%;
             }
         }
     }
@@ -274,6 +385,7 @@ main {
 
             .title-banner {
                 margin-top: 100px;
+
                 h1 {
                     font-size: 1.8rem;
                 }
@@ -297,21 +409,31 @@ main {
             div {
                 width: 150px;
             }
+            div span{
+                padding: 0 8px;
+            }
+            div span h3{
+                font-size: 1.1rem;
+            }
+            div span h5{
+                font-size: 0.95rem;
+            }
         }
     }
 }
 
-@media (max-width: 330px){
-    .hero{
-        .banner{
-            .title-banner{
+@media (max-width: 330px) {
+    .hero {
+        .banner {
+            .title-banner {
                 margin-top: 95px;
             }
         }
     }
-    main{
-        section{
-            div{
+
+    main {
+        section {
+            div {
                 width: 110px;
             }
         }
@@ -319,8 +441,8 @@ main {
 }
 
 @media (max-width: 300px) {
-    main{
-        section{
+    main {
+        section {
             grid-template-columns: auto;
         }
     }

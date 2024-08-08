@@ -193,17 +193,17 @@ header {
 
   .carousel-wrap {
     display: -webkit-box;
-    padding: 8px 46px;
+    /* padding: 8px 46px; */
     overflow-x: auto;
     width: 100%;
     transition: transform 0.3s ease-in-out;
 
 
     .carousel-inner {
-      width: 90%;
+      width: 100%;
       box-sizing: border-box;
       display: flex;
-      gap: 24px;
+      /* gap: 24px; */
 
       .item-carousel {
         width: 100%;
@@ -354,6 +354,19 @@ header {
     }
     .sub-title{
       font-size: 1rem;
+    }
+  }
+
+  .about-section{
+    .carousel-wrap{
+      .carousel-inner{
+        .item-carousel{
+          button{
+            width: 180px;
+            font-size: 0.9rem;
+          }
+        }
+      }
     }
   }
 }
