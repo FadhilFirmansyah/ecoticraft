@@ -103,21 +103,7 @@
 
 
     <footer>
-        <div class="aside-wrap">
-            <aside>
-                <a href="https://goo.gl/maps/4SFE6SCtnJPw8MpN7?g_st=aw" target="_blank"><span><img src="assets/icon/maps.png" alt="icon"> Cikal RT05 RW07 Gang Manggar 7</span></a>
-                <a href="https://wa.me/6285729320717" target="_blank"><span><img src="assets/icon/call.png" alt="icon"> +62 857-2932-0717</span></a>
-                <a href="https://www.instagram.com/cikidul077/" target="_blank"><span><img src="assets/icon/instagram.png" alt="icon"> @cikidul077</span></a>
-                <a href="mailto:cikidul07@gmail.com"><span><img src="assets/icon/email.png" alt="icon"> cikidul07@gmail.com</span></a>
-            </aside>
-            <aside>
-                <a href="https://goo.gl/maps/4SFE6SCtnJPw8MpN7?g_st=aw" target="_blank"><img src="assets/components/maps.jpg" alt="maps"></a>
-            </aside>
-        </div>
-        <div>
-            <hr>
-            <h4>Hak Cipta ©2024 Kerajinan Tuntang-Seluruh Hak Cipta</h4>
-        </div>
+        <?= $this->include('layouts/footer') ?>
     </footer>
 
 
