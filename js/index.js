@@ -72,7 +72,7 @@ fetch('https://haydar-hilmy.github.io/ecoticraft/products-data.json')
                     </div>
                     <div class="option-product">
                         <h4>${getHarga}</h4>
-                        <a href"${product.link}" target="_blank"><button>BUY</button></a>
+                        <a href="${product.link}" target="_blank"><button>BUY</button></a>
                     </div>
                 </div>`;
                 card_wrap.insertAdjacentHTML('beforeend', card); // Tambahkan elemen ke dalam 'card_wrap'

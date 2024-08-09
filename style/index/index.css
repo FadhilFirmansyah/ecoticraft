@@ -528,6 +528,7 @@ header {
 
     .umkm-section{
       .card-umkm-wrap{
+        padding: 0 8px;
         .card-umkm{
           width: 100%;
         }
