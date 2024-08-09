@@ -8,6 +8,8 @@ let text_sh = document.getElementById('text-sub-hero');
 
 let product_sect = document.getElementById("product_sect");
 let card_wraps = document.getElementsByClassName("products-wrap");
+let umkm_wraps = document.getElementsByClassName("card-umkm-wrap");
+
 
 
 let maxVh = window.innerHeight; // ukuran maksimal dari sebuah device
@@ -44,7 +46,6 @@ window.addEventListener('scroll', function () {
 
 
 // ==== QUERY PRODUCTS DATA ==== //
-// NGAMBIL JSON DARI GITHUB HAYDAR
 fetch('https://haydar-hilmy.github.io/ecoticraft/products-data.json')
     .then(response => {
         if (!response.ok) {
@@ -84,4 +85,33 @@ fetch('https://haydar-hilmy.github.io/ecoticraft/products-data.json')
     });
 
 
-    // END OF PRODUCTS DATA
+// END OF PRODUCTS DATA
+
+
+// ==== QUERY UMKM DATA ==== //
+
+fetch('https://haydar-hilmy.github.io/ecoticraft/umkm-data.json')
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok ' + response.statusText);
+        }
+        return response.json();
+    })
+    .then(datas => {
+        Array.from(umkm_wraps).forEach(umkm_wrap => {
+            Array.from(datas).forEach(data => {
+                let card = `
+                <div class="card-umkm" style="background-image: url('assets/umkm/${data.gambar}');">
+                <div class="text-card">
+                <h3>${data.judul}</h3>
+                <p>${data.deskripsi}</p>
+                </div>
+                </div>`;
+                umkm_wrap.insertAdjacentHTML('beforeend', card);
+            });
+        });
+    })
+    .catch(error => {
+        console.error('There has been a problem with your fetch operation:', error);
+    });
+// END OF UMKM DATA

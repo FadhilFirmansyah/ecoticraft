@@ -28,6 +28,7 @@ html {
   top: 0;
   right: 0;
   z-index: 3;
+  opacity: 0.25;
 }
 
 .hero header {
@@ -41,23 +42,24 @@ html {
   justify-content: space-between;
   z-index: 4;
 }
+
 header {
-    padding: 12px 26px;
+  padding: 12px 26px;
 
-    div {
-        display: flex;
-        align-items: center;
-        gap: 8px;
+  div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
 
-        img.logo-header {
-            width: 45px;
-            filter: drop-shadow(5px 5px 5px #4e4e4e);
-        }
-
-        h4 {
-            font-size: 1.1rem;
-        }
+    img.logo-header {
+      width: 45px;
+      filter: drop-shadow(5px 5px 5px #4e4e4e);
     }
+
+    h4 {
+      font-size: 1.1rem;
+    }
+  }
 }
 
 .left-header {
@@ -101,6 +103,7 @@ header {
   padding: 100px;
   display: flex;
   overflow: hidden;
+  flex-direction: row;
 }
 
 .hero section .title-hero-wrap {
@@ -123,6 +126,32 @@ header {
   font-size: 4.5vh;
 }
 
+/* ========== MASKOTTT =========== */
+.maskot-wrap {
+  position: absolute;
+  right: 10%;
+  top: 10%;
+  z-index: 4;
+}
+
+.maskot-wrap .maskot {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.maskot-wrap .maskot .main-maskot {
+  width: 400px;
+  z-index: 6;
+}
+
+.maskot-wrap .maskot .alas-maskot {
+  position: absolute;
+  bottom: 0;
+  z-index: 5;
+  width: 80%;
+}
 
 
 
@@ -179,7 +208,7 @@ header {
 .about-section {
   margin: 50px 0;
   display: block;
-  padding: 0 0 300px 0;
+  padding: 0 0 200px 0;
   background: linear-gradient(0deg, var(--basic-color) -400px, transparent);
 
   h2 {
@@ -250,11 +279,63 @@ header {
     box-shadow: none;
   }
 
+
+  /* ========== UMKM ========== */
+  .umkm-section {
+    width: 100%;
+    margin: 48px 0 0 0;
+  }
+
+  .umkm-section h2 {
+    font-size: 3rem;
+  }
+
+  .umkm-section {
+    .card-umkm-wrap {
+      display: -webkit-box;
+      overflow-x: auto;
+      gap: 12px;
+      padding: 0 24px;
+
+      .card-umkm {
+        width: 33%;
+        border-radius: 6px;
+        height: auto;
+        aspect-ratio: 4/2.6;
+        background-size: cover;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+
+        .text-card {
+          color: #000;
+          border-radius: 0 0 6px 6px;
+          width: 100%;
+          padding: 0 3% 3% 3%;
+          background-image: linear-gradient(0deg, #dfcbcb 0%, transparent 100%);
+        }
+      }
+    }
+
+    .card-umkm-wrap::-webkit-scrollbar {
+      height: 0px;
+    }
+
+    .card-umkm-wrap::-webkit-scrollbar {
+      background-color: transparent;
+    }
+
+    .card-umkm-wrap::-webkit-scrollbar {
+      box-shadow: none;
+    }
+  }
+
 }
+
+/* ============ END OF UMKM =========== */
 
 
 /* ========== END ABOUT SECTION ========== */
-
 
 
 
@@ -282,6 +363,57 @@ header {
   .header-bg-component {
     display: none;
   }
+
+  .maskot-wrap {
+    top: 10%;
+    right: 10%;
+  }
+
+  .maskot-wrap .maskot .main-maskot {
+    width: 300px;
+  }
+}
+
+@media (max-width: 950px){
+  .about-section{
+    .umkm-section{
+      .card-umkm-wrap{
+        .card-umkm{
+          .text-card{
+            h3{
+              font-size: 1rem;
+              font-weight: 700;
+            }
+            p{
+              font-size: 0.95rem;
+              font-weight: 400;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+@media (max-width: 850px) {
+  .maskot-wrap {
+    display: none;
+  }
+  .about-section{
+    .umkm-section{
+      .card-umkm-wrap{
+        .card-umkm{
+          width: 50%;
+          .text-card{
+            h3{
+              font-size: 1.15rem;
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 @media (max-width: 600px) {
@@ -300,6 +432,17 @@ header {
         gap: 0;
       }
 
+    }
+
+    .umkm-section{
+      h2{
+        font-size: 2rem;
+      }
+      .card-umkm-wrap{
+        .card-umkm{
+          width: 70%;
+        }
+      }
     }
 
   }
@@ -339,32 +482,54 @@ header {
 
 }
 
-@media (max-width: 350px){
-  .sub-hero .text h2{
+@media (max-width: 450px){
+  .about-section{
+    .umkm-section{
+      .card-umkm-wrap{
+        .card-umkm{
+          width: 80%;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 350px) {
+  .sub-hero .text h2 {
     font-size: 2rem;
   }
-  .sub-hero .text p{
+
+  .sub-hero .text p {
     font-size: 0.85rem;
     word-spacing: -1px;
   }
 
-  .title-hero-wrap{
-    .title{
+  .title-hero-wrap {
+    .title {
       font-size: 2.7rem;
     }
-    .sub-title{
+
+    .sub-title {
       font-size: 1rem;
     }
   }
 
-  .about-section{
-    .carousel-wrap{
-      .carousel-inner{
-        .item-carousel{
-          button{
+  .about-section {
+    .carousel-wrap {
+      .carousel-inner {
+        .item-carousel {
+          button {
             width: 180px;
             font-size: 0.9rem;
           }
+        }
+      }
+    }
+
+    .umkm-section{
+      .card-umkm-wrap{
+        .card-umkm{
+          width: 100%;
         }
       }
     }
