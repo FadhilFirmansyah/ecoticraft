@@ -13,7 +13,7 @@ html {
 }
 
 .hero {
-  background: linear-gradient(220deg, var(--basic-color) -120px, #fff);
+  background: linear-gradient(174deg, var(--basic-color) -120px, #fff);
   position: relative;
   width: 100%;
   bottom: 0;
@@ -25,10 +25,11 @@ html {
 .header-bg-component {
   position: absolute;
   width: 50%;
+  height: 100%;
   top: 0;
   right: 0;
   z-index: 3;
-  opacity: 0.25;
+  opacity: 0.15;
 }
 
 .hero header {
@@ -119,7 +120,7 @@ header {
 }
 
 .title-hero-wrap .title span {
-  color: #103837;
+  color: #244602;
 }
 
 .title-hero-wrap .sub-title {
@@ -144,6 +145,19 @@ header {
 .maskot-wrap .maskot .main-maskot {
   width: 400px;
   z-index: 6;
+  animation: float_maskot 5000ms linear infinite;
+}
+
+@keyframes float_maskot {
+  0%{
+    transform: translateY(0px);
+  }
+  50%{
+    transform: translateY(-20px);
+  }
+  100%{
+    transform: translateY(0px);
+  }
 }
 
 .maskot-wrap .maskot .alas-maskot {
@@ -159,8 +173,9 @@ header {
 
 
 .sub-hero {
+  height: 100vh;
   position: relative;
-  padding: 300px 100px 150px 100px;
+  padding: 0 100px;
   background: #fff;
   z-index: 1;
   display: flex;
@@ -172,11 +187,11 @@ header {
 .sub-hero .circle {
   border-radius: 100%;
   padding: 20px;
-  width: 100%;
+  width: 80%;
   height: auto;
   aspect-ratio: 1/1;
   background: linear-gradient(200deg, var(--basic-color) -20px, #fff);
-  box-shadow: 0px 0px 50px 14px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 0px 35px 14px rgba(0, 0, 0, 0.3);
 }
 
 .sub-hero .circle img {
@@ -397,6 +412,16 @@ header {
 
 
 @media (max-width: 850px) {
+  .sub-hero{
+    height: auto;
+    padding: 230px 100px;
+    flex-direction: column;
+    align-items: center;
+    padding: 100px 30px;
+  }
+  .sub-hero .circle{
+    width: 30%;
+  }
   .maskot-wrap {
     display: none;
   }
@@ -463,12 +488,6 @@ header {
 
   .hero section {
     justify-content: center;
-  }
-
-  .sub-hero {
-    flex-direction: column;
-    align-items: center;
-    padding: 100px 30px;
   }
 
   .sub-hero .circle {

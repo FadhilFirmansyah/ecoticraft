@@ -16,7 +16,7 @@ let maxVh = window.innerHeight; // ukuran maksimal dari sebuah device
 
 window.addEventListener('load', function () {
     circle_sh.style.transform = "translateX(-350px)";
-    text_sh.style.transform = "translateX(200px)";
+    text_sh.style.transform = "translateX(312px)";
 });
 
 window.addEventListener('scroll', function () {
@@ -57,25 +57,30 @@ fetch('https://haydar-hilmy.github.io/ecoticraft/products-data.json')
         let idx = 0;
         Array.from(card_wraps).forEach(card_wrap => {
             let products = data[idx];
+            let isStop = 0;
             products.forEach(product => {
-                const getHarga = new Intl.NumberFormat("id", {
-                    style: "currency",
-                    currency: "IDR",
-                    maximumFractionDigits: 0,
-                }).format(product.harga);
-                let card = `
+                if (isStop < 3) {
+                    const getHarga = new Intl.NumberFormat("id", {
+                        style: "currency",
+                        currency: "IDR",
+                        maximumFractionDigits: 0,
+                    }).format(product.harga);
+                    let card = `                
                 <div class="card-product">
-                    <div style="background-image: url('assets/products/${product.gambar}');" class="img-product"></div>
-                    <div class="title-product">
+                <div style="background-image: url('assets/products/${product.gambar}');" class="img-product"></div>
+                <div class="title-product">
+                    <span>
                         <h4>${product.nama}</h4>
                         <h5>${product.sub_nama}</h5>
-                    </div>
-                    <div class="option-product">
+                    </span>
+                    <span>
                         <h4>${getHarga}</h4>
-                        <a href="${product.link}" target="_blank"><button>BUY</button></a>
-                    </div>
-                </div>`;
-                card_wrap.insertAdjacentHTML('beforeend', card); // Tambahkan elemen ke dalam 'card_wrap'
+                    </span>
+                </div>
+            </div>`;
+                    card_wrap.insertAdjacentHTML('beforeend', card); // Tambahkan elemen ke dalam 'card_wrap'
+                    isStop++;
+                }
             });
             idx++;
         });
@@ -83,7 +88,6 @@ fetch('https://haydar-hilmy.github.io/ecoticraft/products-data.json')
     .catch(error => {
         console.error('There has been a problem with your fetch operation:', error);
     });
-
 
 // END OF PRODUCTS DATA
 

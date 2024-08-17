@@ -1,5 +1,7 @@
 /* ========== TEMPAT UNTUK STYLING BAGIAN PRODUK ========== */
 
+@import url("https://fonts.googleapis.com/css?family=Inter");
+
 :root{
     --basic-color: #244602;
     --basic-color-hover: #6d8a4f;
@@ -9,7 +11,8 @@
 
 .product-section{
     padding: 50px 0;
-    display: block;
+    display: flex;
+    flex-direction: row;
 }
 
 .product-section h2{
@@ -17,37 +20,97 @@
     margin: 16px 46px;
 }
 
-.product-section .products-wrap{
+.product-section .title-product-section-wrap{
+    width: 30%;
+    background-color: #244602;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 36px;
+
+    /* JUDUL DI PRODUK SECTION */
+    .title-product-section{
+        text-align: left;
+
+        /* PRODUK KERAJINAN */
+        h3{
+            font-size: 1.4rem;
+            font-weight: 500;
+        }
+        /* ECENG GONDOK */
+        h1{
+            font-size: 3.5rem;
+            line-height: 135%;
+            font-family: 'Italiana';
+            font-weight: normal;
+        }
+        /* TUNTANG */
+        h4{
+            font-size: 1.1rem;
+            text-align: center;
+        }
+    }
+
+    .title-product-section-link{
+        a{
+            background-color: #fff;
+            padding: 8px 24px;
+            color: #000;
+            border: 0;
+            outline: none;
+            font-size: 1.04rem;
+            font-weight: 600;
+            border-radius: 50px;
+            text-decoration: none;
+        }
+        a:hover{
+            background-color: #adadad;
+            transition-duration: 150ms;
+        }
+    }
+}
+
+.product-section .product-wrap-outer{
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+    width: 70%;
+    padding: 60px 20px;
+}
+
+.product-section .product-wrap-outer .products-wrap{
     display: flex;
     flex-direction: row;
     gap: 24px;
-    overflow-x: auto;
-    padding: 8px 35px;
-    margin: 0 0 100px 0;
+    overflow-x: unset;
+    padding: 0;
+    margin: 0;
+    justify-content: center;
 }
-.product-section .products-wrap::-webkit-scrollbar{
+.product-section .product-wrap-outer .products-wrap::-webkit-scrollbar{
     height: 2px;
 }
-.product-section .products-wrap::-webkit-scrollbar-thumb{
+.product-section .product-wrap-outer .products-wrap::-webkit-scrollbar-thumb{
     background-color: transparent;
 }
-.product-section .products-wrap::-webkit-scrollbar-track {
+.product-section .product-wrap-outer .products-wrap::-webkit-scrollbar-track {
     box-shadow: none;
 }
 
 .card-product{
     display: flex;
     flex-direction: column;
-    width: var(--width-card);
+    width: 33%;
     height: auto;
     aspect-ratio: 8/6;
-    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.3);
     border-radius: 4px;
     justify-content: space-between;
 }
 
 .img-product{
-    width: var(--width-card);
+    width: 100%;
     height: auto;
     aspect-ratio: 16/11;
     object-fit: cover;
@@ -56,16 +119,22 @@
     background-position: center;
 }
 
-.title-product{
-    display: block;
-    padding: 12px 18px;
-}
 
-.title-product h4{
+
+.title-product{
+    display: flex;
+    flex-direction: row;
+    padding: 18px 18px;
+    align-items: flex-end;
+}
+/* BAGIAN JUDUL PRODUK DAN DESKRIPSINYA */
+.title-product span:nth-child(1){
+    width: 100%;
+}
+.title-product span:nth-child(1) h4{
     font-size: 1rem;
 }
-
-.title-product h5{
+.title-product span:nth-child(1) h5{
     font-size: 0.95rem;
     font-weight: 500;
 }
@@ -82,6 +151,9 @@
     width: 100%;
 }
 
+.option-product a, .option-product a button{
+    width: 100%;
+}
 .option-product button{
     background-color: var(--basic-color);
     color: #fff;
@@ -112,6 +184,52 @@
 
 
 /* RESPONSIVE ONLY */
+
+@media (max-width: 1000px) {
+    .card-product{
+        width: 50%;
+    }
+    .card-product:last-child{
+        display: none;
+    }
+    .title-product{
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 800px){
+    .product-section{
+        flex-direction: column;
+    }
+    .product-section .product-wrap-outer{
+        width: 100%;
+    }
+    .product-section .title-product-section-wrap{
+        align-items: center;
+        width: 100%;
+        padding: 48px 0;
+        gap: 48px;
+        flex-direction: row;
+    }
+    .card-product:last-child{
+        display: flex;
+    }
+    .title-product{
+        gap: 12px;
+    }
+}
+
+@media (max-width: 700px) {
+    .card-product:last-child{
+        display: none;
+    }
+}
+
+@media (max-width: 460px){
+    .product-section .title-product-section-wrap{
+        flex-direction: column;
+    }
+}
 
 @media (max-width: 350px) {
     :root {
