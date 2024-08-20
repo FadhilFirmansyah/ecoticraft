@@ -1,8 +1,5 @@
 /* ========== TEMPAT UNTUK STYLING BAGIAN PRODUK ========== */
 
-@import url("https://fonts.googleapis.com/css?family=Inter");
-@import url("https://fonts.googleapis.com/css?family=Italiana");
-
 :root{
     --basic-color: #244602;
     --basic-color-hover: #6d8a4f;
@@ -11,10 +8,13 @@
 
 
 .product-section{
-    /* padding: 50px 0; */
     display: flex;
     flex-direction: row;
-    height: 100vh;
+    height: 110vh;
+}
+
+.row-reverse{
+    flex-direction: row-reverse !important;
 }
 
 .product-section h2{
@@ -68,8 +68,12 @@
             text-decoration: none;
         }
         a:hover{
-            background-color: #adadad;
+            background-color: #dddddd;
             transition-duration: 150ms;
+        }
+        a:active{
+            background-color: #797979;
+            transition-duration: 50ms;
         }
     }
 }
@@ -83,7 +87,7 @@
     justify-content: center;
 }
 
-.product-section .product-wrap-outer .products-wrap{
+.product-section .product-wrap-outer .products-wrap, .card-umkm-wrap{
     display: flex;
     flex-direction: row;
     gap: 24px;
@@ -109,7 +113,7 @@
     height: auto;
     aspect-ratio: 8/6;
     border-radius: 4px;
-    justify-content: space-between;
+    justify-content: flex-start;
 }
 
 .img-product{
@@ -207,6 +211,9 @@
     .product-section{
         flex-direction: column;
         height: auto;
+    }
+    .row-reverse{
+        flex-direction: column !important;
     }
     .product-section .product-wrap-outer{
         width: 100%;

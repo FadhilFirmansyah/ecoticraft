@@ -1,5 +1,9 @@
 // SISTEM PARALLAX
 
+let hero_index = document.getElementById("hero-index");
+
+let maskot_wrap = document.getElementById("maskot-wrap");
+
 let header_comp = document.getElementsByClassName('header-bg-component')[0];
 let title_hero_wrap = document.getElementsByClassName('title-hero-wrap')[0];
 
@@ -21,6 +25,8 @@ window.addEventListener('load', function () {
 
 window.addEventListener('scroll', function () {
     let Ylevel = window.scrollY;
+
+    // TULISAN DI HERO
     if (Ylevel > 150) {
         title_hero_wrap.style.left = `${((Ylevel * 1.05) + (-50))}px`;
     } else {
@@ -28,16 +34,26 @@ window.addEventListener('scroll', function () {
     }
 
 
-    if (Ylevel > (maxVh / 2)) {
-        if (Ylevel <= maxVh) {
-            text_sh.style.transform = `translateX(${(Ylevel - maxVh) * (-1)}px)`;
-            circle_sh.style.transform = `translateX(${(Ylevel - maxVh)}px)`;
-        } else {
-            circle_sh.style.transform = "translateX(0)";
-            text_sh.style.transform = "translateX(0)";
-        }
-    }
+    // TULISAN DI ABOUT ECENG GONDOK
+    if (Ylevel > (maxVh * 0.75)) {
+        hero_index.style.transform = `translateY(-${maxVh}px)`;
+        maskot_wrap.style.opacity = '0';
 
+        circle_sh.style.transform = "translateX(0)";
+        text_sh.style.transform = "translateX(0)";
+        
+        circle_sh.style.opacity = "1";
+        text_sh.style.opacity = "1";
+    } else {
+        hero_index.style.transform = `translateY(0px)`;
+        maskot_wrap.style.opacity = '1';
+
+        circle_sh.style.transform = "translateX(-350px)";
+        text_sh.style.transform = "translateX(312px)";
+
+        circle_sh.style.opacity = "0";
+        text_sh.style.opacity = "0";
+    }
 
 })
 
@@ -102,17 +118,22 @@ fetch('https://haydar-hilmy.github.io/ecoticraft/umkm-data.json')
         return response.json();
     })
     .then(datas => {
+        let idx = 0;
         Array.from(umkm_wraps).forEach(umkm_wrap => {
-            Array.from(datas).forEach(data => {
+            for (let i = 0; i < 3; i++) {
                 let card = `
-                <div class="card-umkm" style="background-image: url('assets/umkm/${data.gambar}');">
-                <div class="text-card">
-                <h3>${data.judul}</h3>
-                <p>${data.deskripsi}</p>
-                </div>
-                </div>`;
+                        <div class="card-product">
+                        <div style="background-image: url('assets/umkm/${datas[idx].gambar}');" class="img-product"></div>
+                        <div class="title-product">
+                        <span>
+                        <h4>${datas[idx].judul}</h4>
+                        <h5>${datas[idx].alamat_singkat}</h5>
+                        </span>
+                        </div>
+                        </div>`;
                 umkm_wrap.insertAdjacentHTML('beforeend', card);
-            });
+                idx++;
+            }
         });
     })
     .catch(error => {

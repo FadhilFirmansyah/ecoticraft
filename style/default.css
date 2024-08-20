@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("scrollbar.css");
-
+@import url("https://fonts.googleapis.com/css?family=Inter");
+@import url("https://fonts.googleapis.com/css?family=Italiana");
 
 /* TEMPAT KONFIGURASI SECARA DEFAULT */
 /* TERMASUK IMPORT FONT, CUSTOM SCROLLBAR DAN LAIN LAIN */
@@ -8,8 +9,10 @@
 :root {
   /* warna ijo nya ecoticraft */
   --basic-color: #244602;
+  --basic-color-hero: rgba(36, 70, 2, 0.164);
   --basic-color-lighter: #3d5d1c;
-  --basic-color-hover: #6d8a4f;
+  --basic-color-hover: #43770f;
+  --basic-color-click: #6d8a4f;
 }
 
 * {
@@ -18,6 +21,10 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
   scroll-behavior: smooth;
+}
+
+body {
+  background-color: #fff;
 }
 
 /* TOMBOL KEMBALI */
@@ -47,24 +54,87 @@
   width: 17px;
 }
 
-/* ============ HEADER ============ */
-/* HEADER: tulisan Ecotictaft dan logo eceng gondoknya */
-header {
-  padding: 12px 26px;
-  width: 100%;
+/* ============ NAVBAR ============ */
 
-  div {
+header.navbar {
+  background-color: #fff;
+  z-index: 5;
+  width: 100%;
+  height: 65px;
+  position: sticky;
+  display: flex;
+  flex-direction: row;
+  gap: 5%;
+
+  .icon-menu{
+    display: none;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 30px;
+  }
+
+  .back-modal{
+    display: none;
+    position: sticky;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    transition-duration: 100ms;
+  }
+  
+  .logo-navbar {
     display: flex;
+    flex-direction: row;
     align-items: center;
     gap: 8px;
-
-    img.logo-header {
-      width: 45px;
-      filter: drop-shadow(5px 5px 5px #4e4e4e);
+    cursor: pointer;
+    margin: 0 1.5rem;
+    
+    img {
+      width: 40px;
     }
-
+    
     h4 {
       font-size: 1.1rem;
+      font-weight: 700;
+    }
+    
+  }
+  
+  nav {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    transform: translateX(0);
+    transition-duration: 150ms;
+    
+    h3.title-navbar, h3.close-navbar{
+      display: none;
+    }
+
+    a {
+      color: #000;
+      align-self: center;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      padding: 0 16px;
+      text-decoration: none;
+      cursor: pointer;
+      font-weight: 600;
+      border: 0;
+      font-size: 0.9rem;
+    }
+
+    .active-nav{
+      border-bottom: 2px solid black;
+    }
+    
+    a:hover {
+      transition-duration: 200ms;
+      background-color: #d8d8d8;
     }
   }
 }
@@ -73,6 +143,7 @@ header {
 /* ========== FOOTER ========== */
 footer {
   width: 100%;
+  background-color: #f5f5f5;
 
   section {
 
@@ -83,6 +154,7 @@ footer {
       justify-items: start;
       grid-template-columns: auto auto auto auto;
       padding: 24px;
+      padding-top: 56px;
 
       aside {
         display: flex;
@@ -144,6 +216,16 @@ footer {
 
 }
 
+
+
+
+
+
+
+
+/* ========= RESPONSIVE ONLY ========= */
+
+
 @media (max-width: 1000px) {
   footer {
     section {
@@ -160,7 +242,13 @@ footer {
   }
 }
 
+
 @media (max-width: 750px) {
+
+  header.navbar{
+    gap: 0;
+  }
+
   footer {
     section {
       .aside-wrap {
@@ -170,6 +258,15 @@ footer {
   }
 }
 
+@media (max-width: 650px){
+  header.navbar{
+    justify-content: center;
+
+    .logo-navbar{
+      display: none;
+    }
+  }
+}
 
 @media (max-width: 600px) {
   .back-btn {
@@ -193,6 +290,13 @@ footer {
 }
 
 @media (max-width: 500px) {
+
+  header.navbar{
+    nav{
+      display: flex;
+    }
+  }
+
   footer {
     section {
       .aside-wrap {
@@ -202,11 +306,65 @@ footer {
   }
 }
 
+@media (max-width: 450px){
+  header.navbar{
+    background-color: var(--basic-color-hero);
+    justify-content: flex-end;
+    top: 0;
+
+    .icon-menu{
+      display: block;
+    }
+
+    .back-modal{
+      display: none;
+    }
+    
+    nav{
+      position: sticky;
+      right: 0;
+      background-color: #fff;
+      height: 100vh;
+      flex-direction: column;
+      width: 100%;
+      display: none;
+
+      .title-navbar{
+        padding: 20px;
+      }
+
+      .active-nav{
+        border: 0;
+      }
+
+      h3.title-navbar{
+        padding: 20px;
+        text-align: left;
+        display: block;
+      }
+      
+      h3.close-navbar{
+        padding: 30px;
+        text-align: center;
+        display: block;
+      }
+
+      a{
+        width: 100%;
+        height: 50px;
+        background-color: #fff;
+        font-weight: normal;
+      }
+    }
+  }
+}
+
 @media (max-width: 400px) {
   footer {
     section:nth-child(2) {
       padding: 24px 10px;
-      iframe{
+
+      iframe {
         aspect-ratio: 16/11;
       }
     }
