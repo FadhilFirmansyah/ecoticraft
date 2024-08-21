@@ -21,12 +21,14 @@
         <div id="back-modal" class="back-modal"></div>
         <nav id="navbar">
             <h3 class="title-navbar">Menu Pilihan</h3>
-            <a href="#">Beranda</a>
-            <a href="#">Produk</a>
-            <a href="#" class="active-nav">Komunitas</a>
-            <a href="#">UMKM</a>
-            <a href="#">Tim PPKO</a>
-            <h3 id="tulisan-tutup" class="close-navbar">TUTUP</h3>
+            <a href="index.html">Beranda</a>
+            <a href="product.html">Produk</a>
+            <a href="community.html" class="active-nav">Komunitas</a>
+            <a href="umkm.html">UMKM</a>
+            <a href="about.html">Tim PPKO</a>
+            <span class="close-span">
+                <img id="tulisan-tutup" class="close-navbar" src="assets/icon/xicon.png">
+            </span>
         </nav>
     </header>
 
@@ -51,6 +53,32 @@
         
     </div>
 
+    <section class="grid-photo">
+
+        <section class="justified-grid-gallery">
+            <figure style="--width: 640; --height: 520; ">
+              <img src="assets/products/tas1.jpg">
+            </figure>
+            <figure style="--width: 500; --height: 420; ">
+              <img src="assets/products/vas-gentong.jpg">
+            </figure>
+            <figure style="--width: 710; --height: 580; ">
+              <img src="assets/products/topi.jpg">
+            </figure>
+            <figure style="--width: 760; --height: 540; ">
+              <img src="assets/products/ganci.jpg">
+            </figure>
+            <figure style="--width: 690; --height: 570; ">
+              <img src="assets/products/tas2.jpg">
+            </figure>
+            <figure style="--width: 540; --height: 340; ">
+              <img src="assets/products/kotak-hantaran.jpg">
+            </figure>
+            <!-- If you need something fancier, check out https://gridzy.gallery/ -->
+          </section>
+
+    </section>
+
     <main>
 
         <article>
@@ -59,8 +87,6 @@
         </article>
 
     </main>
-
-    <a href="index.html" class="back-btn" id="flow_btn"><img src="assets/icon/left-arrow.png">Kembali</a>
 
     <footer>
         <section>
@@ -117,6 +143,5 @@
     
     <script src="js/library/navbar.js"></script>
     <script src="js/library/live_view.js"></script>
-    <script src="js/library/btn_animation.js"></script>
 </body>
 </html>

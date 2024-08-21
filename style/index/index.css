@@ -182,6 +182,7 @@ header {
   flex-direction: row;
   gap: 70px;
   align-items: center;
+  background: linear-gradient(360deg, #24460270 0rem, #fff);
 }
 
 .sub-hero .circle {

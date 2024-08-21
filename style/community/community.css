@@ -27,7 +27,7 @@
         line-height: 100%;
         color: var(--basic-color);
     }
-    
+
     .title-hero-wrap .title span {
         color: inherit;
         font-weight: 500;
@@ -52,6 +52,62 @@
 }
 
 
+
+
+/* =========== GRID PHOTO ============= */
+
+section.grid-photo {
+    width: 100%;
+    padding: 10%;
+    height: auto;
+    background-image: url('../../assets/background/bg-eceng.jpg');
+    background-position: center;
+    background-size: cover;
+    /* REF: https://medium.com/@ehtmlu/css-image-grid-gallery-4ec8824560a1 */
+
+    .justified-grid-gallery {
+        --space: 4px;
+        --min-height: 190px;
+        --last-row-background: rgb(188 234 153);
+    }
+
+    /* Settings end */
+
+    .justified-grid-gallery {
+        display: flex;
+        flex-wrap: wrap;
+        grid-gap: var(--space);
+        list-style: none;
+        margin: 0 !important;
+        /* We use !important to avoid gaps in some environments. */
+        padding: 0 !important;
+        /* We use !important to avoid gaps in some environments. */
+    }
+
+    .justified-grid-gallery>* {
+        flex-grow: calc(var(--width) * (100000 / var(--height)));
+        flex-basis: calc(var(--min-height) * (var(--width) / var(--height)));
+        aspect-ratio: var(--width) / var(--height);
+        position: relative;
+        overflow: hidden;
+        margin: 0 !important;
+        /* We use !important to avoid gaps in some environments. */
+        padding: 0 !important;
+        /* We use !important to avoid gaps in some environments. */
+    }
+
+    .justified-grid-gallery>*>img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+
+}
+
+
+/* =========== END OF GRID PHOTO ============= */
+
+
 main {
     background: linear-gradient(180deg, var(--basic-color) -150px, #fff);
     height: 100vh;
@@ -68,7 +124,8 @@ main article {
     line-height: 165%;
     font-size: 1.05rem;
 }
-main article p{
+
+main article p {
     text-indent: 2rem;
 }
 
@@ -113,41 +170,70 @@ main article p{
 }
 
 @media (max-width: 860px) {
-    main{
+    main {
         height: 100%;
         padding: 150px 0;
     }
+
     main article {
         width: 100%;
         border-radius: 0;
     }
 }
 
-@media (max-width: 600px){
-    main article{
+@media (max-width: 600px) {
+    main article {
         word-spacing: -1px;
         padding: 26px;
     }
-    .hero{
-        section{
+
+    .hero {
+        section {
             padding: 100px 30px;
         }
-        section .title-hero-wrap .title{
+
+        section .title-hero-wrap .title {
             font-size: 3.7rem;
         }
-        section .title-hero-wrap .sub-title{
+
+        section .title-hero-wrap .sub-title {
             font-size: 1.2rem;
+        }
+    }
+
+    section.grid-photo {
+        .justified-grid-gallery>* {
+            --width: 100 !important;
+            --height: 100 !important;
+        }
+
+    }
+}
+
+@media (max-width: 460px) {
+    .hero {
+        section .title-hero-wrap .title {
+            font-size: 2.7rem;
+            line-height: 120%;
+        }
+
+        section .title-hero-wrap .sub-title {
+            font-size: 1rem;
+        }
+    }
+
+    section.grid-photo {
+        .justified-grid-gallery {
+            --min-height: 85px;
         }
     }
 }
 
-@media (max-width: 460px){
-    .hero{
-        section .title-hero-wrap .title{
-            font-size: 2.7rem;
-        }
-        section .title-hero-wrap .sub-title{
-            font-size: 1rem;       
+
+@media (max-width: 380px) {
+    section.grid-photo {
+        .justified-grid-gallery {
+            --min-height: 60px;
         }
     }
 }
