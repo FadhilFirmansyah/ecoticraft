@@ -5,26 +5,13 @@ var icon_menu = document.getElementById("icon-menu");
 var tulisan_tutup = document.getElementById("tulisan-tutup");
 
 icon_menu.addEventListener('click', function () {
-    navbar.style.transform = 'translateX(0)';
-    back_modal.style.transform = 'translateX(0)';
-    // navbar.style.display = 'block';
-    // back_modal.style.display = 'block';
+    navbar.style.display = 'block';
+    back_modal.style.display = 'block';
 });
 tulisan_tutup.addEventListener('click', function () {
-    navbar.style.transform = 'translateX(100%)';
-    back_modal.style.transform = 'translateX(200%)';
-    // navbar.style.display = 'none';
-    // back_modal.style.display = 'none';
+    navbar.style.display = 'none';
+    back_modal.style.display = 'none';
 });
-
-window.onclick = function (event) {
-    if (event.target == back_modal) {
-        navbar.style.transform = 'translateX(100%)';
-        back_modal.style.transform = 'translateX(200%)';
-        // navbar.style.display = 'none'
-        // back_modal.style.display = 'none';
-    }
-}
 
 window.addEventListener('resize', function () {
     if (screen.width > 450) {
@@ -33,7 +20,12 @@ window.addEventListener('resize', function () {
     }
 })
 
-
+window.onclick = function (event) {
+    if (event.target == back_modal) {
+        navbar.style.display = 'none'
+        back_modal.style.display = 'none';
+    }
+}
 
 
 let lastScrollTop = 0; // Inisialisasi posisi scroll sebelumnya
