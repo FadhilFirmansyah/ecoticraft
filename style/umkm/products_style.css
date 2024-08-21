@@ -45,6 +45,14 @@
     border-radius: 8px 8px 0 0;
 }
 
+.no-img-product{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #dfdfdf;
+    font-size: 0.85rem;
+}
+
 .title-product{
     display: flex;
     flex-direction: column;
@@ -57,11 +65,16 @@
 }
 
 .title-product span:nth-child(1) h4{
-    font-size: 1rem;
+    font-size: 1.1rem;
 }
 .title-product span:nth-child(1) h5{
     font-size: 0.95rem;
     font-weight: 500;
+}
+.title-product span:nth-child(1) a{
+    font-size: 1rem;
+    text-decoration: none;
+    line-height: 50px;
 }
 
 .option-product{
@@ -96,6 +109,7 @@
 @media (max-width: 650px){
     .card-product{
         width: 45%;
+        justify-content: flex-start;
     }
 }
 
