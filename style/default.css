@@ -53,12 +53,11 @@ header.navbar {
   }
 
   .back-modal {
-    display: none;
+    /* display: none; */
     position: sticky;
     height: 100vh;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.2);
-    transition-duration: 100ms;
   }
 
   .logo-navbar {
@@ -292,9 +291,10 @@ footer {
     }
 
     .back-modal {
-      display: none;
+      /* display: none; */
+      transform: translateX(200%);
     }
-
+    
     nav {
       position: sticky;
       right: 0;
@@ -302,7 +302,9 @@ footer {
       height: 100vh;
       flex-direction: column;
       width: 100%;
-      display: none;
+
+      transform: translateX(100%);
+      /* display: none; */
 
       .title-navbar {
         padding: 20px;
