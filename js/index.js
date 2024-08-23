@@ -82,7 +82,8 @@ fetch('https://haydar-hilmy.github.io/ecoticraft/products-data.json')
                         maximumFractionDigits: 0,
                     }).format(product.harga);
                     let card = `                
-                <div class="card-product">
+                    <div class="card-product">
+                    <a href="https://shopee.co.id/cikidul07" target='_self'>
                 <div style="background-image: url('assets/products/${product.gambar}');" class="img-product"></div>
                 <div class="title-product">
                     <span>
@@ -93,7 +94,9 @@ fetch('https://haydar-hilmy.github.io/ecoticraft/products-data.json')
                         <h4>${getHarga}</h4>
                     </span>
                 </div>
-            </div>`;
+                </a>
+                </div>
+                `;
                     card_wrap.insertAdjacentHTML('beforeend', card); // Tambahkan elemen ke dalam 'card_wrap'
                     isStop++;
                 }

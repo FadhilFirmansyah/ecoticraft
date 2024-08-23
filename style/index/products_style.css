@@ -24,7 +24,8 @@
 
 .product-section .title-product-section-wrap{
     width: 30%;
-    background-color: #244602;
+    /* background-color: #244602; */
+    background-image: url('../../assets/background/bg-eceng.jpg');
     color: #fff;
     display: flex;
     justify-content: center;
@@ -114,6 +115,11 @@
     aspect-ratio: 8/6;
     border-radius: 4px;
     justify-content: flex-start;
+
+}
+
+.card-product a {
+    text-decoration: none;
 }
 
 .img-product{
@@ -133,6 +139,7 @@
     flex-direction: row;
     padding: 18px 18px;
     align-items: flex-end;
+    color: #000;
 }
 /* BAGIAN JUDUL PRODUK DAN DESKRIPSINYA */
 .title-product span:nth-child(1){

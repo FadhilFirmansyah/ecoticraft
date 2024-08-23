@@ -102,6 +102,8 @@ section.grid-photo {
         height: 100%;
     }
 
+    
+
 }
 
 
@@ -205,6 +207,10 @@ main article p {
         .justified-grid-gallery>* {
             --width: 100 !important;
             --height: 100 !important;
+        }
+        .pengrajin-figure{
+            --width: 16 !important;
+            --height: 9 !important;
         }
 
     }

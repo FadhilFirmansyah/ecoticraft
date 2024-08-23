@@ -12,6 +12,10 @@ html {
   overflow-x: hidden;
 }
 
+.row-reverse{
+  flex-direction: row-reverse;
+}
+
 .hero {
   background: linear-gradient(174deg, var(--basic-color) -120px, #fff);
   position: relative;
@@ -149,13 +153,15 @@ header {
 }
 
 @keyframes float_maskot {
-  0%{
+  0% {
     transform: translateY(0px);
   }
-  50%{
+
+  50% {
     transform: translateY(-20px);
   }
-  100%{
+
+  100% {
     transform: translateY(0px);
   }
 }
@@ -182,13 +188,16 @@ header {
   flex-direction: row;
   gap: 70px;
   align-items: center;
+}
+
+.sub-hero:last-of-type{
   background: linear-gradient(360deg, #24460270 0rem, #fff);
 }
 
 .sub-hero .circle {
   border-radius: 100%;
   padding: 20px;
-  width: 80%;
+  width: 25%;
   height: auto;
   aspect-ratio: 1/1;
   background: linear-gradient(200deg, var(--basic-color) -20px, #fff);
@@ -200,12 +209,19 @@ header {
   aspect-ratio: 1/1;
 }
 
-.sub-hero .text, .sub-hero .circle, .hero, .maskot-wrap{
+.sub-hero .text {
+  width: 75%;
+}
+
+.sub-hero .text,
+.sub-hero .circle,
+.hero,
+.maskot-wrap {
   transition-duration: 400ms;
   transition-timing-function: ease-in-out;
 }
 
-.sub-hero .text hr{
+.sub-hero .text hr {
   border: 1px solid black;
 }
 
@@ -253,22 +269,26 @@ header {
   }
 }
 
-@media (max-width: 950px){
-
-}
+@media (max-width: 950px) {}
 
 
 @media (max-width: 850px) {
-  .sub-hero{
+  .sub-hero {
     height: auto;
     padding: 230px 100px;
     flex-direction: column;
     align-items: center;
     padding: 100px 30px;
   }
-  .sub-hero .circle{
+  
+  .row-reverse{
+    flex-direction: column;
+  }
+
+  .sub-hero .circle {
     width: 30%;
   }
+
   .maskot-wrap {
     display: none;
   }
@@ -299,6 +319,9 @@ header {
     width: 60%;
   }
 
+  .sub-hero .text {
+    width: 95%;
+  }
 
   .carousel-wrap {
     padding: 8px 20px;
@@ -306,8 +329,10 @@ header {
 
 }
 
-@media (max-width: 450px){
-
+@media (max-width: 450px) {
+  .sub-hero .text {
+    width: 100%;
+  }
 }
 
 @media (max-width: 350px) {
