@@ -155,7 +155,7 @@ window.addEventListener('resize', removeLastProduct())
 
 
 // ==== QUERY UMKM DATA ==== //
-let allUmkm = [];
+
 fetch('https://haydar-hilmy.github.io/ecoticraft/umkm-data.json')
     .then(response => {
         if (!response.ok) {
@@ -178,15 +178,10 @@ fetch('https://haydar-hilmy.github.io/ecoticraft/umkm-data.json')
                         </div>
                         </div>`;
                 umkm_wrap.insertAdjacentHTML('beforeend', card);
-                allUmkm.push(datas[idx])
                 idx++;
             }
         });
 
-        allUmkm.forEach(umkm => {
-            let link = `<a href="umkm.html#${umkm.judul}">${umkm.judul}</a>`;
-            umkm_footer.innerHTML += link;
-        });
     })
     .catch(error => {
         console.error('There has been a problem with your fetch operation:', error);
