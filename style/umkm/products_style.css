@@ -70,7 +70,7 @@
     text-decoration: none;
     line-height: normal;
     display: flex;
-    flex-direction: row;
+    flex-direction: row-reverse;
     align-items: center;
     gap: 10%;
     width: max-content;
@@ -127,6 +127,24 @@
     transition-duration: 250ms;
 }
 
+
+@media (max-width: 900px){
+    .title-product span:nth-child(1) .link-option{
+        flex-direction: row-reverse;
+        gap: 8px;
+    }
+    .title-product span:nth-child(1) .link-option a:nth-child(1){
+        font-size: 0.8rem;
+    }
+    .title-product span:nth-child(1) .link-option a:nth-child(1){
+        padding: 10px;
+        text-indent: -9999px;
+    }
+    .title-product span:nth-child(1) .link-option a:nth-child(2){
+        padding: 10px;
+    }
+}
+
 @media (max-width: 650px){
     .card-product{
         width: 95%;
@@ -134,6 +152,10 @@
     }
     .products-wrap{
         gap: 32px;
+    }
+    .title-product span:nth-child(1) .link-option a:nth-child(1){
+        text-indent: unset;
+        padding: 10px 20px;
     }
 }
 
