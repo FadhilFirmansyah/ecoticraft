@@ -1,4 +1,3 @@
-// SISTEM PARALLAX
 
 let hero_index = document.getElementById("hero-index");
 
@@ -9,6 +8,8 @@ let title_hero_wrap = document.getElementsByClassName('title-hero-wrap')[0];
 
 let circle_sh = document.getElementById('circle-sub-hero');
 let text_sh = document.getElementById('text-sub-hero');
+let circle_sh2 = document.getElementById('circle-sub-hero2');
+let text_sh2 = document.getElementById('text-sub-hero2');
 
 let product_sect = document.getElementById("product_sect");
 let card_wraps = document.getElementsByClassName("products-wrap");
@@ -19,12 +20,15 @@ let btn_more_product = document.getElementById('more-product');
 let umkm_footer = document.getElementById("umkm-footer");
 
 
+// SISTEM PARALLAX
 
 let maxVh = window.innerHeight; // ukuran maksimal dari sebuah device
 
 window.addEventListener('load', function () {
     circle_sh.style.transform = "translateX(-350px)";
     text_sh.style.transform = "translateX(312px)";
+    circle_sh2.style.transform = "translateX(350px)";
+    text_sh2.style.transform = "translateX(-312px)";
 });
 
 window.addEventListener('scroll', function () {
@@ -58,6 +62,31 @@ window.addEventListener('scroll', function () {
         circle_sh.style.opacity = "0";
         text_sh.style.opacity = "0";
     }
+
+    let translateXValueCircle = "350px";
+    let translateXValueText = "-312px";
+    let opacityValue = "0";
+
+    if (this.screen.width < 450) {
+        if (Ylevel > (maxVh * 2.6)) {
+            translateXValueCircle = "0";
+            translateXValueText = "0";
+            opacityValue = "1";
+        }
+    } else {
+        if (Ylevel > (maxVh * 1.7)) {
+            translateXValueCircle = "0";
+            translateXValueText = "0";
+            opacityValue = "1";
+        }
+    }
+
+    circle_sh2.style.transform = `translateX(${translateXValueCircle})`;
+    text_sh2.style.transform = `translateX(${translateXValueText})`;
+
+    circle_sh2.style.opacity = opacityValue;
+    text_sh2.style.opacity = opacityValue;
+
 
 })
 
@@ -116,29 +145,29 @@ fetch('https://haydar-hilmy.github.io/ecoticraft/products-data.json')
     });
 
 
-    function removeLastProduct(params) {
-        Array.from(card_wraps).forEach(card_wrap => {
-            // Ambil semua elemen card-product dalam card_wrap
-            let products = Array.from(card_wrap.querySelectorAll('.card-product'));
-            
-            // Hapus semua elemen di card_wrap
-            card_wrap.innerHTML = '';
-    
-            // Tambahkan hanya 4 elemen pertama
-            products.slice(0, 6).forEach(product => {
-                card_wrap.appendChild(product);
-            });
+function removeLastProduct(params) {
+    Array.from(card_wraps).forEach(card_wrap => {
+        // Ambil semua elemen card-product dalam card_wrap
+        let products = Array.from(card_wrap.querySelectorAll('.card-product'));
+
+        // Hapus semua elemen di card_wrap
+        card_wrap.innerHTML = '';
+
+        // Tambahkan hanya 4 elemen pertama
+        products.slice(0, 6).forEach(product => {
+            card_wrap.appendChild(product);
         });
-    }
+    });
+}
 
 let isMore = true;
-btn_more_product.addEventListener('click', function(){
-    if(isMore != true){
+btn_more_product.addEventListener('click', function () {
+    if (isMore != true) {
         removeLastProduct();
         this.innerHTML = "Tampilkan Lebih Banyak";
     } else {
         Array.from(card_wraps).forEach(card_wrap => {
-            for(let i = 0; i < lastProduct.length; i++){
+            for (let i = 0; i < lastProduct.length; i++) {
                 card_wrap.insertAdjacentHTML('beforeend', lastProduct[i])
             }
         });
@@ -150,7 +179,7 @@ btn_more_product.addEventListener('click', function(){
 window.addEventListener('resize', removeLastProduct())
 
 
-    
+
 // END OF PRODUCTS DATA
 
 
@@ -169,7 +198,7 @@ fetch('https://haydar-hilmy.github.io/ecoticraft/umkm-data.json')
             for (let i = 0; i < 6; i++) {
                 let card = `
                         <div class="card-product">
-                        <div style="background-image: url('assets/umkm/${datas[idx].gambar}');" class="img-product"></div>
+                        <div style="background-image: url('assets/umkm/${datas[idx].gambar}');" class="img-product ${datas[idx].gambar == '' ? 'no-img-product' : ''}">${datas[idx].gambar == '' ? 'gambar tidak tersedia :(' : ''}</div>
                         <div class="title-product">
                         <span>
                         <h4>${datas[idx].judul}</h4>

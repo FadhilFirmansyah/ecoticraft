@@ -19,7 +19,10 @@ fetch('https://haydar-hilmy.github.io/ecoticraft/umkm-data.json')
                         <span>
                         <h4>${data.judul}</h4>
                         <h5>${data.alamat_lengkap}</h5>
-                        <a href="https://wa.me/${data.no_telp}" target="_blank">${data.no_telp}</a>
+                        <div class="link-option">
+                        <a href="https://wa.me/${data.no_telp}" target="_blank">${data.no_telp} <img src="assets/logo/whatsapp.png"></a>
+                        <a href="${data.maps}" target="_blank"><img src="assets/logo/gmaps.png"></a>
+                        </div>
                         </span>
                         </div>
                         </div>`;

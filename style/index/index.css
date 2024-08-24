@@ -192,7 +192,7 @@ header {
 
 .sub-hero:last-of-type{
   background: linear-gradient(360deg, #24460270 0rem, #fff);
-  height: auto;
+  height: 100vh;
   padding-bottom: 5rem;
 }
 
@@ -219,7 +219,7 @@ header {
 .sub-hero .circle,
 .hero,
 .maskot-wrap {
-  transition-duration: 400ms;
+  transition-duration: 700ms;
   transition-timing-function: ease-in-out;
 }
 
@@ -271,7 +271,11 @@ header {
   }
 }
 
-@media (max-width: 950px) {}
+@media (max-width: 950px) {
+  .sub-hero:last-of-type{
+    height: auto;
+  }
+}
 
 
 @media (max-width: 850px) {

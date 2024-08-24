@@ -205,7 +205,17 @@ footer {
 }
 
 
+/* ======== UMKM ========= */
 
+.no-img-product{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #dfdfdf;
+  font-size: 0.85rem;
+}
+
+/* ======== END OF UMKM ========= */
 
 
 
