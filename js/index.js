@@ -14,6 +14,10 @@ let product_sect = document.getElementById("product_sect");
 let card_wraps = document.getElementsByClassName("products-wrap");
 let umkm_wraps = document.getElementsByClassName("card-umkm-wrap");
 
+let btn_more_product = document.getElementById('more-product');
+
+let umkm_footer = document.getElementById("umkm-footer");
+
 
 
 let maxVh = window.innerHeight; // ukuran maksimal dari sebuah device
@@ -41,7 +45,7 @@ window.addEventListener('scroll', function () {
 
         circle_sh.style.transform = "translateX(0)";
         text_sh.style.transform = "translateX(0)";
-        
+
         circle_sh.style.opacity = "1";
         text_sh.style.opacity = "1";
     } else {
@@ -62,6 +66,7 @@ window.addEventListener('scroll', function () {
 
 
 // ==== QUERY PRODUCTS DATA ==== //
+let lastProduct = [];
 fetch('https://haydar-hilmy.github.io/ecoticraft/products-data.json')
     .then(response => {
         if (!response.ok) {
@@ -72,33 +77,35 @@ fetch('https://haydar-hilmy.github.io/ecoticraft/products-data.json')
     .then(data => {
         let idx = 0;
         Array.from(card_wraps).forEach(card_wrap => {
-            let products = data[idx];
             let isStop = 0;
-            products.forEach(product => {
-                if (isStop < 3) {
-                    const getHarga = new Intl.NumberFormat("id", {
-                        style: "currency",
-                        currency: "IDR",
-                        maximumFractionDigits: 0,
-                    }).format(product.harga);
-                    let card = `                
-                    <div class="card-product">
-                    <a href="https://shopee.co.id/cikidul07" target='_self'>
-                <div style="background-image: url('assets/products/${product.gambar}');" class="img-product"></div>
-                <div class="title-product">
-                    <span>
-                        <h4>${product.nama}</h4>
-                        <h5>${product.sub_nama}</h5>
-                    </span>
-                    <span>
-                        <h4>${getHarga}</h4>
-                    </span>
-                </div>
-                </a>
-                </div>
-                `;
+            data.forEach(product => {
+                const getHarga = new Intl.NumberFormat("id", {
+                    style: "currency",
+                    currency: "IDR",
+                    maximumFractionDigits: 0,
+                }).format(product.harga);
+                let card = `                
+                <div class="card-product">
+                <a href="https://shopee.co.id/cikidul07" target='_blank'>
+            <div style="background-image: url('assets/products/${product.gambar}');" class="img-product"></div>
+            <div class="title-product">
+                <span>
+                    <h4>${product.nama}</h4>
+                    <h5>${product.sub_nama}</h5>
+                </span>
+                <span>
+                    <h4>${getHarga}</h4>
+                </span>
+            </div>
+            </a>
+            </div>
+            `;
+
+                if (isStop < 6) {
                     card_wrap.insertAdjacentHTML('beforeend', card); // Tambahkan elemen ke dalam 'card_wrap'
                     isStop++;
+                } else {
+                    lastProduct.push(card);
                 }
             });
             idx++;
@@ -108,11 +115,47 @@ fetch('https://haydar-hilmy.github.io/ecoticraft/products-data.json')
         console.error('There has been a problem with your fetch operation:', error);
     });
 
+
+    function removeLastProduct(params) {
+        Array.from(card_wraps).forEach(card_wrap => {
+            // Ambil semua elemen card-product dalam card_wrap
+            let products = Array.from(card_wrap.querySelectorAll('.card-product'));
+            
+            // Hapus semua elemen di card_wrap
+            card_wrap.innerHTML = '';
+    
+            // Tambahkan hanya 4 elemen pertama
+            products.slice(0, 6).forEach(product => {
+                card_wrap.appendChild(product);
+            });
+        });
+    }
+
+let isMore = true;
+btn_more_product.addEventListener('click', function(){
+    if(isMore != true){
+        removeLastProduct();
+        this.innerHTML = "Tampilkan Lebih Banyak";
+    } else {
+        Array.from(card_wraps).forEach(card_wrap => {
+            for(let i = 0; i < lastProduct.length; i++){
+                card_wrap.insertAdjacentHTML('beforeend', lastProduct[i])
+            }
+        });
+        this.innerHTML = "Tampilkan Lebih Sedikit";
+    }
+    isMore = !isMore;
+})
+
+window.addEventListener('resize', removeLastProduct())
+
+
+    
 // END OF PRODUCTS DATA
 
 
 // ==== QUERY UMKM DATA ==== //
-
+let allUmkm = [];
 fetch('https://haydar-hilmy.github.io/ecoticraft/umkm-data.json')
     .then(response => {
         if (!response.ok) {
@@ -123,7 +166,7 @@ fetch('https://haydar-hilmy.github.io/ecoticraft/umkm-data.json')
     .then(datas => {
         let idx = 0;
         Array.from(umkm_wraps).forEach(umkm_wrap => {
-            for (let i = 0; i < 3; i++) {
+            for (let i = 0; i < 6; i++) {
                 let card = `
                         <div class="card-product">
                         <div style="background-image: url('assets/umkm/${datas[idx].gambar}');" class="img-product"></div>
@@ -135,11 +178,18 @@ fetch('https://haydar-hilmy.github.io/ecoticraft/umkm-data.json')
                         </div>
                         </div>`;
                 umkm_wrap.insertAdjacentHTML('beforeend', card);
+                allUmkm.push(datas[idx])
                 idx++;
             }
+        });
+
+        allUmkm.forEach(umkm => {
+            let link = `<a href="umkm.html#${umkm.judul}">${umkm.judul}</a>`;
+            umkm_footer.innerHTML += link;
         });
     })
     .catch(error => {
         console.error('There has been a problem with your fetch operation:', error);
     });
+
 // END OF UMKM DATA

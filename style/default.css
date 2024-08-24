@@ -144,6 +144,12 @@ footer {
         gap: 8px;
         width: auto;
 
+        div{
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+        }
+
         h4 {
           font-size: 1.2rem;
         }

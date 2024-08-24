@@ -8,14 +8,13 @@ fetch('https://haydar-hilmy.github.io/ecoticraft/products-data.json')
         return response.json();
     })
     .then(datas => {
-        datas.forEach(data => {
-            data.forEach(product => {
-                const getHarga = new Intl.NumberFormat("id", {
-                    style: "currency",
-                    currency: "IDR",
-                    maximumFractionDigits: 0,
-                }).format(product.harga);
-                let card = `                
+        datas.forEach(product => {
+            const getHarga = new Intl.NumberFormat("id", {
+                style: "currency",
+                currency: "IDR",
+                maximumFractionDigits: 0,
+            }).format(product.harga);
+            let card = `                
                             <div class="card-product">
                             <div style="background-image: url('assets/products/${product.gambar}');" class="img-product"></div>
                             <div class="title-product">
@@ -31,10 +30,8 @@ fetch('https://haydar-hilmy.github.io/ecoticraft/products-data.json')
                                 <a href="${product.link}" target="_blank"><button>LIHAT PRODUK</button></a>
                             </div>
                         </div>`;
-                        card_wraps.innerHTML += card;
-            })
+            card_wraps.innerHTML += card;
         });
-
     })
     .catch(error => {
         console.error('There has been a problem with your fetch operation:', error);

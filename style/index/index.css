@@ -192,6 +192,8 @@ header {
 
 .sub-hero:last-of-type{
   background: linear-gradient(360deg, #24460270 0rem, #fff);
+  height: auto;
+  padding-bottom: 5rem;
 }
 
 .sub-hero .circle {

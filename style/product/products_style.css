@@ -95,12 +95,14 @@
 
 @media (max-width: 650px){
     .card-product{
-        width: 45%;
+        width: 95%;
     }
 }
 
 @media (max-width: 400px){
     .option-product a, .option-product a button {
-        font-size: 0.7rem;
+        font-size: 0.8rem;
+        padding-top: 10px;
+        padding-bottom: 10px;
     }
 }
