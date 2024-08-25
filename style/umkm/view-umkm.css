@@ -166,7 +166,14 @@ main h1 {
 }
 
 
-
+.not-found{
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 600;
+    span{
+        font-size: 3.5rem;
+    }
+}
 
 
 /* ===== RESPONSIVE ONLY ====== */

@@ -81,8 +81,11 @@ fetch('https://haydar-hilmy.github.io/ecoticraft/umkm-data.json')
                 });
             }
 
+            document.title = nama_umkm;
+            
         } else {
-            main.innerHTML = '<p>UMKM dengan ID tersebut tidak ditemukan.</p>';
+            main.innerHTML = '<p class="not-found"><span>404</span> Not Found >ᴗ<</p>';
+            document.title = "404 Not Found";
         }
     })
     .catch(error => {
