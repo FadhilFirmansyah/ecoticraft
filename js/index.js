@@ -207,7 +207,9 @@ fetch('https://haydar-hilmy.github.io/ecoticraft/umkm-data.json')
             for (let i = 0; i < 6; i++) {
                 let card = `
                         <div class="card-product">
+                        <a href="view.html?id=${datas[idx].id}">
                         <div style="background-image: url('assets/umkm/${datas[idx].gambar}');" class="img-product ${datas[idx].gambar == '' ? 'no-img-product' : ''}">${datas[idx].gambar == '' ? 'gambar tidak tersedia :(' : ''}</div>
+                        </a>
                         <div class="title-product">
                         <span>
                         <h4>${datas[idx].judul}</h4>

@@ -8,6 +8,9 @@ let umkm_product = document.getElementById("umkm-product");
 let title_umkm_product = document.getElementById("title-umkm-product");
 let product_wrap = document.getElementById("product-wrap");
 
+let contact_name = document.getElementById("contact-name");
+let contact_link = document.getElementById("contact-link");
+
 let nama_umkm = "";
 let produk_lain = {};
 
@@ -82,6 +85,8 @@ fetch('https://haydar-hilmy.github.io/ecoticraft/umkm-data.json')
             }
 
             document.title = nama_umkm;
+            contact_link.href = selectedData.no_telp != "" ? "https://wa.me/"+selectedData.no_telp : "";
+            contact_name.innerHTML = selectedData.pemilik != "" ? `${selectedData.pemilik}` : `${selectedData.no_telp != "" ? `${selectedData.no_telp}` : ""}`;
             
         } else {
             main.innerHTML = '<p class="not-found"><span>404</span> Not Found >ᴗ<</p>';

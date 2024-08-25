@@ -1,5 +1,13 @@
 
 let umkm_wraps = document.querySelector(".products-wrap");
+let gambar_arr = [];
+let img_banner = document.getElementById("img-banner");
+
+
+function getRandomElement(arr) {
+    const randomIndex = Math.floor(Math.random() * arr.length);
+    return arr[randomIndex];
+}
 
 
 fetch('https://haydar-hilmy.github.io/ecoticraft/umkm-data.json')
@@ -26,8 +34,16 @@ fetch('https://haydar-hilmy.github.io/ecoticraft/umkm-data.json')
                         </div>
                         </div>`;
             umkm_wraps.innerHTML += card;
+
+            if(data.gambar != ""){
+                gambar_arr.push(data.gambar)
+            }
         });
+        let randomGambar = gambar_arr != [] ? getRandomElement(gambar_arr) : "";
+        img_banner.style.backgroundImage = `url('./assets/umkm/${randomGambar}')`;
     })
     .catch(error => {
         console.error('There has been a problem with your fetch operation:', error);
     });
+
+    
