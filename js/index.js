@@ -51,7 +51,7 @@ window.addEventListener('scroll', function () {
 
     // TULISAN DI ABOUT ECENG GONDOK
     // if (Ylevel > (maxVh * 0.75)) {
-    if (loc_eceng_gondok_explain < -50) {
+    if (loc_eceng_gondok_explain < -10) {
         hero_index.style.transform = `translateY(-${maxVh}px)`;
         maskot_wrap.style.opacity = '0';
 
@@ -89,7 +89,7 @@ window.addEventListener('scroll', function () {
     //     }
     // }
 
-    if (loc_edukasi_explain < -50) {
+    if (loc_edukasi_explain < -10) {
         translateXValueCircle = "0";
         translateXValueText = "0";
         opacityValue = "1";
@@ -101,8 +101,6 @@ window.addEventListener('scroll', function () {
     circle_sh2.style.opacity = opacityValue;
     text_sh2.style.opacity = opacityValue;
 
-    console.log(loc_eceng_gondok_explain)
-    console.log("edu ", loc_edukasi_explain)
 })
 
 // END OF SISTEM PARALLAX
