@@ -6,11 +6,9 @@ fetch('https://haydar-hilmy.github.io/ecoticraft/umkm-data.json')
         return response.json();
     })
     .then(datas => {
-        let idxUmkm = 1;
         datas.forEach(umkm => {
-            let link = `<a href="umkm.html#umkm${idxUmkm}">${umkm.judul}</a>`;
+            let link = `<a href="umkm.html#umkm${umkm.id}">${umkm.judul}</a>`;
             document.getElementById("umkm-footer").innerHTML += link;
-            idxUmkm++;
         });
     })
     .catch(error => {

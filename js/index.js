@@ -1,6 +1,9 @@
 
 let hero_index = document.getElementById("hero-index");
 
+let edukasi_explain = document.getElementById("edukasi-explain");
+let eceng_gondok_explain = document.getElementById("eceng-gondok-explain");
+
 let maskot_wrap = document.getElementById("maskot-wrap");
 
 let header_comp = document.getElementsByClassName('header-bg-component')[0];
@@ -32,6 +35,10 @@ window.addEventListener('load', function () {
 });
 
 window.addEventListener('scroll', function () {
+
+    let loc_edukasi_explain = edukasi_explain.getBoundingClientRect().top;
+    let loc_eceng_gondok_explain = eceng_gondok_explain.getBoundingClientRect().top;
+
     let Ylevel = window.scrollY;
 
     // TULISAN DI HERO
@@ -43,7 +50,8 @@ window.addEventListener('scroll', function () {
 
 
     // TULISAN DI ABOUT ECENG GONDOK
-    if (Ylevel > (maxVh * 0.75)) {
+    // if (Ylevel > (maxVh * 0.75)) {
+    if (loc_eceng_gondok_explain < -50) {
         hero_index.style.transform = `translateY(-${maxVh}px)`;
         maskot_wrap.style.opacity = '0';
 
@@ -67,18 +75,24 @@ window.addEventListener('scroll', function () {
     let translateXValueText = "-312px";
     let opacityValue = "0";
 
-    if (this.screen.width < 450) {
-        if (Ylevel > (maxVh * 2.6)) {
-            translateXValueCircle = "0";
-            translateXValueText = "0";
-            opacityValue = "1";
-        }
-    } else {
-        if (Ylevel > (maxVh * 1.7)) {
-            translateXValueCircle = "0";
-            translateXValueText = "0";
-            opacityValue = "1";
-        }
+    // if (this.screen.width < 450) {
+    //     if (Ylevel > (maxVh * 2.6)) {
+    //         translateXValueCircle = "0";
+    //         translateXValueText = "0";
+    //         opacityValue = "1";
+    //     }
+    // } else {
+    //     if (Ylevel > (maxVh * 1.7)) {
+    //         translateXValueCircle = "0";
+    //         translateXValueText = "0";
+    //         opacityValue = "1";
+    //     }
+    // }
+
+    if (loc_edukasi_explain < -50) {
+        translateXValueCircle = "0";
+        translateXValueText = "0";
+        opacityValue = "1";
     }
 
     circle_sh2.style.transform = `translateX(${translateXValueCircle})`;
@@ -87,7 +101,8 @@ window.addEventListener('scroll', function () {
     circle_sh2.style.opacity = opacityValue;
     text_sh2.style.opacity = opacityValue;
 
-
+    console.log(loc_eceng_gondok_explain)
+    console.log("edu ", loc_edukasi_explain)
 })
 
 // END OF SISTEM PARALLAX

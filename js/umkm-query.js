@@ -10,10 +10,9 @@ fetch('https://haydar-hilmy.github.io/ecoticraft/umkm-data.json')
         return response.json();
     })
     .then(datas => {
-        let idxUmkm = 1;
         datas.forEach(data => {
             let card = `
-                        <div class="card-product" id="umkm${idxUmkm}">
+                        <div class="card-product" id="umkm${data.id}">
                         <div style="background-image: url('assets/umkm/${data.gambar}');" class="img-product ${data.gambar == '' ? 'no-img-product' : ''}">${data.gambar == '' ? 'gambar tidak tersedia :(' : ''}</div>
                         <div class="title-product">
                         <span>
@@ -27,7 +26,6 @@ fetch('https://haydar-hilmy.github.io/ecoticraft/umkm-data.json')
                         </div>
                         </div>`;
             umkm_wraps.innerHTML += card;
-            idxUmkm++;
         });
     })
     .catch(error => {
