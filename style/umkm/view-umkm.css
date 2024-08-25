@@ -1,2 +1,205 @@
 @import url('../default.css');
 
+main {
+    background-color: rgba(36, 70, 2, 0.164);
+    padding: 5% 2rem;
+}
+
+main h1 {
+    font-size: 2.5rem;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 18px;
+    margin: 1rem 0 0 0;
+}
+
+.main-content .img-banner {
+    width: 65%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    background-position: center;
+    background-size: cover;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.9rem;
+    background-color: #efefef;
+}
+
+.main-content aside {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.main-content aside h4 {
+    font-weight: 600;
+}
+
+.main-content aside .link-option {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+}
+
+.main-content aside .link-option a {
+    text-decoration: none;
+    color: #000;
+    display: flex;
+    font-size: 0.65rem;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    width: max-content;
+    padding: 6px 20px;
+    border-radius: 50px;
+    font-weight: 400;
+    background-color: #fff;
+}
+
+.main-content aside .link-option img {
+    width: 1.5rem;
+    aspect-ratio: 1/1;
+}
+
+
+
+
+/* UMKM PRODUCT */
+
+.umkm-product {
+    background-color: rgb(255 255 255);
+    padding: 5% 2rem;
+}
+
+.umkm-product .title-umkm-product {
+    margin: 1rem 3%;
+    font-size: 1.5rem;
+}
+
+.product-wrap {
+    width: 100%;
+    height: auto;
+    display: flex;
+    gap: 1.3rem 2%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.product {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    width: 30%;
+    height: max-content;
+}
+
+.product .img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    background-position: center;
+    background-size: cover;
+    border-radius: 8px 8px 0 0;
+}
+
+.product aside {
+    padding: 12px 16px;
+}
+
+.product aside h4 {
+    font-size: 1.15rem;
+    font-weight: 600;
+}
+
+.product aside p {
+    font-size: 0.95rem;
+    font-weight: normal;
+}
+.product aside p:last-of-type {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-top: 12px;
+}
+
+
+/* CONTACT WRAP */
+.contact-wrap{
+    position: fixed;
+    bottom: 3%;
+    width: max-content;
+    margin-left: 3%;
+}
+.contact-wrap a{
+    padding: 12px;
+    background-color: #fff;
+    border-radius: 12px;
+    display: flex;
+    width: auto;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+    gap: 0;
+    text-decoration: none;
+    color: #000;
+    font-size: 0;
+    transition-duration: 200ms;
+}
+.contact-wrap a img{
+    width: 2.1rem;
+}
+
+.contact-wrap a:hover{
+    text-indent: 0;
+    gap: 8px;
+    font-size: 1rem;
+}
+
+
+
+
+
+/* ===== RESPONSIVE ONLY ====== */
+
+@media (max-width: 800px) {
+    
+    .main-content{
+        flex-direction: column;
+    }
+    
+    .product-wrap{
+        gap: 1.6rem 2%;
+    }
+    .product {
+        width: 45%;
+    }
+}
+
+@media (max-width: 600px) {
+    .main-content .img-banner{
+        width: 80%;
+    }
+}
+
+
+@media (max-width: 550px) {
+    .main-content .img-banner{
+        width: 100%;
+    }
+
+    .product {
+        width: 100%;
+    }
+}
+
+/* ===== END OF RESPONSIVE ONLY ====== */

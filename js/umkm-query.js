@@ -13,7 +13,7 @@ fetch('https://haydar-hilmy.github.io/ecoticraft/umkm-data.json')
         datas.forEach(data => {
             let card = `
                         <div class="card-product" id="umkm${data.id}">
-                        <div style="background-image: url('assets/umkm/${data.gambar}');" class="img-product ${data.gambar == '' ? 'no-img-product' : ''}">${data.gambar == '' ? 'gambar tidak tersedia :(' : ''}</div>
+                        <a href="view.html?id=${data.id}" target="_self"><div style="background-image: url('assets/umkm/${data.gambar}');" class="img-product ${data.gambar == '' ? 'no-img-product' : ''}">${data.gambar == '' ? 'gambar tidak tersedia :(' : ''}</div></a>
                         <div class="title-product">
                         <span>
                         <h4>${data.judul}</h4>

@@ -36,6 +36,11 @@
     justify-content: flex-start;
 }
 
+.card-product a{
+    text-decoration: none;
+    color: #000;
+}
+
 .img-product{
     width: 100%;
     height: auto;
