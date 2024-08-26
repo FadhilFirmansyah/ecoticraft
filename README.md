@@ -5,7 +5,7 @@
 ![Landing Page](https://github.com/FadhilFirmansyah/ecoticraft/blob/deploy/assets/Landing%20Page.png)
 
 - Product Page
-![Product Page](https://github.com/FadhilFirmansyah/ecoticraft/blob/deploy/assets/Product&20Page.png)
+![Product Page](https://github.com/FadhilFirmansyah/ecoticraft/blob/deploy/assets/Product%20Page.png)
 
 - UMKM Page
 ![UMKM Page](https://github.com/FadhilFirmansyah/ecoticraft/blob/deploy/assets/UMKM%20Page.png)
