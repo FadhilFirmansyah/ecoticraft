@@ -1,0 +1,314 @@
+/* ========== TEMPAT UNTUK STYLING BAGIAN PRODUK ========== */
+
+:root {
+    --basic-color: #244602;
+    --basic-color-hover: #6d8a4f;
+    --width-card: 300px;
+}
+
+
+.product-section {
+    display: flex;
+    flex-direction: row;
+    height: 110vh;
+}
+
+.row-reverse {
+    flex-direction: row-reverse !important;
+}
+
+.product-section h2 {
+    width: auto;
+    margin: 16px 46px;
+}
+
+.product-section .title-product-section-wrap {
+    width: 30%;
+    /* background-color: #244602; */
+    background-image: url('../../assets/background/bg-eceng.jpg');
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 36px;
+
+    /* JUDUL DI PRODUK SECTION */
+    .title-product-section {
+        text-align: left;
+
+        /* PRODUK KERAJINAN */
+        h3 {
+            font-size: 1.4rem;
+            font-weight: 500;
+        }
+
+        /* ECENG GONDOK */
+        h1 {
+            font-size: 3.5rem;
+            line-height: 135%;
+            font-family: 'Italiana';
+            font-weight: normal;
+        }
+
+        /* TUNTANG */
+        h4 {
+            font-size: 1.1rem;
+            text-align: center;
+        }
+    }
+
+    .title-product-section-link {
+        a {
+            background-color: #fff;
+            padding: 8px 24px;
+            color: #000;
+            border: 0;
+            outline: none;
+            font-size: 1.04rem;
+            font-weight: 600;
+            border-radius: 50px;
+            text-decoration: none;
+        }
+
+        a:hover {
+            background-color: #dddddd;
+            transition-duration: 150ms;
+        }
+
+        a:active {
+            background-color: #797979;
+            transition-duration: 50ms;
+        }
+    }
+}
+
+.product-section .product-wrap-outer {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 70%;
+    padding: 60px 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-section .product-wrap-outer .products-wrap,
+.card-umkm-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 12px 0;
+    overflow-x: unset;
+    padding: 0;
+    margin: 0;
+    justify-content: space-around;
+}
+
+.product-section .product-wrap-outer .products-wrap::-webkit-scrollbar {
+    height: 2px;
+}
+
+.product-section .product-wrap-outer .products-wrap::-webkit-scrollbar-thumb {
+    background-color: transparent;
+}
+
+.product-section .product-wrap-outer .products-wrap::-webkit-scrollbar-track {
+    box-shadow: none;
+}
+
+.card-product {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    height: auto;
+    aspect-ratio: 8/6;
+    border-radius: 4px;
+    justify-content: flex-start;
+
+}
+
+.card-product a {
+    text-decoration: none;
+    color: #000;
+}
+
+.img-product {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/11;
+    object-fit: cover;
+    border-radius: 4px 4px 0 0;
+    background-size: cover;
+    background-position: center;
+}
+
+
+
+.title-product {
+    display: flex;
+    flex-direction: row;
+    padding: 18px 18px;
+    align-items: flex-end;
+    color: #000;
+}
+
+/* BAGIAN JUDUL PRODUK DAN DESKRIPSINYA */
+.title-product span:nth-child(1) {
+    width: 100%;
+}
+
+.title-product span:nth-child(1) h4 {
+    font-size: 1rem;
+}
+
+.title-product span:nth-child(1) h5 {
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.option-product {
+    display: flex;
+    flex-direction: row;
+    padding: 12px 18px;
+    align-items: center;
+}
+
+.option-product h4 {
+    font-size: 1rem;
+    width: 100%;
+}
+
+.option-product a,
+.option-product a button {
+    width: 100%;
+}
+
+.option-product button {
+    background-color: var(--basic-color);
+    color: #fff;
+    font-size: 0.9rem;
+    padding: 6px 28px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+}
+
+.option-product button:hover {
+    background-color: var(--basic-color-hover);
+    transition-duration: 250ms;
+}
+
+.products-wrap.active {
+    background: rgba(255, 255, 255, 0.3);
+    cursor: grabbing;
+    cursor: -webkit-grabbing;
+    transform: scale(1);
+}
+
+.not-selectable {
+    -webkit-user-select: none;
+    /* Safari */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+    /* Standard */
+}
+
+.more-button-index {
+    display: none;
+    font-size: 0.9rem;
+    padding: 10px 10%;
+    width: fit-content;
+    border-radius: 120px;
+    border: 1px solid #585858;
+    background-color: #fff;
+}
+
+
+/* RESPONSIVE ONLY */
+
+@media (max-width: 1000px) {
+    .card-product {
+        width: 45%;
+    }
+
+    .card-product:nth-last-child(-n+2) {
+        display: none;
+    }
+
+    .title-product {
+        flex-direction: column;
+    }
+
+    .img-product {
+        aspect-ratio: 16/9;
+    }
+}
+
+@media (max-width: 800px) {
+    .product-section {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .row-reverse {
+        flex-direction: column !important;
+    }
+
+    .product-section .product-wrap-outer {
+        width: 100%;
+    }
+
+    .product-section .title-product-section-wrap {
+        align-items: center;
+        width: 100%;
+        padding: 48px 0;
+        gap: 48px;
+        flex-direction: row;
+    }
+
+    .card-product:nth-last-child(-n+2) {
+        display: flex;
+    }
+
+    .title-product {
+        gap: 12px;
+    }
+
+    .img-product {
+        aspect-ratio: 16/11;
+    }
+
+    .more-button-index {
+        display: block;
+    }
+
+}
+
+@media (max-width: 700px) {}
+
+@media (max-width: 460px) {
+    .product-section .title-product-section-wrap {
+        flex-direction: column;
+    }
+
+    .product-section .product-wrap-outer {
+        padding: 60px 12px;
+    }
+
+    .product-section .product-wrap-outer .products-wrap {
+        gap: 12px;
+    }
+
+}
+
+@media (max-width: 350px) {
+    :root {
+        --width-card: 250px;
+    }
+
+
+}

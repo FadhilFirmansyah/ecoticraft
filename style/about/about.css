@@ -1,0 +1,449 @@
+@import url("../default.css");
+
+.hero {
+    background: linear-gradient(220deg, var(--basic-color) -120px, #fff);
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+
+    .banner {
+        margin: auto;
+        width: 100%;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.3);
+
+        .title-banner {
+            position: absolute;
+            bottom: 0;
+            margin: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+
+            h1 {
+                font-size: 3.5rem;
+                line-height: 120%;
+            }
+
+            /* TULISAN TIM PPKO */
+            h1:nth-child(1) {
+                -webkit-text-stroke: 3px white;
+            }
+
+            /* TULISAN HM DKV */
+            h1:nth-child(2) {
+                font-weight: 400;
+            }
+
+            .jargon {
+                background-color: rgba(255, 255, 255, 0.4);
+                padding: 6px 24px;
+                width: auto;
+                font-size: 1rem;
+                font-weight: 600;
+                box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.3);
+                border-radius: 4px;
+            }
+
+        }
+    }
+
+}
+
+
+
+main {
+    background: linear-gradient(180deg, var(--basic-color) -150px, #fff);
+    padding: 184px 0 0 0;
+
+    article {
+        padding: 28px 56px;
+        background-color: var(--basic-color);
+        color: #fff;
+        width: 80%;
+        border-radius: 0 6px 6px 0;
+        text-align: justify;
+        line-height: 165%;
+        font-size: 1.05rem;
+    }
+
+    /* WADAH UNTUK FOTO-FOTO */
+    section {
+        width: 100%;
+        margin: 200px 0 300px 0;
+        display: grid;
+        justify-items: center;
+        gap: 44px;
+        grid-template-columns: auto auto auto auto;
+        justify-content: center;
+
+        /* PER FOTO */
+        div,
+        div div {
+            width: 260px;
+            aspect-ratio: 4/6;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition-duration: 300ms;
+            transition-timing-function: ease-in-out;
+            border-radius: 8px;
+            position: relative;
+        }
+
+        /* TULISAN NAMA DAN KET */
+        div span {
+            position: absolute;
+            bottom: 16px;
+            padding: 0 24px;
+            width: 100%;
+        }
+
+        div span h3,
+        div span h5 {
+            color: #fff;
+            opacity: 0;
+        }
+
+        div span h3 {
+            font-size: 1.4rem;
+        }
+
+        div span h5 {
+            font-size: 1.1rem;
+            font-weight: 400;
+        }
+
+        div:hover span h3, div:hover span h5 {
+            opacity: 1;
+            transition-duration: 200ms;
+        }
+
+        
+        
+        /* MS LUSI */
+        div:nth-child(1):hover {
+            background-size: 120%;
+            transition-duration: 200ms;
+        }
+        div:nth-child(1):hover div{
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+
+        /* TIM ANGGOTA */
+        div div:hover{
+            filter: brightness(50%) blur(1px) contrast(120%);
+        }
+
+        div:nth-child(2) div:hover {
+            transition-duration: 200ms;
+            background-image: url('../../assets/image/pp/pose/ody.jpg') !important;
+        }
+
+        div:nth-child(3) div:hover {
+            transition-duration: 200ms;
+            background-image: url('../../assets/image/pp/pose/nata.jpg') !important;
+        }
+
+        div:nth-child(4) div:hover {
+            transition-duration: 200ms;
+            background-image: url('../../assets/image/pp/pose/silva.jpg') !important;
+        }
+
+        div:nth-child(5) div:hover {
+            transition-duration: 200ms;
+            background-image: url('../../assets/image/pp/pose/risma.jpg') !important;
+        }
+
+        div:nth-child(6) div:hover {
+            transition-duration: 200ms;
+            background-image: url('../../assets/image/pp/pose/jevon.jpg') !important;
+        }
+
+        div:nth-child(7) div:hover {
+            transition-duration: 200ms;
+            background-image: url('../../assets/image/pp/pose/nur.jpg') !important;
+        }
+
+        div:nth-child(8) div:hover {
+            transition-duration: 200ms;
+            background-image: url('../../assets/image/pp/pose/reyhan.jpg') !important;
+        }
+
+        div:nth-child(9) div:hover {
+            transition-duration: 200ms;
+            background-image: url('../../assets/image/pp/pose/nida.jpg') !important;
+        }
+
+        div:nth-child(10) div:hover {
+            transition-duration: 200ms;
+            background-image: url('../../assets/image/pp/pose/wawan.jpg') !important;
+        }
+
+        div:nth-child(11) div:hover {
+            transition-duration: 200ms;
+            background-image: url('../../assets/image/pp/pose/nina.jpg') !important;
+        }
+
+        div:nth-child(12) div:hover {
+            transition-duration: 200ms;
+            background-image: url('../../assets/image/pp/pose/arul.jpg') !important;
+        }
+
+        div:nth-child(13) div:hover {
+            transition-duration: 200ms;
+            background-image: url('../../assets/image/pp/pose/haydar.jpg') !important;
+        }
+
+        div:nth-child(14) div:hover {
+            transition-duration: 200ms;
+            background-image: url('../../assets/image/pp/pose/fadhil.jpg') !important;
+        }
+
+        div:nth-child(15) div:hover {
+            transition-duration: 200ms;
+            background-image: url('../../assets/image/pp/pose/daiyan.jpg') !important;
+        }
+
+        div:nth-child(16) div:hover {
+            transition-duration: 200ms;
+            background-image: url('../../assets/image/pp/pose/anggi.jpg') !important;
+        }
+
+
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/* ========================================= */
+/* =========== RESPONSIVE ONLY ============= */
+/* ========================================= */
+
+@media (max-width: 1350px) {
+    .hero {
+        .banner {
+            width: 100%;
+            height: 100vh;
+            padding: 20px;
+            box-shadow: none;
+
+            .title-banner {
+                position: absolute;
+                margin: 72px 24px;
+            }
+        }
+    }
+}
+
+@media (max-width: 1185px) {
+    main {
+        section {
+            grid-template-columns: auto auto auto;
+        }
+    }
+}
+
+@media (max-width: 860px) {
+    .hero {
+        height: 100%;
+
+        .banner {
+            background-size: cover;
+            background-position: center;
+
+            .title-banner {
+                h1 {
+                    font-size: 2.5rem;
+                }
+
+                .jargon {
+                    font-size: 0.9rem;
+                }
+            }
+        }
+    }
+
+    main {
+        article {
+            width: 100%;
+            border-radius: 0;
+        }
+
+        section {
+            grid-template-columns: auto auto;
+
+            div {
+                width: 320px;
+            }
+            div div{
+                width: 100%;
+            }
+        }
+    }
+}
+
+@media (max-width: 740px) {
+    .hero {
+        height: 100%;
+
+        .banner {
+            height: 100%;
+
+            .title-banner {
+                position: relative;
+                margin: 120px 24px 0 24px;
+            }
+        }
+    }
+
+    main {
+        background: linear-gradient(180deg, var(--basic-color-lighter) -50px, #fff);
+
+        section {
+            div {
+                width: 260px;
+            }
+        }
+    }
+}
+
+@media (max-width: 620px) {
+    .hero {
+        .banner {
+            .title-banner {
+                h1 {
+                    font-size: 2.3rem;
+                }
+
+                .jargon {
+                    font-size: 0.8rem;
+                    padding: 6px 12px;
+                }
+            }
+        }
+    }
+
+    main {
+        section {
+            div {
+                width: 200px;
+            }
+        }
+    }
+}
+
+@media (max-width: 550px) {
+    main {
+        padding: 0;
+
+        article {
+            padding: 56px 32px;
+            font-size: 0.9rem;
+            line-height: 175%;
+        }
+    }
+
+    .hero {
+        .banner {
+            .title-banner {
+                margin: 124px 24px 0 24px;
+            }
+        }
+    }
+}
+
+@media (max-width: 450px) {
+
+    .hero {
+        header {
+            div {
+                h4 {
+                    font-size: 1rem;
+                }
+            }
+        }
+
+        .banner {
+            padding-top: 6px;
+
+            .title-banner {
+                margin-top: 100px;
+
+                h1 {
+                    font-size: 1.8rem;
+                }
+
+                h1:nth-child(1) {
+                    -webkit-text-stroke: 1px white;
+                }
+
+                .jargon {
+                    font-size: 0.65rem;
+                    padding: 3px 12px;
+                }
+            }
+        }
+    }
+
+    main {
+        section {
+            gap: 24px;
+
+            div {
+                width: 150px;
+            }
+            div span{
+                padding: 0 8px;
+            }
+            div span h3{
+                font-size: 1.1rem;
+            }
+            div span h5{
+                font-size: 0.95rem;
+            }
+        }
+    }
+}
+
+@media (max-width: 330px) {
+    .hero {
+        .banner {
+            .title-banner {
+                margin-top: 95px;
+            }
+        }
+    }
+
+    main {
+        section {
+            div {
+                width: 110px;
+            }
+        }
+    }
+}
+
+@media (max-width: 300px) {
+    main {
+        section {
+            grid-template-columns: auto;
+        }
+    }
+}

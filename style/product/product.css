@@ -1,0 +1,208 @@
+@import url('../default.css');
+@import url('products_style.css');
+
+.hero {
+    background: var(--basic-color-hero);
+    width: 100%;
+    height: 90vh;
+    overflow: hidden;
+
+    section {
+        position: unset;
+        width: 100%;
+        height: 100vh;
+        padding: 100px;
+        display: flex;
+        overflow: hidden;
+    }
+
+    section .title-hero-wrap {
+        position: absolute;
+        right: 5%;
+        z-index: 1;
+    }
+
+    .title-hero-wrap .title {
+        color: #000000;
+        font-size: 12.5vh;
+        line-height: 100%;
+        color: var(--basic-color);
+    }
+
+    .title-hero-wrap .title span {
+        color: inherit;
+        font-weight: 500;
+        font-family: 'Italiana', Arial, Helvetica, sans-serif;
+    }
+
+    .title-hero-wrap .sub-title {
+        color: var(--basic-color);
+    }
+
+    section .img-banner {
+        position: absolute;
+        height: 100vh;
+        width: 40%;
+        left: 0;
+        bottom: 0;
+        background-size: cover;
+        background-repeat: no-repeat;
+        border-radius: 100% 0 0 0;
+        z-index: 3;
+    }
+}
+
+
+
+
+/* =========== GRID PHOTO ============= */
+
+section.grid-photo {
+    width: 100%;
+    padding: 10%;
+    height: auto;
+    background-image: url('../../assets/background/bg-eceng.jpg');
+    background-position: center;
+    background-size: cover;
+
+    /* REF: https://medium.com/@ehtmlu/css-image-grid-gallery-4ec8824560a1 */
+
+    .justified-grid-gallery {
+        --space: 4px;
+        --min-height: 190px;
+        --last-row-background: rgb(188 234 153);
+    }
+
+    /* Settings end */
+
+    .justified-grid-gallery {
+        display: flex;
+        flex-wrap: wrap;
+        grid-gap: var(--space);
+        list-style: none;
+        margin: 0 !important;
+        /* We use !important to avoid gaps in some environments. */
+        padding: 0 !important;
+        /* We use !important to avoid gaps in some environments. */
+    }
+
+    .justified-grid-gallery>* {
+        flex-grow: calc(var(--width) * (100000 / var(--height)));
+        flex-basis: calc(var(--min-height) * (var(--width) / var(--height)));
+        aspect-ratio: var(--width) / var(--height);
+        position: relative;
+        overflow: hidden;
+        margin: 0 !important;
+        /* We use !important to avoid gaps in some environments. */
+        padding: 0 !important;
+        /* We use !important to avoid gaps in some environments. */
+    }
+
+    .justified-grid-gallery>*>img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/* ========================================= */
+/* =========== RESPONSIVE ONLY ============= */
+/* ========================================= */
+
+
+@media (max-width: 900px) {
+    .hero {
+        height: 100%;
+
+        section {
+            flex-direction: column;
+            height: auto;
+            gap: 26px;
+        }
+
+        section .title-hero-wrap {
+            position: relative;
+            margin-left: 30px;
+        }
+
+        section .img-banner {
+            position: relative;
+            width: 100%;
+            height: auto;
+            aspect-ratio: 16/9;
+            right: unset;
+            bottom: unset;
+            background-size: cover;
+            border-radius: 6px;
+            z-index: unset;
+            background-position: center;
+        }
+    }
+}
+
+@media (max-width: 860px) {
+
+}
+
+@media (max-width: 600px) {
+
+    .hero {
+        section {
+            padding: 100px 30px;
+        }
+
+        section .title-hero-wrap .title {
+            font-size: 3.7rem;
+        }
+
+        section .title-hero-wrap .sub-title {
+            font-size: 1.2rem;
+        }
+    }
+
+    section.grid-photo {
+        .justified-grid-gallery>* {
+            --width: 100 !important;
+            --height: 100 !important;
+        }
+
+    }
+}
+
+@media (max-width: 460px) {
+    .hero {
+        section .title-hero-wrap .title {
+            font-size: 2.7rem;
+        }
+
+        section .title-hero-wrap .sub-title {
+            font-size: 1rem;
+        }
+    }
+
+    section.grid-photo {
+        .justified-grid-gallery {
+            --min-height: 85px;
+        }
+    }
+}
+
+
+@media (max-width: 380px) {
+    section.grid-photo {
+        .justified-grid-gallery {
+            --min-height: 60px;
+        }
+    }
+}
