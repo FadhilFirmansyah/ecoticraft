@@ -1,11 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <meta name="title" content="Kerajinan Eceng Gondok Cikidul Tuntang" />
+    <meta
+      name="google-site-verification"
+      content=""
+    />
+    <meta
+      name="description"
+      content="Kerajinan Eceng Gondok | Produk Ramah Lingkungan & Unik | Temukan kerajinan eceng gondok yang bernilai dan ramah lingkungan."
+    />
+    <meta
+      name="keywords"
+      content="kerajinan tuntang, tuntang, eceng gondok, kerajinan tangan, budidaya eceng gondok, produk ramah lingkungan, aksesoris rumah tangga, ekonomi kreatif, kerajinan eco-friendly, tas dari eceng gondok, potensi lokal, edukasi kerajinan"
+    />
+    <meta name="robots" content="index, follow" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="language" content="Indonesia" />
+    <meta name="revisit-after" content="2 days" />
 
     <?php 
     if (!empty($css)) {
