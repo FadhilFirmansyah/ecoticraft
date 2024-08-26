@@ -2,19 +2,19 @@
 
 ## Preview
 - Landing Page
-![[Landing Page.png]]
+![[assets/Landing Page.png]]
 
 - Product Page
-![[Product Page.png]]
+![[assets/Product Page.png]]
 
 - UMKM Page
-![[UMKM Page.png]]
+![[assets/UMKM Page.png]]
 
 - Community Page
-![[Komunitas Page.png]]
+![[assets/Komunitas Page.png]]
 
 - Team PPKO Page
-![[PPKO Page.png]]
+![[assets/PPKO Page.png]]
 
 ## URL Website
 - [[https://www.ecoticraft.org]]
