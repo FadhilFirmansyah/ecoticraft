@@ -2,20 +2,20 @@
 
 ## Preview
 - Landing Page
-![[assets/Landing Page.png]]
+![Landing Page](https://github.com/FadhilFirmansyah/ecoticraft/blob/deploy/assets/Landing%20Page.png)
 
 - Product Page
-![[assets/Product Page.png]]
+![Product Page](https://github.com/FadhilFirmansyah/ecoticraft/blob/deploy/assets/Product Page.png)
 
 - UMKM Page
-![[assets/UMKM Page.png]]
+![UMKM Page](https://github.com/FadhilFirmansyah/ecoticraft/blob/deploy/assets/Product Page.png)
 
 - Community Page
-![[assets/Komunitas Page.png]]
+![Komunitas](https://github.com/FadhilFirmansyah/ecoticraft/blob/deploy/assets/Product Page.png)
 
 - Team PPKO Page
-![[assets/PPKO Page.png]]
+![PPKO Page](https://github.com/FadhilFirmansyah/ecoticraft/blob/deploy/assets/Product Page.png)
 
 ## URL Website
-- [[https://www.ecoticraft.org]]
-- [[https://ecoticraft.org]]
+- https://www.ecoticraft.org
+- https://ecoticraft.org
