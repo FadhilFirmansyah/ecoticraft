@@ -11,6 +11,7 @@ class Umkm extends CI_Controller {
 			],
 			"page" => "umkm"
 		];
+		$this->template->set('title', $data['title']);
 		$this->template->set('page', $data['page']);
 		$this->template->set('css', $data['css']);
 		$this->template->load('templates/main2', 'umkm');
@@ -18,12 +19,13 @@ class Umkm extends CI_Controller {
 
 	public function viewUmkm($getId = ""){
 		$data = [
-			"title" => "",
+			"title" => "UMKM Desa Tuntang",
 			"css" => [
 				"style/umkm/view-umkm.css"
 			],
 			"page" => "umkm"
 		];
+		$this->template->set('title', $data['title']);
 		$this->template->set('page', $data['page']);
 		$this->template->set('css', $data['css']);
 		$this->template->load('templates/main2', 'view');

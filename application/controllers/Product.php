@@ -11,6 +11,7 @@ class Product extends CI_Controller {
 			],
 			"page" => "product"
 		];
+		$this->template->set('title', $data['title']);
 		$this->template->set('page', $data['page']);
 		$this->template->set('css', $data['css']);
 		$this->template->load('templates/main2', 'product');

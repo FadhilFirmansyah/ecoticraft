@@ -7,7 +7,7 @@ fetch('https://haydar-hilmy.github.io/ecoticraft/umkm-data.json')
     })
     .then(datas => {
         datas.forEach(umkm => {
-            let link = `<a href="view.html?id=${umkm.id}">${umkm.judul}</a>`;
+            let link = `<a href="view?id=${umkm.id}">${umkm.judul}</a>`;
             document.getElementById("umkm-footer").innerHTML += link;
         });
     })

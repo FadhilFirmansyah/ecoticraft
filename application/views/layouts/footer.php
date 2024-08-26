@@ -16,8 +16,8 @@
                 <aside>
                     <h4>Kerajinan Tuntang</h4>
                     <a href="community">Komunitas Cikidul</a>
-                    <a href="#eceng-gondok-explain">Tentang Eceng Gondok</a>
-                    <a href="#edukasi-explain">Edukasi dan Kerajinan</a>
+                    <a href="home#eceng-gondok-explain">Tentang Eceng Gondok</a>
+                    <a href="home#edukasi-explain">Edukasi dan Kerajinan</a>
                     <a href="product">Produk Kerajinan</a>
                 </aside>
 
