@@ -17,7 +17,7 @@
     />
     <meta
       name="keywords"
-      content="kerajinan tuntang, tuntang, eceng gondok, kerajinan tangan, budidaya eceng gondok, produk ramah lingkungan, aksesoris rumah tangga, ekonomi kreatif, kerajinan eco-friendly, tas dari eceng gondok, potensi lokal, edukasi kerajinan"
+      content="ecoticraft, ppko hmdkv, cikidul, kreasi eceng gondok, kreatifitas eceng gondok, produk olahan eceng gondok, inspirasi lokal ekspor global, edukasi dan kerajinan eceng gondok, kerajinan tuntang, umkm tuntang, komunitas cikidul, desa tuntang, kerajinan tuntang, tuntang, eceng gondok, kerajinan tangan, budidaya eceng gondok, produk ramah lingkungan, aksesoris rumah tangga, ekonomi kreatif, kerajinan eco-friendly, potensi lokal, edukasi kerajinan, tas eceng gondok, sandal eceng gondok, topi eceng gondok, tempat tisu eceng gondok"
     />
     <meta name="robots" content="index, follow" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
