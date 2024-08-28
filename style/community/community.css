@@ -96,10 +96,13 @@ section.grid-photo {
         /* We use !important to avoid gaps in some environments. */
     }
 
-    .justified-grid-gallery>*>img {
+    .justified-grid-gallery>*>.img {
         position: absolute;
         width: 100%;
-        height: 100%;
+        height: auto;
+        aspect-ratio: 16/9;
+        background-position: center;
+        background-size: cover;
     }
 
     
