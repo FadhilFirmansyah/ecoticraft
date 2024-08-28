@@ -207,10 +207,10 @@ main article p {
     }
 
     section.grid-photo {
-        .justified-grid-gallery>* {
+        /* .justified-grid-gallery>* {
             --width: 100 !important;
             --height: 100 !important;
-        }
+        } */
         .pengrajin-figure{
             --width: 16 !important;
             --height: 9 !important;
