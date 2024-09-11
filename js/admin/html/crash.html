@@ -1,0 +1,53 @@
+<style type="text/css">
+    #went-wrong {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font: 13px/20px normal Helvetica, Arial, sans-serif;
+        color: #4F5155;
+
+        h1,
+        h2 {
+            color: #444;
+            background-color: transparent;
+            font-size: 5rem;
+            font-weight: normal;
+            text-align: center;
+            margin: 2rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+        }
+
+
+        p {
+            font-size: 1.2rem;
+            text-align: center;
+        }
+
+        button.reload {
+            padding: 6px 16px;
+            font-size: 0.75rem;
+            border-radius: 8px;
+            border: none;
+            background-color: #55aaff;
+            color: #fff;
+            cursor: pointer;
+        }
+        button.reload:hover {
+            background-color: #1389ff;
+        }
+
+    }
+</style>
+
+<div id="went-wrong">
+
+    <h1>:(</h1>
+    <h2>Something Went Wrong</h2>
+    <button class="reload" onclick="location.reload()">Reload Page</button>
+
+</div>

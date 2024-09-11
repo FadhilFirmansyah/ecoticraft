@@ -11,8 +11,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 ::-moz-selection { background-color: #E13300; color: white; }
 
 body {
-	background-color: #fff;
-	margin: 40px;
 	font: 13px/20px normal Helvetica, Arial, sans-serif;
 	color: #4F5155;
 }
@@ -23,42 +21,57 @@ a {
 	font-weight: normal;
 }
 
-h1 {
+h1,h2 {
 	color: #444;
-	background-color: transparent;
-	border-bottom: 1px solid #D0D0D0;
-	font-size: 19px;
-	font-weight: normal;
-	margin: 0 0 14px 0;
-	padding: 14px 15px 10px 15px;
+    background-color: transparent;
+    font-size: 10rem;
+    font-weight: bold;
+	text-align: center;
+	margin: 3rem;
 }
-
-code {
-	font-family: Consolas, Monaco, Courier New, Courier, monospace;
-	font-size: 12px;
-	background-color: #f9f9f9;
-	border: 1px solid #D0D0D0;
-	color: #002166;
-	display: block;
-	margin: 14px 0 14px 0;
-	padding: 12px 10px 12px 10px;
+h2{
+	font-size: 3rem;
 }
 
 #container {
-	margin: 10px;
-	border: 1px solid #D0D0D0;
-	box-shadow: 0 0 8px #D0D0D0;
+	height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 p {
-	margin: 12px 15px 12px 15px;
+	font-size: 1.2rem;
+	text-align: center;
 }
 </style>
 </head>
 <body>
 	<div id="container">
-		<h1><?php echo $heading; ?></h1>
-		<?php echo $message; ?>
+
+		<h1>404</h1>
+		<h2>Not Found :(</h2>
+		<p id="message">Anda akan dialihkan ke halaman lain dalam 15</p>
+
+
+		<?php // echo $heading; ?>
+		<?php // echo $message; ?>
 	</div>
+
+	<script>
+    window.onload = function() {
+            var seconds = 15;
+            var countdownElement = document.getElementById("message");
+            var countdownInterval = setInterval(function() {
+                countdownElement.innerHTML = "Anda akan dialihkan ke halaman lain dalam " + seconds;
+                seconds--;
+                if (seconds < 0) {
+                    clearInterval(countdownInterval);
+                    window.history.back();
+                }
+            }, 1000);
+        };
+</script>
 </body>
 </html>

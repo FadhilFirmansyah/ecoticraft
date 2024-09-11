@@ -1,0 +1,50 @@
+@import url('default/default.css');
+
+
+.count-stat {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 12px;
+    margin: 24px 0;
+}
+
+.count-stat .count-stat-detail {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    border: 1px solid #00000061;
+    padding: 12px 24px;
+    width: 100%;
+    border-radius: 12px;
+    background-color: #7dffdb;
+}
+
+.count-stat .count-stat-detail i.fa {
+    font-size: 1.2rem;
+}
+
+.count-stat .count-stat-detail div h4 {
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+.count-stat .count-stat-detail div h3 {
+    font-size: 1.8rem;
+}
+
+
+.stat {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 48px;
+
+    #view_page {
+        display: block;
+        box-sizing: border-box;
+        height: 70vh;
+        width: 100%;
+    }
+}

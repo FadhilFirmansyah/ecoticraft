@@ -1,0 +1,177 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("../../scrollbar.css");
+@import url("https://fonts.googleapis.com/css?family=Inter");
+@import url("https://fonts.googleapis.com/css?family=Italiana");
+
+/* TEMPAT KONFIGURASI SECARA DEFAULT */
+/* TERMASUK IMPORT FONT, CUSTOM SCROLLBAR DAN LAIN LAIN */
+
+:root {
+    /* warna ijo nya ecoticraft */
+    --basic-color: #244602;
+    --basic-color-dark: #141a00;
+    --basic-color-hero: rgba(36, 70, 2, 0.164);
+    --basic-color-lighter: #3d5d1c;
+    --basic-color-hover: #43770f;
+    --basic-color-click: #6d8a4f;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #fff;
+}
+
+main {
+    background-color: #fff;
+    padding: 24px;
+}
+
+.main-section {
+    width: 100%;
+}
+
+header {
+    display: flex;
+    background-color: var(--basic-color-dark);
+    float: left;
+    width: 20%;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    left: 0;
+    color: #fff;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 16px;
+    margin: 0 24px 0 0;
+
+    .title-web {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 12px;
+        cursor: pointer;
+
+        img {
+            width: 40px;
+            background-color: #fff;
+            border-radius: 30px;
+            padding: 6px;
+        }
+
+        h2 {
+            font-weight: 400;
+            font-size: 1.1rem;
+        }
+    }
+
+    nav {
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin: 12px 0 0 0;
+        width: 100%;
+        height: 100%;
+
+        a {
+            color: #fff;
+            width: 100%;
+            padding: 12px;
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: 400;
+            display: flex;
+            gap: 8px;
+            background-color: var(--basic-color-dark);
+            border-radius: 8px;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        a:hover {
+            transition-duration: 200ms;
+            background-color: #2c360c;
+        }
+
+        hr {
+            width: 100%;
+            border: 1px solid #ffffff2e;
+            margin: 12px 0;
+        }
+    }
+
+    .user {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 12px;
+        
+        .pp-user {
+            width: 45px;
+            height: auto;
+            aspect-ratio: 1 / 1;
+            background-color: #fff;
+            color: var(--basic-color-dark);
+            border-radius: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.4rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        h2{
+            font-size: 1.2rem;
+        }
+    }
+}
+
+.load-page{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-size: 2rem;
+    font-weight: 300;
+    gap: 6px;
+    flex-direction: column;
+}
+.loading-icon{
+    animation: spin 1000ms linear infinite;
+    border: 3px solid black;
+    border-top-color: #fff;
+    width: 40px;
+    aspect-ratio: 1 / 1;
+    border-radius: 40px;
+}
+@keyframes spin{
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.title-wrap{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+button.reload {
+    padding: 6px 16px;
+    font-size: 0.75rem;
+    border-radius: 8px;
+    border: none;
+    background-color: #55aaff;
+    color: #fff;
+    cursor: pointer;
+}
+button.reload:hover {
+    background-color: #1389ff;
+}

@@ -1,0 +1,166 @@
+@import url("default/default.css");
+
+:root{
+    --basic-color-border-input: #68B02E;
+}
+
+main{
+    background-color: #fff;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+section.form-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 50px;
+    width: 50%;
+    justify-content: center;
+    padding: 48px;
+    box-shadow: 4px 6px 20px 3px rgb(0 0 0 / 22%);
+    border-radius: 12px;
+}
+
+h1.title-form{
+    text-align: center;
+    width: 100%;
+    font-size: 1.8rem;
+}
+
+h3.sub-title-form{
+    width: 75%;
+    font-size: 1rem;
+    text-align: center;
+    font-size: 0.9rem;
+    font-weight: 400;
+}
+
+form.admin-form{
+    width: max-content;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 24px;
+}
+
+div.input-group{
+    display: inline-grid;
+    justify-items: stretch;
+}
+
+
+div.input-group span label{
+    margin-left: 12px;
+    font-size: 0.9rem;
+    position: absolute;
+    z-index: 2;
+    background-color: #fff;
+    padding: 0 6px;
+    top: unset;
+    transition-duration: 180ms;
+    transition-timing-function: ease-in-out;
+    opacity: 0.7;
+}
+
+
+div.input-group span{
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    margin-top: 8px;
+    position: relative;
+}
+
+div.input-group span .icon-fa{
+    font-weight: 900;
+    position: absolute;
+    right: 10px;
+    font-size: 0.9rem;
+}
+div.input-group span input{
+    padding: 10px 32px 10px 16px;
+    outline: none;
+    width: 300px;
+    font-size: 0.9rem;
+    transition-duration: 300ms;
+    border: 2px solid var(--basic-color-border-input);
+    border-radius: 8px;
+}
+
+div.input-group span input::placeholder{
+    transition-duration: 150ms;
+}
+div.input-group span input:focus::placeholder{
+    transform: translateY(-100%);
+    transition-duration: 300ms;
+    opacity: 0;
+}
+div.input-group span input:focus, .main-btn:focus{
+    outline: 2px solid #c6c6ff;
+}
+
+
+.main-btn{
+    width: 100%;
+    padding: 8px;
+    background-color: var(--basic-color);
+    border: none;
+    color: #fff;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 400;
+    cursor: pointer;
+}
+.main-btn:hover{
+    transition-duration: 200ms;
+    background-color: var(--basic-color-hover);
+}
+
+.warning-text{
+    font-size: 0.8rem;
+    margin: 4px 4px 4px 12px;
+    color: red;
+}
+
+
+@media (max-width: 750px){
+    .banner-section{
+        display: none;
+    }
+    h3.sub-title-form{
+        width: 100%;
+    }
+    section.form-section{
+        width: 100%;
+    }
+}
+
+@media (max-width: 500px){
+    section.form-section{
+        box-shadow: unset;
+        padding: unset;
+    }
+}
+
+@media (max-width: 400px){
+
+    section.form-section{
+        margin: 50px 0;
+    }
+
+    form.admin-form{
+        width: 85%;
+    }
+
+    div.input-group span input,
+    h1.title-form,
+    h3.sub-title-form
+    {
+        width: 100%;
+    }
+
+}

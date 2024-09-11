@@ -1,0 +1,23 @@
+/* @import url('default/default.css'); */
+
+table.product {
+    border-collapse: collapse;
+
+    thead tr {
+        background-color: #7dffdb;
+
+        th {
+            border: 1px solid #b5b5b5;
+            padding: 6px 10px;
+            width: fit-content;
+            font-size: 0.8rem;
+        }
+    }
+
+    tbody tr{
+        
+        td{
+
+        }
+    }
+}

@@ -56,5 +56,18 @@ $route['product'] = 'Product';
 $route['umkm'] = 'Umkm';
 $route['view'] = 'Umkm/viewUmkm';
 
+$route['admin'] = 'Admin/index';
+$route['admin/login'] = 'Admin/login';
+$route['admin/logout'] = 'Admin/logout';
+
+$route['admin/dashboard'] = 'Admin/dashboard';
+$route['admin/product'] = 'Admin/product';
+$route['admin/umkm'] = 'Admin/umkm';
+$route['admin/superadmin'] = 'Admin/manageAdmin';
+
+$route['admin/api/allpage']['GET'] = 'api/PageController/allpage';
+$route['admin/api/homepage']['GET'] = 'api/PageController/homepage';
+$route['admin/api/productpage']['GET'] = 'api/PageController/productpage';
+
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
