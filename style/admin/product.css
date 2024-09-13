@@ -1,23 +1,192 @@
 /* @import url('default/default.css'); */
 
+.table-div {
+    display: flex;
+    flex-direction: column;
+
+    h4 {
+        margin: 12px 0;
+    }
+}
+
 table.product {
     border-collapse: collapse;
+    width: 100%;
+    text-align: left;
+
+    thead {
+        position: sticky;
+        top: 0;
+        z-index: 4;
+    }
 
     thead tr {
-        background-color: #7dffdb;
+        background-color: #c9fff0;
 
         th {
             border: 1px solid #b5b5b5;
-            padding: 6px 10px;
+            border-radius: 3px;
+            padding: 10px 12px;
             width: fit-content;
             font-size: 0.8rem;
         }
     }
 
-    tbody tr{
-        
-        td{
+    tbody tr {
 
+        td {
+            font-size: 0.8rem;
+            padding: 12px;
+            vertical-align: top;
+            border: 1px solid #b5b5b5;
+
+            .desc {
+                width: 30%;
+            }
         }
     }
+
+    tfoot {
+
+        td {
+            font-size: 0.8rem;
+            padding: 12px;
+            vertical-align: top;
+            border: 1px solid #b5b5b5;
+        }
+    }
+
+    .btn-more {
+        background-color: #fff;
+
+        button {
+            padding: 6px 12px;
+            width: 100%;
+            border: 0;
+            background: none;
+            cursor: pointer;
+        }
+    }
+
+    .btn-more:hover {
+        transition-duration: 200ms;
+        background-color: #c9fff0;
+    }
+}
+
+.controller-table {
+    width: 100%;
+    background-color: #fff;
+    padding: 12px;
+    display: flex;
+    position: sticky;
+    flex-direction: row-reverse;
+    bottom: 0;
+    border: 1px solid #b5b5b5;
+    border-radius: 0 0 6px 6px;
+
+    button {
+        padding: 6px 18px;
+        width: max-content;
+        border-radius: 4px;
+        border: none;
+        color: #fff;
+        font-size: 0.8rem;
+        cursor: pointer;
+        transition-duration: 200ms;
+    }
+
+    button:disabled {
+        opacity: 0.5;
+        transition-duration: 100ms;
+        cursor: not-allowed;
+    }
+
+    button:hover {
+        filter: brightness(1.2);
+    }
+
+    button:disabled:hover {
+        opacity: 0.3;
+    }
+
+    .btn-wrap {
+        display: flex;
+        gap: 8px;
+    }
+
+    .warning, #warning{
+        background-color: var(--warning-btn);
+    }
+
+    .normal, #normal {
+        background-color: var(--normal-btn);
+    }
+}
+
+.label-checkbox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    position: relative;
+    padding-left: 35px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.label-checkbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 1.15rem;
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    aspect-ratio: 1/1;
+    background-color: transparent;
+    border: 1px solid rgb(161, 161, 161);
+}
+
+.label-checkbox:hover input~.checkmark {
+    background-color: #bdbdbd;
+    transition-duration: 200ms;
+}
+
+.label-checkbox input:checked~.checkmark {
+    background-color: #0070cc;
+}
+
+.checkmark:after {
+    content: "";
+    /* position: absolute; */
+    display: none;
+}
+
+.label-checkbox input:checked~.checkmark:after {
+    display: block;
+}
+
+.label-checkbox .checkmark:after {
+    width: 3px;
+    height: 7px;
+    border: 1px solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    transition-duration: 200ms;
 }

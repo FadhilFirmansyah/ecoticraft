@@ -104,6 +104,7 @@ class Admin extends CI_Controller
     public function dashboard()
     {
         if ($this->session->userdata('logged_in')) {
+            date_default_timezone_set('Asia/Jakarta');
             $today = date('Y-m-d');
             $data = [
                 "user" => [
@@ -130,7 +131,8 @@ class Admin extends CI_Controller
             $data = [
                 "css" => [
                     "style/admin/product.css"
-                ]
+                ],
+                "getAllProductVariasi" => $this->ProductModel->getAllData(TRUE, 10, 0)
             ];
 
             $this->load->view('admin/product', $data);

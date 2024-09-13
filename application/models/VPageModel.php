@@ -27,11 +27,11 @@ class VPageModel extends CI_Model{
             $this->db->where('page_name', $page);
         }
         $this->db->group_by('getDate');
-        $this->db->order_by('getDate');
+        $this->db->order_by('getDate', 'DESC');
         $this->db->limit(7);
 
         $query = $this->db->get();
-        return $query->result_array();
+        return array_reverse($query->result_array()); // CARA OUTPUTNYA DI REVERSE
     }
 
     public function insertCountView($data){

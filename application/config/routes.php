@@ -65,6 +65,8 @@ $route['admin/product'] = 'Admin/product';
 $route['admin/umkm'] = 'Admin/umkm';
 $route['admin/superadmin'] = 'Admin/manageAdmin';
 
+$route['admin/api/getallproduct/(:num)']['GET'] = 'api/ProductApi/getAllProduct/$1';
+$route['admin/api/getallproduct/(:num)/(:num)']['GET'] = 'api/ProductApi/getAllProduct/$1/$2';
 $route['admin/api/allpage']['GET'] = 'api/PageController/allpage';
 $route['admin/api/homepage']['GET'] = 'api/PageController/homepage';
 $route['admin/api/productpage']['GET'] = 'api/PageController/productpage';

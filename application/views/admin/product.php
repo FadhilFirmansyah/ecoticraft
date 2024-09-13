@@ -1,5 +1,6 @@
 <link rel="stylesheet" href="<?php foreach ($css as $key) echo $key; ?>">
 
+
 <div class="title-wrap">
   <h1 class="title-content">Produk</h1>
   <button class="reload" onclick="if(confirm('Apakah anda yakin ingin memuat ulang halaman?')){location.reload()}">Reload Page</button>
@@ -9,91 +10,75 @@
 
   <div class="table-div">
     <h4>Daftar Produk</h4>
-    <table class="product">
-      <thead>
-        <tr>
-          <th>Id</th>
-          <th>Nama</th>
-          <th>Bahan</th>
-          <th>Deskripsi</th>
-          <th>Harga</th>
-          <th>Variasi</th>
-          <th>Gambar</th>
-          <th>Link</th>
-        </tr>
-      </thead>
-      <tbody>
+    <form action="">
+      <table class="product">
+        <thead>
+          <tr>
+            <th>
+              <label class="label-checkbox">
+                <input type="checkbox" id="checkbox-input-main">
+                <span class="checkmark"></span>
+                Nama
+              </label>
+            </th>
+            <th>Bahan</th>
+            <th>Deskripsi</th>
+            <th>Variasi</th>
+            <th>Harga</th>
+          </tr>
+        </thead>
+        <tbody id="product-list">
 
-        <tr>
-          <td>1</td>
-          <td>Keranjang Eceng Gondok</td>
-          <td>Eceng Gondok</td>
-          <td>Keranjang anyaman yang terbuat dari eceng gondok, kuat dan ramah lingkungan.</td>
-          <td>Rp150.000</td>
-          <td>S, M, L</td>
-          <td>asasas asas</td>
-          <td><a href="#">Link Produk</a></td>
-        </tr>
-
-        <tr>
-          <td>2</td>
-          <td>Tas Tangan Eceng Gondok</td>
-          <td>Eceng Gondok</td>
-          <td>Tas tangan elegan dari anyaman eceng gondok, cocok untuk sehari-hari.</td>
-          <td>Rp250.000</td>
-          <td>M, L</td>
-          <td>asasas asas</td>
-          <td><a href="#">Link Produk</a></td>
-        </tr>
-
-        <tr>
-          <td>3</td>
-          <td>Dompet Eceng Gondok</td>
-          <td>Eceng Gondok</td>
-          <td>Dompet kecil yang simpel dan stylish, terbuat dari bahan alami.</td>
-          <td>Rp80.000</td>
-          <td>S</td>
-          <td>asasas asas</td>
-          <td><a href="#">Link Produk</a></td>
-        </tr>
-
-        <tr>
-          <td>4</td>
-          <td>Topi Pantai Eceng Gondok</td>
-          <td>Eceng Gondok</td>
-          <td>Topi pantai lebar yang terbuat dari bahan eceng gondok, melindungi dari sinar matahari.</td>
-          <td>Rp100.000</td>
-          <td>L</td>
-          <td>asasas asas</td>
-          <td><a href="#">Link Produk</a></td>
-        </tr>
-
-        <tr>
-          <td>5</td>
-          <td>Vas Bunga Eceng Gondok</td>
-          <td>Eceng Gondok</td>
-          <td>Vas bunga minimalis dengan tekstur alami eceng gondok.</td>
-          <td>Rp120.000</td>
-          <td>S, M</td>
-          <td>asasas asas</td>
-          <td><a href="#">Link Produk</a></td>
-        </tr>
-
-        <tr>
-          <td>6</td>
-          <td>Alas Piring Eceng Gondok</td>
-          <td>Eceng Gondok</td>
-          <td>Alas piring unik yang terbuat dari eceng gondok, tahan lama dan ramah lingkungan.</td>
-          <td>Rp60.000</td>
-          <td>M</td>
-          <td>asasas asas</td>
-          <td><a href="#">Link Produk</a></td>
-        </tr>
+          <?php foreach ($getAllProductVariasi as $p) { ?>
+            <tr>
+              <td>
+                <label class="label-checkbox">
+                  <input class="checkbox-input" type="checkbox" name="<?= $p['id'] ?>">
+                  <span class="checkmark"></span>
+                  <?= $p['nama'] ?>
+                </label>
+              </td>
+              <td><?= $p['bahan'] ?></td>
+              <td class="desc"><?= $p['deskripsi'] ?></td>
+              <td><?= $p['variasi'] != '' | $p['variasi'] != null ? $p['variasi'] : '-'; ?></td>
+              <td><?= $p['harga_range'] != '' | $p['harga_range'] != null ? $p['harga_range'] : '-' ?></td>
+            </tr>
+          <?php } ?>
 
 
-      </tbody>
-    </table>
+        </tbody>
+
+        <tfoot>
+          <tr>
+            <td colspan="5" class="btn-more"><button loadDataLimit="10" id="load-more-btn" type="button">Load more</button></td>
+          </tr>
+        </tfoot>
+
+      </table>
+
+      <div class="controller-table">
+        <div class="btn-wrap">
+          <button disabled contentPopup="Apakah anda yakin ingin menghapus?" titlePopup="Info" id="warning-btn" type="button" class="warning"><i class="fa fa-trash"></i> Hapus</button>
+          <button disabled type="button" class="normal"><i class="fa fa-pencil"></i> Edit</button>
+        </div>
+      </div>
+
+
+      <div class="popup-wrap" id="popup-wrap">
+        <div class="box" id="box-popup">
+          <h2 id="title-popup">Info</h2>
+          <div id="content-popup">Apakah anda yakin ingin menghapus?</div>
+          <div id="option-popup">
+            <button class="warning" id="cancel-btn" type="button">Tidak</button>
+            <button id="normal">Ya</button>
+          </div>
+        </div>
+      </div>
+
+
+    </form>
   </div>
+
 
 </section>
 

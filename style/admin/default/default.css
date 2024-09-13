@@ -14,6 +14,8 @@
     --basic-color-lighter: #3d5d1c;
     --basic-color-hover: #43770f;
     --basic-color-click: #6d8a4f;
+    --warning-btn: #ff3e3e;
+    --normal-btn: #65b700;
 }
 
 * {
@@ -113,7 +115,7 @@ header {
         flex-direction: row;
         align-items: center;
         gap: 12px;
-        
+
         .pp-user {
             width: 45px;
             height: auto;
@@ -128,13 +130,14 @@ header {
             font-weight: 600;
             text-transform: uppercase;
         }
-        h2{
+
+        h2 {
             font-size: 1.2rem;
         }
     }
 }
 
-.load-page{
+.load-page {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -144,7 +147,8 @@ header {
     gap: 6px;
     flex-direction: column;
 }
-.loading-icon{
+
+.loading-icon {
     animation: spin 1000ms linear infinite;
     border: 3px solid black;
     border-top-color: #fff;
@@ -152,12 +156,18 @@ header {
     aspect-ratio: 1 / 1;
     border-radius: 40px;
 }
-@keyframes spin{
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
-.title-wrap{
+.title-wrap {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -172,6 +182,50 @@ button.reload {
     color: #fff;
     cursor: pointer;
 }
+
 button.reload:hover {
     background-color: #1389ff;
+}
+
+.popup-wrap {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+
+    .box {
+        background-color: #fff;
+        padding: 24px;
+        width: 30%;
+        display: flex;
+        flex-direction: column;
+        border-radius: 8px;
+
+        #option-popup {
+            margin: 12px 0 0 0;
+            display: flex;
+            gap: 8px;
+            justify-content: flex-end;
+
+            button {
+                padding: 6px 20px;
+                border-radius: 6px;
+                border: 0;
+                color: #fff;
+                cursor: pointer;
+            }
+            .normal, #normal{
+                background-color: var(--normal-btn);
+            }
+            .warning, #warning{
+                background-color: var(--warning-btn);
+            }
+        }
+    }
 }

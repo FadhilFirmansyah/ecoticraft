@@ -1,4 +1,7 @@
-import { createChart } from './chart-dashboard.js';
+import { createChart } from './library/chart-dashboard.js';
+import { setupCheckboxMain } from './library/checkbox.js';
+import { hidePopupDefault, closePopup, openPopup, setFuntionPopup } from './library/popup.js';
+import { setFunctionProduct } from './product.js';
 
 $(document).ready(function () {
 
@@ -40,6 +43,12 @@ $(document).ready(function () {
         $('#main-content').load('admin/product', function (response, status, xhr) {
             if (status == "error") {
                 error_page();
+            } else {
+                setupCheckboxMain();
+                hidePopupDefault();
+                setFuntionPopup();
+                setFunctionProduct();
+                window.onclick = closePopup;
             }
         });
     });

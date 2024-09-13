@@ -10,7 +10,7 @@
         <div class="count-stat-detail">
             <i class="fa fa-box"></i>
             <div>
-                <h4>Produk</h4>
+                <h4>Produk Eceng Gondok</h4>
                 <h3><?= $stat['total_produk'][0]['count'] ?></h3>
             </div>
         </div>

@@ -27,6 +27,10 @@
 .count-stat .count-stat-detail div h4 {
     font-weight: 500;
     font-size: 1.1rem;
+
+    span.smalltxt{
+        font-size: 0.8rem;
+    }
 }
 
 .count-stat .count-stat-detail div h3 {
