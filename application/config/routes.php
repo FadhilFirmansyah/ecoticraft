@@ -65,8 +65,19 @@ $route['admin/product'] = 'Admin/product';
 $route['admin/umkm'] = 'Admin/umkm';
 $route['admin/superadmin'] = 'Admin/manageAdmin';
 
+// PRODUCT CONTROL
 $route['admin/api/getallproduct/(:num)']['GET'] = 'api/ProductApi/getAllProduct/$1';
 $route['admin/api/getallproduct/(:num)/(:num)']['GET'] = 'api/ProductApi/getAllProduct/$1/$2';
+$route['admin/api/delproduct']['GET'] = 'api/ProductApi/delProduct';
+
+
+// FORM CONTROL
+// PRODUCT
+$route['admin/form/product/(:any)']['GET'] = 'api/FormController/product/$1'; // add
+
+// UMKM
+
+
 $route['admin/api/allpage']['GET'] = 'api/PageController/allpage';
 $route['admin/api/homepage']['GET'] = 'api/PageController/homepage';
 $route['admin/api/productpage']['GET'] = 'api/PageController/productpage';

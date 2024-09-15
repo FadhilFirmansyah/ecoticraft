@@ -14,8 +14,12 @@
     --basic-color-lighter: #3d5d1c;
     --basic-color-hover: #43770f;
     --basic-color-click: #6d8a4f;
+
+    /* BUTTON */
     --warning-btn: #ff3e3e;
     --normal-btn: #65b700;
+    --primary-btn: #1389ff;
+    --low-fidelity: #f3f3f3;
 }
 
 * {
@@ -219,12 +223,19 @@ button.reload:hover {
                 border: 0;
                 color: #fff;
                 cursor: pointer;
+                transition-duration: 200ms;
+            }
+            button:hover{
+                filter: brightness(1.2);
             }
             .normal, #normal{
                 background-color: var(--normal-btn);
             }
             .warning, #warning{
                 background-color: var(--warning-btn);
+            }
+            .primary, #primary{
+                background-color: var(--primary-btn);
             }
         }
     }

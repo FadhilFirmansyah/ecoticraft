@@ -2,7 +2,7 @@
     <tr>
         <td>
             <label class="label-checkbox">
-                <input class="checkbox-input" type="checkbox" name="<?= $p['id'] ?>">
+                <input class="checkbox-input" type="checkbox" name="product_ids" value="<?= $p['id'] ?>">
                 <span class="checkmark"></span>
                 <?= $p['nama'] ?>
             </label>

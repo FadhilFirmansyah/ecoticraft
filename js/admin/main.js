@@ -2,14 +2,11 @@ import { createChart } from './library/chart-dashboard.js';
 import { setupCheckboxMain } from './library/checkbox.js';
 import { hidePopupDefault, closePopup, openPopup, setFuntionPopup } from './library/popup.js';
 import { setFunctionProduct } from './product.js';
+import { error_page } from './library/error_page.js';
 
 $(document).ready(function () {
 
-    function error_page() {
-        $('#main-content').load('js/admin/html/crash.html');
-    }
-
-
+    
     // WINDOW ONLOADDD
     $(window).on('load', function () {
 
