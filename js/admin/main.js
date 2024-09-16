@@ -1,8 +1,9 @@
 import { createChart } from './library/chart-dashboard.js';
 import { setupCheckboxMain } from './library/checkbox.js';
-import { hidePopupDefault, closePopup, openPopup, setFuntionPopup } from './library/popup.js';
+import { hidePopupDefault, closePopup, openPopup, setFunctionPopup } from './library/popup.js';
 import { setFunctionProduct } from './product.js';
 import { error_page } from './library/error_page.js';
+import { setBtnForm, setForm } from './library/form-controller.js';
 
 $(document).ready(function () {
 
@@ -43,8 +44,9 @@ $(document).ready(function () {
             } else {
                 setupCheckboxMain();
                 hidePopupDefault();
-                setFuntionPopup();
+                setFunctionPopup();
                 setFunctionProduct();
+                setForm('GET', true);
                 window.onclick = closePopup;
             }
         });
@@ -62,7 +64,7 @@ $(document).ready(function () {
     });
 
 
-    // UMKM
+    // MANAGE ADMIN
     $('#manageAdmBtn').click(function () {
         $('#main-content').load('js/admin/html/loading.html');
         $('#main-content').load('admin/superadmin', function (response, status, xhr) {

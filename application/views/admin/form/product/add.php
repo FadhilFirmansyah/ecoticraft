@@ -7,7 +7,8 @@
 </div>
 
 
-<form class="admin-form" method="post">
+<form id="form-ajax" throwto="/api/addproduct" action="/api/addproduct" class="admin-form" method="post" enctype="multipart/form-data">
+<input type="hidden" name="<?= $this->security->get_csrf_token_name(); ?>" value="<?= $this->security->get_csrf_hash(); ?>">
 
     <div class="input-group-wrap">
 
@@ -34,8 +35,8 @@
         <div class="input-group" id="drop-area">
             <label for="fileElem">Gambar</label>
             <p class="info">Drag and drop your image</p>
-            <input name="gambar" type="file" id="fileElem" accept="image/*" style="display:none">
-            <button class="button-primary" id="chooseImg">Pilih gambar</button>
+            <input name="gambar" type="file" id="fileElem" accept="image/jpg/jpeg/png" style="display:none">
+            <button class="button-primary" type="button" id="chooseImg">Pilih gambar</button>
             <div id="preview-img" class="preview-img"></div>
         </div>
 
@@ -46,7 +47,7 @@
 
             <div class="variant-input" id="variant-input">
                 <div class="variant">
-                    <input type="text" name="harga[]" placeholder="Harga">
+                    <input type="number" name="harga[]" placeholder="Harga">
                     <input type="text" name="variasi[]" placeholder="Nama Variasi">
                     <button type="button" class="variant-btn add-var">+</button>
                 </div>
@@ -62,9 +63,25 @@
     <div class="controller">
         <div class="button-group">
             <button type="reset" class="second">Reset Input</button>
-            <button type="button" class="primary">Tambahkan</button>
+            <button type="submit" class="primary">Tambahkan</button>
         </div>
     </div>
 
 
 </form>
+
+<div class="popup-wrap" id="popup-wrap">
+
+    <div class="box" id="box-popup">
+
+        <h2 id="title-popup">Info</h2>
+
+        <div id="content-popup">Apakah anda yakin ingin menghapus?</div>
+        <div id="option-popup">
+            <button class="warning" id="cancel-btn" type="button">Tidak</button>
+            <button class="normal" type="submit">Ya</button>
+        </div>
+
+    </div>
+
+</div>

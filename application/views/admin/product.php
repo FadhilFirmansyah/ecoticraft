@@ -59,12 +59,12 @@
       <div class="controller-table">
 
         <div class="btn-wrap">
-          <button type="button" class="primary" id="btn-add-product"><i class="fa fa-plus"></i> Tambah Produk</button>
+          <button type="button" formGetPost="POST" openform="product/add" class="primary open-form"><i class="fa fa-plus"></i> Tambah Produk</button>
         </div>
 
         <div class="btn-wrap">
           <button disabled contentPopup="Apakah anda yakin ingin menghapus?" titlePopup="Info" id="warning-btn" type="button" class="warning"><i class="fa fa-trash"></i> Hapus</button>
-          <button disabled openform="product/add" id="open-form" type="button" class="normal"><i class="fa fa-pencil"></i> Edit</button>
+          <button disabled openform="product/add" formGetPost="GET" id="edit-btn" type="button" class="normal open-form"><i class="fa fa-pencil"></i> Edit</button>
         </div>
       </div>
 
@@ -78,7 +78,7 @@
           <div id="content-popup">Apakah anda yakin ingin menghapus?</div>
           <div id="option-popup">
             <button class="warning" id="cancel-btn" type="button">Tidak</button>
-            <button class="normal" id="confirm-form" type="submit">Ya</button>
+            <button class="normal" type="submit">Ya</button>
           </div>
 
         </div>

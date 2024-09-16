@@ -2,13 +2,12 @@ export function setupCheckboxMain() {
     let checkboxMain = document.getElementById('checkbox-input-main');
     let checkboxChild = document.querySelectorAll('.checkbox-input');
     let warning_btn = document.getElementById('warning-btn');
-    let open_form = document.getElementById('open-form');
+    let edit_btn = document.getElementById('edit-btn');
 
     checkboxMain.addEventListener('click', function() {
         checkboxChild.forEach(function(checkbox) {
             checkbox.checked = checkboxMain.checked;
         });
-
     });
 
     function updateButtonState() {
@@ -19,7 +18,7 @@ export function setupCheckboxMain() {
         warning_btn.disabled = !isAnyChecked;
         checkboxMain.checked = isAllChecked;
 
-        open_form.disabled = checkedCount !== 1;
+        edit_btn.disabled = checkedCount !== 1;
     }
 
 

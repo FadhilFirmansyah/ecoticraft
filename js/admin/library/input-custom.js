@@ -50,7 +50,7 @@ export function setFunctionVarianInput() {
     function addEventVariant(){
       variantInp.insertAdjacentHTML('beforeend', `
         <div class="variant">
-                    <input type="text" name="harga[]" placeholder="Harga">
+                    <input type="number" name="harga[]" placeholder="Harga">
                     <input type="text" name="variasi[]" placeholder="Nama Variasi">
                     <button type="button" class="variant-btn add-var">+</button>
                 </div>
@@ -69,8 +69,8 @@ export function setFunctionVarianInput() {
         }
       });
       
-      setFunctionVarianInput();
       remVarBtn = document.querySelectorAll('.rem-var');
+      setFunctionVarianInput();
     }
   });
 
@@ -79,6 +79,7 @@ export function setFunctionVarianInput() {
     remVarBtn.forEach((btn, index) => {
       btn.addEventListener('click', () => {
         btn.closest('.variant').remove();
+        // console.log(index)
       });
     })
   }
@@ -119,6 +120,3 @@ function previewFile(file) {
     preview.appendChild(img);
   };
 }
-
-
-// TOMBOL MINUS NYA BELUM BISA (DI POSISI YANG TERBARU)

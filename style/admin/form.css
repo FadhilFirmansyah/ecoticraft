@@ -56,14 +56,18 @@ form.admin-form {
 
             .variant-input {
                 display: flex;
-                flex-direction: column;
-                gap: 8px;
+                flex-direction: row;
+                gap: 18px;
+                flex-wrap: wrap;
+                align-items: flex-start;
+                justify-content: flex-start;
             }
 
             .variant {
                 display: flex;
                 align-items: center;
                 gap: 12px;
+                width: fit-content;
             }
         }
 

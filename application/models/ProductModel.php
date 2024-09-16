@@ -13,7 +13,7 @@ class ProductModel extends CI_Model
             $this->db->group_by('mp.id');
             $this->db->order_by('mp.id', 'DESC');
 
-            if($limit != ''){
+            if ($limit != '') {
                 $this->db->limit($limit, $offset);
             }
 
@@ -54,5 +54,15 @@ class ProductModel extends CI_Model
 
         $query = $this->db->get();
         return $query->result_array();
+    }
+
+    public function insertProduct($data)
+    {
+        return $this->db->insert('m_produk', $data);
+    }
+    public function insertHarga($data)
+    {
+        $this->db->insert_batch('variasi_produk', $data);
+        return $this->db->affected_rows() > 0;
     }
 }

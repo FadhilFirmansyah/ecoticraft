@@ -73,7 +73,8 @@ $route['admin/api/delproduct']['GET'] = 'api/ProductApi/delProduct';
 
 // FORM CONTROL
 // PRODUCT
-$route['admin/form/product/(:any)']['GET'] = 'api/FormController/product/$1'; // add
+$route['admin/form/product/(:any)']['GET'] = 'api/FormController/product/$1'; // add form
+$route['admin/api/addproduct']['POST'] = 'api/ProductApi/addproduct'; // add data
 
 // UMKM
 
