@@ -38,7 +38,6 @@
             <hr>
 
             <?php if ($user["role"] == "superadmin" && $user["role"] != "admin") { ?>
-                <a id="manageAdmBtn"><i class="fa fa-users"></i> Manage Admin</a>
                 <a id="superadminBtn"><i class="fa fa-bolt"></i> SuperAdmin Power</a>
             <?php } ?>
 

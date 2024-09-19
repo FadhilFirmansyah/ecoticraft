@@ -7,8 +7,8 @@
 </div>
 
 
-<form id="form-ajax" throwto="/api/addproduct" action="/api/addproduct" class="admin-form" method="post" enctype="multipart/form-data">
-<input type="hidden" name="<?= $this->security->get_csrf_token_name(); ?>" value="<?= $this->security->get_csrf_hash(); ?>">
+<form loadTo="#productBtn" id="form-ajax" action="/api/addproduct" class="admin-form" method="post" enctype="multipart/form-data" isDanger="false">
+    <input type="hidden" name="<?= $this->security->get_csrf_token_name(); ?>" value="<?= $this->security->get_csrf_hash(); ?>">
 
     <div class="input-group-wrap">
 
@@ -35,7 +35,7 @@
         <div class="input-group" id="drop-area">
             <label for="fileElem">Gambar</label>
             <p class="info">Drag and drop your image</p>
-            <input name="gambar" type="file" id="fileElem" accept="image/jpg/jpeg/png" style="display:none">
+            <input name="gambar" type="file" id="fileElem" accept="image/*" style="display:none">
             <button class="button-primary" type="button" id="chooseImg">Pilih gambar</button>
             <div id="preview-img" class="preview-img"></div>
         </div>
@@ -45,7 +45,7 @@
             <label>Variasi</label>
             <p class="info">Klik tanda <b>+</b> untuk menambahkan variasi lain</p>
 
-            <div class="variant-input" id="variant-input">
+            <div class="variant-input" id="variant-input" variant="product">
                 <div class="variant">
                     <input type="number" name="harga[]" placeholder="Harga">
                     <input type="text" name="variasi[]" placeholder="Nama Variasi">
@@ -71,17 +71,12 @@
 </form>
 
 <div class="popup-wrap" id="popup-wrap">
-
     <div class="box" id="box-popup">
-
-        <h2 id="title-popup">Info</h2>
-
-        <div id="content-popup">Apakah anda yakin ingin menghapus?</div>
+        <h2 id="title-popup"></h2>
+        <div id="content-popup"></div>
         <div id="option-popup">
-            <button class="warning" id="cancel-btn" type="button">Tidak</button>
-            <button class="normal" type="submit">Ya</button>
+        <button class="warning" id="cancel-btn" type="button">Tidak</button>
+        <button class="normal" type="submit">Ya</button>
         </div>
-
     </div>
-
 </div>

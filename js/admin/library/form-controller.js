@@ -1,30 +1,50 @@
 import { error_page } from './error_page.js';
-import { setFunctionDragndrop, setFunctionVarianInput } from './input-custom.js';
-import { cancelPopup, hidePopupDefault, openPopup } from './popup.js';
+import { setFunctionDragndrop, setFunctionVarianInput, setMultiFunctionDragndrop } from './input-custom.js';
+import { cancelPopup, hidePopupDefault, openPopup, setFunctionPopup } from './popup.js';
 
 export function setBtnForm() {
     document.querySelectorAll('.open-form').forEach((btn) => {
 
         btn.addEventListener('click', (event) => {
             let getForm = event.target.getAttribute('openform');
-            let formGetPost = event.target.getAttribute('formGetPost');
 
-            openForm(getForm, formGetPost);
+            openForm(getForm);
         });
 
     });
 }
 
-export function openForm(getContent = null, isGetPost) {
+export function openForm(getContent = null) {
+
+    let checkboxs = document.querySelectorAll('.checkbox-input'),
+    getId = null,
+    loadUrl;
+
+    if(checkboxs != null){
+        checkboxs.forEach(function(cb) {
+            if(cb.checked){
+                getId = cb.value;
+                return; // keluar loop jika ada cb yang tercheck
+            }
+        });
+    }
+
+    if(getId != null){    
+        loadUrl = `admin/form/${getContent}/${getId}`;
+    } else {
+        loadUrl = `admin/form/${getContent}`;
+    }
+
     $('#main-content').load('js/admin/html/loading.html');
     if (getContent != null) {
-        $('#main-content').load(`admin/form/${getContent}`, function (response, status, xhr) {
+        $('#main-content').load(loadUrl, function (response, status, xhr) {
             if (status == "error") {
                 error_page();
             } else {
                 setFunctionDragndrop();
+                setMultiFunctionDragndrop();
                 setFunctionVarianInput();
-                setForm(isGetPost, false);
+                setForm();
                 hidePopupDefault();
             }
         });
@@ -33,37 +53,64 @@ export function openForm(getContent = null, isGetPost) {
     }
 }
 
-// DANGERFORM: khusus untuk permintaan menghapus data
-export function setForm(isGetPost = 'GET', dangerForm = false) {
+export function setForm() {
+    
+    setFunctionPopup();
+    
+    let throwto = $('#form-ajax').attr('action') != null ? $('#form-ajax').attr('action') : "";
+    let method = $('#form-ajax').attr('method') != null ? $('#form-ajax').attr('method') : "";
+    let isDanger = $('#form-ajax').attr('isDanger') != null ? $('#form-ajax').attr('isDanger') : false;
+    let loadTo = $('#form-ajax').attr('loadTo') != null ? $('#form-ajax').attr('loadTo') : null;
 
     $('#form-ajax').on('submit', function (e) {
         e.preventDefault();
-        if (!dangerForm) {
+        if (!isDanger) {
             cancelPopup();
         }
 
-        // let formData = $(this).serialize();
-        let formData = new FormData(this);
+        let formData;
+        let fileInput = $(this).find('input[type="file"]');
 
-        let throwto = $('#form-ajax').attr('throwto') != null ? $('#form-ajax').attr('throwto') : "";
+        // let formHasFile = fileInput.length > 0 || fileInput.get(0).files.length > 0;
+        let formHasFile = fileInput.length > 0;
+
+        if (formHasFile) {
+            formData = new FormData(this);
+        } else {
+            formData = $(this).serialize();
+        }
+
+        
+        let getFieldforResponseData = $(this).find('#show-result').length > 0 ? true : false;
 
         // RETURN JSON
         $.ajax({
             url: window.location + throwto,
-            type: isGetPost,
+            type: method,
             data: formData,
-            processData: false, // Jangan proses data
-            contentType: false, // Jangan set konten tipe
+            processData: formHasFile ? false : true, // Jangan proses data
+            contentType: formHasFile ? false : 'application/x-www-form-urlencoded', // Jangan set konten tipe
             success: function (response) {
-                if (!dangerForm) {
-                    openPopup(response.status, response.message, true, true);
+                if (!isDanger) {
+                    openPopup(response.status, response.message, true, loadTo);
                 } else {
-                    openPopup(response.status, response.message, true, true);
+                    openPopup(response.status, response.message, true, loadTo);
+                }
+                
+                if(response.data != null){
+                    if(getFieldforResponseData){
+                        $('#show-result').html('<pre>' + JSON.stringify(response.data, null, 2) + '</pre>');
+                    }
                 }
             },
             error: function (xhr, status, error) {
                 // $('#response').html('An error occurred: ' + error);
+                openPopup("Error", error, true, loadTo);
                 console.log("Error: ", error);
+                console.log("XHR: ", xhr.responseText);
+                if(getFieldforResponseData){
+                    $('#show-result').html(`Error: ${error}`);
+                }
             }
         });
     })

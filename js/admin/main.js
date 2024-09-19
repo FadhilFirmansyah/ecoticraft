@@ -1,7 +1,7 @@
 import { createChart } from './library/chart-dashboard.js';
 import { setupCheckboxMain } from './library/checkbox.js';
 import { hidePopupDefault, closePopup, openPopup, setFunctionPopup } from './library/popup.js';
-import { setFunctionProduct } from './product.js';
+import { setFunctionBtnTable } from './library/setTable.js';
 import { error_page } from './library/error_page.js';
 import { setBtnForm, setForm } from './library/form-controller.js';
 
@@ -43,33 +43,37 @@ $(document).ready(function () {
                 error_page();
             } else {
                 setupCheckboxMain();
-                hidePopupDefault();
-                setFunctionPopup();
-                setFunctionProduct();
-                setForm('GET', true);
-                window.onclick = closePopup;
+                setFunctionBtnTable();
+                setForm();
             }
         });
     });
-
-
+    
+    
     // UMKM
     $('#umkmBtn').click(function () {
         $('#main-content').load('js/admin/html/loading.html');
         $('#main-content').load('admin/umkm', function (response, status, xhr) {
             if (status == "error") {
                 error_page();
+            } else {
+                setupCheckboxMain();
+                setFunctionBtnTable();
+                setForm();
             }
         });
     });
 
 
-    // MANAGE ADMIN
-    $('#manageAdmBtn').click(function () {
+    // SUPERADMIN
+    $('#superadminBtn').click(function () {
         $('#main-content').load('js/admin/html/loading.html');
-        $('#main-content').load('admin/superadmin', function (response, status, xhr) {
+        $('#main-content').load('admin/superadmin/power', function (response, status, xhr) {
             if (status == "error") {
                 error_page();
+            } else {
+                setFunctionPopup();
+                setForm();
             }
         });
     });

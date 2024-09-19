@@ -64,19 +64,37 @@ $route['admin/dashboard'] = 'Admin/dashboard';
 $route['admin/product'] = 'Admin/product';
 $route['admin/umkm'] = 'Admin/umkm';
 $route['admin/superadmin'] = 'Admin/manageAdmin';
+$route['admin/superadmin/power'] = 'superadmin/Superadmin/power';
+
+// SUPERADMIN CONTROL
+$route['admin/superadmin/power/sendquery']['GET'] = 'superadmin/Superadmin/querySql';
+
 
 // PRODUCT CONTROL
 $route['admin/api/getallproduct/(:num)']['GET'] = 'api/ProductApi/getAllProduct/$1';
 $route['admin/api/getallproduct/(:num)/(:num)']['GET'] = 'api/ProductApi/getAllProduct/$1/$2';
-$route['admin/api/delproduct']['GET'] = 'api/ProductApi/delProduct';
+// PRODUCT CONTROL
+$route['admin/api/getallumkm/(:num)']['GET'] = 'api/UmkmApi/getAllUmkm/$1';
+$route['admin/api/getallumkm/(:num)/(:num)']['GET'] = 'api/UmkmApi/getAllUmkm/$1/$2';
 
 
 // FORM CONTROL
 // PRODUCT
 $route['admin/form/product/(:any)']['GET'] = 'api/FormController/product/$1'; // add form
+$route['admin/form/product/(:any)/(:num)']['GET'] = 'api/FormController/product/$1/$2'; // edit form
+// PRODUCT PROSES
+$route['admin/api/delproduct']['GET'] = 'api/ProductApi/delProduct'; // del data
 $route['admin/api/addproduct']['POST'] = 'api/ProductApi/addproduct'; // add data
+$route['admin/api/updateproduct']['POST'] = 'api/ProductApi/updproduct'; // update data
+
 
 // UMKM
+$route['admin/form/umkm/(:any)']['GET'] = 'api/FormController/umkm/$1'; // add form
+$route['admin/form/umkm/(:any)/(:num)']['GET'] = 'api/FormController/umkm/$1/$2'; // edit form
+// UMKM PROSES
+$route['admin/api/delumkm']['GET'] = 'api/UmkmApi/delUmkm'; // del data
+$route['admin/api/addumkm']['POST'] = 'api/UmkmApi/addumkm'; // add data
+$route['admin/api/updateumkm']['POST'] = 'api/UmkmApi/updumkm'; // update data
 
 
 $route['admin/api/allpage']['GET'] = 'api/PageController/allpage';

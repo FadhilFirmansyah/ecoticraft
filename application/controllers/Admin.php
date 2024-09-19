@@ -18,6 +18,7 @@ class Admin extends CI_Controller
         $this->load->model('VPageModel');
         $this->load->model('AdminModel');
         $this->load->model('ProductModel');
+        $this->load->model('UmkmModel');
         $this->load->library('session');
     }
 
@@ -115,7 +116,8 @@ class Admin extends CI_Controller
                     "total_view" => $this->VPageModel->getCountAllData(),
                     "pengunjung_hari_ini" => $this->VPageModel->getCountAllData('', $today),
                     "total_admin" => $this->AdminModel->getCountAdmin(),
-                    "total_produk" => $this->ProductModel->getCountAllData()
+                    "total_produk" => $this->ProductModel->getCountAllData(),
+                    "total_umkm" => $this->UmkmModel->getCountAllData(),
                 ]
             ];
             $this->load->view('admin/dashboard', $data);
@@ -144,21 +146,17 @@ class Admin extends CI_Controller
     public function umkm()
     {
         if ($this->session->userdata('logged_in')) {
-            $this->load->view('admin/umkm');
+            $data = [
+                "css" => [
+                    "style/admin/product.css"
+                ],
+                "getAllUmkm" => $this->UmkmModel->getAllData(10, 0)
+            ];
+
+            $this->load->view('admin/umkm', $data);
         } else {
             redirect('admin');
         }
     }
 
-    public function manageAdmin()
-    {
-        if ($this->session->userdata('logged_in')) {
-            $this->load->view('admin/manageAdmin');
-        } else {
-            redirect('admin');
-        }
-    }
 }
-
-
-// CARA LOAD CSS nya dibenahi, di dashboard() dan di index()

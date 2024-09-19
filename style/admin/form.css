@@ -18,7 +18,7 @@ form.admin-form {
             }
 
             input,
-            textarea {
+            textarea, .div-place {
                 padding: 8px 12px;
                 font-size: 0.9rem;
                 background-color: var(--low-fidelity);
@@ -68,6 +68,11 @@ form.admin-form {
                 align-items: center;
                 gap: 12px;
                 width: fit-content;
+            }
+
+            .variant-type2{
+                align-items: stretch !important;
+                flex-direction: column !important;
             }
         }
 
@@ -149,5 +154,25 @@ form.admin-form {
     .button-primary:hover {
         filter: brightness(1.2);
         transition-duration: 200ms;
+    }
+
+
+
+    .preview-img {
+        min-width: 280px;
+        min-height: 170px;
+        width: fit-content;
+        height: fit-content;
+        background-color: transparent;
+        border: 2px dashed #b7b7b7;
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.7rem;
+
+        img {
+            width: 270px;
+        }
     }
 }

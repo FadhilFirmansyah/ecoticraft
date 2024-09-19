@@ -10,7 +10,7 @@
 
   <div class="table-div">
     <h4>Daftar Produk</h4>
-    <form id="form-ajax" method="GET" throwto="/api/delproduct">
+    <form loadTo="#productBtn" id="form-ajax" method="GET" action="/api/delproduct" isDanger="true">
       <table class="product">
         <thead>
           <tr>
@@ -50,7 +50,7 @@
 
         <tfoot>
           <tr>
-            <td colspan="5" class="btn-more"><button loadDataLimit="10" id="load-more-btn" type="button">Load more</button></td>
+            <td colspan="5" class="btn-more"><button loadMoreData="getallproduct" loadDataLimit="10" id="load-more-btn" type="button">Load more</button></td>
           </tr>
         </tfoot>
 
@@ -64,25 +64,20 @@
 
         <div class="btn-wrap">
           <button disabled contentPopup="Apakah anda yakin ingin menghapus?" titlePopup="Info" id="warning-btn" type="button" class="warning"><i class="fa fa-trash"></i> Hapus</button>
-          <button disabled openform="product/add" formGetPost="GET" id="edit-btn" type="button" class="normal open-form"><i class="fa fa-pencil"></i> Edit</button>
+          <button disabled openform="product/edit" formGetPost="POST" id="edit-btn" type="button" class="normal open-form"><i class="fa fa-pencil"></i> Edit</button>
         </div>
       </div>
 
 
       <div class="popup-wrap" id="popup-wrap">
-
         <div class="box" id="box-popup">
-
-          <h2 id="title-popup">Info</h2>
-
-          <div id="content-popup">Apakah anda yakin ingin menghapus?</div>
+          <h2 id="title-popup"></h2>
+          <div id="content-popup"></div>
           <div id="option-popup">
-            <button class="warning" id="cancel-btn" type="button">Tidak</button>
-            <button class="normal" type="submit">Ya</button>
+          <button class="warning" id="cancel-btn" type="button">Tidak</button>
+          <button class="normal" type="submit">Ya</button>
           </div>
-
         </div>
-
       </div>
 
 

@@ -42,8 +42,26 @@ class ProductApi extends CI_Controller
                 $product_ids = $this->input->get('product_ids');
 
                 if (!empty($product_ids)) {
+                    $this->db->select('gambar');
+                    $this->db->from('m_produk');
+                    $this->db->where_in('id', $product_ids);
+                    $query = $this->db->get();
+                    $results = $query->result_array();
+
+                    // Hapus data dari tabel produk
                     $this->db->where_in('id', $product_ids);
                     $this->db->delete('m_produk');
+
+                    // Hapus file gambar jika ada
+                    foreach ($results as $result) {
+                        $gambar = $result['gambar'];
+                        if ($gambar) {
+                            $file_path = FCPATH . 'assets/products/' . $gambar;
+                            if (file_exists($file_path)) {
+                                unlink($file_path); // Menghapus file
+                            }
+                        }
+                    }
 
                     $this->output
                         ->set_content_type('application/json')
@@ -59,65 +77,48 @@ class ProductApi extends CI_Controller
         }
     }
 
-    // public function upload_image($name)
-    // {
-    //     // Konfigurasi upload
-    //     $config['upload_path'] = './assets/products/'; // Path folder tempat menyimpan gambar
-    //     $config['allowed_types'] = 'gif|jpg|png|jpeg'; // Jenis file yang diizinkan
-    //     $config['max_size'] = 2048; // Ukuran maksimal file dalam KB (2MB)
-    //     $config['file_name'] = uniqid(); // Berikan nama unik pada file
-
-    //     $this->load->library('upload', $config);
-
-    //     if (!$this->upload->do_upload($name)) {
-    //         // Jika terjadi error saat upload, tampilkan pesan error
-    //         return false;
-    //     } else {
-    //         // Jika berhasil upload, return data file yang diupload
-    //         return $this->upload->data();
-    //     }
-    // }
-
     public function upload_image()
-{
-    if ($this->input->server('REQUEST_METHOD') === 'POST') {
-        // Pastikan file diupload
-        if (isset($_FILES['gambar']) && $_FILES['gambar']['error'] === UPLOAD_ERR_OK) {
-            $fileTmpPath = $_FILES['gambar']['tmp_name'];
-            $fileName = $_FILES['gambar']['name'];
-            $fileSize = $_FILES['gambar']['size'];
-            $fileType = $_FILES['gambar']['type'];
-            $fileNameCmps = explode(".", $fileName);
-            $fileExtension = strtolower(end($fileNameCmps));
+    {
+        if ($this->input->server('REQUEST_METHOD') === 'POST') {
+            // Pastikan file diupload
+            if (isset($_FILES['gambar']) && $_FILES['gambar']['error'] === UPLOAD_ERR_OK) {
+                $fileTmpPath = $_FILES['gambar']['tmp_name'];
+                $fileName = $_FILES['gambar']['name'];
+                $fileSize = $_FILES['gambar']['size'];
+                $fileType = $_FILES['gambar']['type'];
+                $fileNameCmps = explode(".", $fileName);
+                $fileExtension = strtolower(end($fileNameCmps));
 
-            // Daftar ekstensi yang diizinkan
-            $allowedExtensions = array('jpg', 'jpeg', 'png', 'gif', 'JPG', 'PNG', 'JPEG');
-            
-            if (in_array($fileExtension, $allowedExtensions)) {
-                // Tentukan path upload
-                $uploadFileDir = FCPATH . 'assets/products/';
-                $namaFileBaru = uniqid() . '.' . $fileExtension;
-                $dest_path = $uploadFileDir . $namaFileBaru;
+                // Daftar ekstensi yang diizinkan
+                $allowedExtensions = array('jpg', 'jpeg', 'png', 'gif', 'JPG', 'PNG', 'JPEG');
 
-                // Pindahkan file dari folder sementara ke folder tujuan
-                if (move_uploaded_file($fileTmpPath, $dest_path)) {
-                    return $message = 'File is successfully uploaded.';
+                if (in_array($fileExtension, $allowedExtensions)) {
+                    // Tentukan path upload
+                    $uploadFileDir = FCPATH . 'assets/products/';
+                    $namaFileBaru = uniqid() . '.' . $fileExtension;
+                    $dest_path = $uploadFileDir . $namaFileBaru;
+
+                    // Pindahkan file dari folder sementara ke folder tujuan
+                    if (move_uploaded_file($fileTmpPath, $dest_path)) {
+                        return $namaFileBaru;
+                    } else {
+                        $message = 'There was some error moving the file to upload directory.';
+                        return false;
+                    }
                 } else {
-                    return $message = 'There was some error moving the file to upload directory.';
+                    $message = 'Upload failed. Allowed file types: jpg, jpeg, png, gif.';
+                    return false;
                 }
             } else {
-                return $message = 'Upload failed. Allowed file types: jpg, jpeg, png, gif.';
+                $message = 'No file uploaded or there was an upload error.';
+                return false;
             }
-            return $namaFileBaru;
+
+            // Tampilkan pesan
         } else {
-            return $message = 'No file uploaded or there was an upload error.';
+            show_404();
         }
-        
-        // Tampilkan pesan
-    } else {
-        show_404();
     }
-}
 
     // POST METHOD
     public function addproduct()
@@ -180,6 +181,87 @@ class ProductApi extends CI_Controller
             } else {
                 show_404();
             }
+        }
+    }
+
+    public function updproduct()
+    {
+        if ($this->session->userdata('logged_in')) {
+            if ($this->input->server('REQUEST_METHOD') === 'POST') {
+
+                $getIdProduct = $this->input->post('id_produk');
+                $nama = $this->input->post('nama');
+                $bahan = $this->input->post('bahan');
+                $deskripsi = $this->input->post('deskripsi');
+                $link = $this->input->post('link');
+                $gambarLama = $this->input->post('gambarLama');
+
+                if ($nama != null && $bahan != null) {
+
+                    $gambar = $this->upload_image();
+
+                    if ($gambar === null || $gambar === false) {
+                        $currentProduct = $this->ProductModel->getData($getIdProduct);
+                        $gambar = $currentProduct['gambar'];
+                    } else {
+                        $file_path = FCPATH . 'assets/products/' . $gambarLama;
+                        if (file_exists($file_path)) {
+                            unlink($file_path); // Menghapus file
+                        }
+                    }
+
+                    $getIdVariasi = $this->input->post('id_variasi');
+                    $variasi = $this->input->post('variasi');
+                    $harga = $this->input->post('harga');
+
+                    $dataProduct = [
+                        "nama" => $nama,
+                        "bahan" => $bahan,
+                        "deskripsi" => $deskripsi,
+                        "link" => $link,
+                        "gambar" => $gambar
+                    ];
+
+                    // UPDATE PRODUCT
+                    $insert = $this->ProductModel->updateProduct($getIdProduct, $dataProduct);
+
+                    $id_product = $this->db->insert_id();
+
+                    if ($getIdVariasi != null) {
+
+                        $dataVariasi = [];
+                        foreach ($variasi as $key => $value) {
+                            $dataVariasi[] = [
+                                "id_produk" => $id_product,
+                                "variasi" => $variasi[$key],
+                                "harga" => $harga[$key]
+                            ];
+                        }
+
+                        $insertUpdateVariasi = $this->ProductModel->updateHarga($getIdVariasi, $dataVariasi);
+                    } else {
+                        $insertUpdateVariasi = $this->ProductModel->delHarga(null, $id_product);
+                    }
+
+                    if (!$insert || !$insertUpdateVariasi) {
+                        $this->output
+                            ->set_content_type('application/json')
+                            ->set_output(json_encode(['status' => 'Info', 'message' => "Produk $nama berhasil diubah"]));
+                    } else {
+                        $this->output
+                            ->set_content_type('application/json')
+                            ->set_output(json_encode(['status' => 'Terjadi Kesalahan', 'message' => "Gagal mengubah data"]));
+                    }
+                } else {
+                    $this->output
+                        ->set_content_type('application/json')
+                        ->set_output(json_encode(['status' => 'Form tidak valid', 'message' => "Input bertanda * wajib diisi"]));
+                }
+            } else {
+                show_404();
+            }
+        } else {
+            show_404();
         }
     }
 }

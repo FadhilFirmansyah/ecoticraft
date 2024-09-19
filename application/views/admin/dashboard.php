@@ -19,7 +19,7 @@
             <i class="fa fa-shop"></i>
             <div>
                 <h4>UMKM</h4>
-                <h3>2</h3>
+                <h3><?= $stat['total_umkm'][0]['count'] ?></h3>
             </div>
         </div>
 
