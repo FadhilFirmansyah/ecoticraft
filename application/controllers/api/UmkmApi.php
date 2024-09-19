@@ -55,6 +55,21 @@ class UmkmApi extends CI_Controller
                     // Hapus file gambar jika ada
                     foreach ($results as $result) {
                         $gambar = $result['gambar'];
+
+                        $gambar_lain = json_decode($result['produk_lain'], true);
+
+                        if (is_array($gambar_lain)) {
+                            foreach ($gambar_lain as $g) {
+                                // Pastikan indeks 'gambar' ada dalam setiap item
+                                if (isset($g['gambar'])) {
+                                    $file_path = FCPATH . 'assets/umkm/produk_lain/' . $g['gambar'];
+                                    if (file_exists($file_path)) {
+                                        unlink($file_path); // Menghapus file
+                                    }
+                                }
+                            }
+                        }
+
                         if ($gambar) {
                             $file_path = FCPATH . 'assets/umkm/' . $gambar;
                             if (file_exists($file_path)) {
@@ -277,7 +292,46 @@ class UmkmApi extends CI_Controller
                 $pemilik = $this->input->post('pemilik');
                 $gambarLama = $this->input->post('gambarLama');
 
+                $judulVariant = $this->input->post('judul_variant');
+                $deskripsiVariant = $this->input->post('deskripsi_variant');
+                $hargaVariant = $this->input->post('harga_variant');
+                $gambarLamaVariant = $this->input->post('gambarLama_variant');
+                $gambarVariant = isset($_FILES['gambar_variant']) ? $_FILES['gambar_variant'] : [];
+
+                $variantsJson = json_encode([]);
+
                 if ($judul != null) {
+
+                    if(!empty($judulVariant)){
+                        for ($i = 0; $i < count($judulVariant); $i++) {
+                            if (!empty($gambarVariant['name'][$i])) {
+                                $_FILES['gambar_var_temp'] = [
+                                    'name' => $gambarVariant['name'][$i],
+                                    'type' => $gambarVariant['type'][$i],
+                                    'tmp_name' => $gambarVariant['tmp_name'][$i],
+                                    'error' => $gambarVariant['error'][$i],
+                                    'size' => $gambarVariant['size'][$i]
+                                ];
+                    
+                                // Panggil multi_upload_image dengan parameter 'gambar_var_temp'
+                                $gambarUploaded = $this->multi_upload_image('gambar_var_temp');
+                            } else {
+                                $gambarUploaded = $gambarLamaVariant;
+                            }
+
+
+                            $variants[] = [
+                                'judul' => $judulVariant[$i],
+                                'deskripsi' => $deskripsiVariant[$i],
+                                'harga' => $hargaVariant[$i],
+                                'gambar' => $gambarUploaded
+                            ];
+                        }
+
+
+                    $variantsJson = json_encode($variants);
+                        
+                    }
 
                     $gambar = $this->upload_image();
 
@@ -300,7 +354,8 @@ class UmkmApi extends CI_Controller
                         "maps" => $maps,
                         "deskripsi" => $deskripsi,
                         "pemilik" => $pemilik,
-                        "gambar" => $gambar
+                        "gambar" => $gambar,
+                        "produk_lain" => $variantsJson
                     ];
 
                     // UPDATE UMKM

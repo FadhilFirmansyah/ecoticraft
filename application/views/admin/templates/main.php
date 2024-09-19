@@ -39,6 +39,7 @@
 
             <?php if ($user["role"] == "superadmin" && $user["role"] != "admin") { ?>
                 <a id="superadminBtn"><i class="fa fa-bolt"></i> SuperAdmin Power</a>
+                <a id="folderadminBtn"><i class="fa fa-folder"></i> Directory</a>
             <?php } ?>
 
             <a href="admin/logout"><i class="fas fa-sign-out-alt"></i> Keluar</a>

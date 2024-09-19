@@ -1,4 +1,6 @@
-<link rel="stylesheet" href="<?php foreach ($css as $key) echo $key; ?>">
+<?php foreach ($css as $key) { ?>
+    <link rel="stylesheet" href="<?= $key ?>">
+<?php } ?>
 
 
 <div class="title-wrap">

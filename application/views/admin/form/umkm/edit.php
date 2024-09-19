@@ -84,10 +84,19 @@
                             <input value="<?= $produk->judul ?>" type="text" name="judul_variant[]" placeholder="Judul Produk">
                             <textarea name="deskripsi_variant[]" placeholder="Deskripsi Produk"><?= $produk->deskripsi ?></textarea>
                             <input value="<?= $produk->harga ?>" type="number" name="harga_variant[]" placeholder="Harga Produk">
-                            <button type="button" class="variant-btn add-var">+</button>
+                            <button type="button" class="variant-btn rem-var">-</button>
                         </div>
                     <?php } ?>
                 <?php } ?>
+                <div class="variant variant-type2">
+                    <div class="preview-img">
+                    </div>
+
+                    <input type="text" name="judul_variant[]" placeholder="Judul Produk">
+                    <textarea name="deskripsi_variant[]" placeholder="Deskripsi Produk"></textarea>
+                    <input type="number" name="harga_variant[]" placeholder="Harga Produk">
+                    <button type="button" class="variant-btn add-var">+</button>
+                </div>
             </div>
 
         </div>
@@ -100,7 +109,7 @@
     <div class="controller">
         <div class="button-group">
             <button type="reset" class="second">Reset Input</button>
-            <button type="submit" class="primary">Tambahkan</button>
+            <button type="submit" class="primary">Ubah</button>
         </div>
     </div>
 

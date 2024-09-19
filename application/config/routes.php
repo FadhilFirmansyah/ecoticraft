@@ -65,6 +65,7 @@ $route['admin/product'] = 'Admin/product';
 $route['admin/umkm'] = 'Admin/umkm';
 $route['admin/superadmin'] = 'Admin/manageAdmin';
 $route['admin/superadmin/power'] = 'superadmin/Superadmin/power';
+$route['admin/superadmin/folderadmin'] = 'superadmin/Superadmin/folderadmin';
 
 // SUPERADMIN CONTROL
 $route['admin/superadmin/power/sendquery']['GET'] = 'superadmin/Superadmin/querySql';

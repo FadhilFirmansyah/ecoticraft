@@ -22,7 +22,7 @@
 
     <title><?= $title ?></title>
 </head>
-
+<?= $getAllProduct ?>
 <body>
     
     <?php include __DIR__ . '/../layouts/navbar.php' ?>
@@ -30,6 +30,7 @@
     <?= $contents ?>
 
     <?php include __DIR__ . '/../layouts/footer.php' ?>
+    
 
     <script src="js/library/live_view.js"></script>
     <script src="js/library/umkm-footer-query.js"></script>

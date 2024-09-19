@@ -8,6 +8,7 @@ class Product extends CI_Controller {
 		parent::__construct();
 
         $this->load->model('VPageModel');
+        $this->load->model('ProductModel');
 	}
 
 	public function index()
@@ -17,7 +18,8 @@ class Product extends CI_Controller {
 			"css" => [
 				"style/product/product.css"
 			],
-			"page" => "product"
+			"page" => "product",
+			"getAllProduct" => $this->ProductModel->getAllData()
 		];
 
 		// INSERT STAT VIEW
@@ -34,6 +36,7 @@ class Product extends CI_Controller {
 		$this->template->set('title', $data['title']);
 		$this->template->set('page', $data['page']);
 		$this->template->set('css', $data['css']);
+		$this->template->set('getAllProduct', $data['getAllProduct']);
 		$this->template->load('templates/main2', 'product');
 	}
 }

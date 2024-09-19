@@ -1,5 +1,5 @@
 RewriteEngine On
-RewriteBase /project/ECOTICRAFT/ci3/ecoticraft/
+RewriteBase /
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)$ index.php/$1 [L]

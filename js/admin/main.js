@@ -78,4 +78,17 @@ $(document).ready(function () {
         });
     });
 
+    // SUPERADMIN FOLDER
+    $('#folderadminBtn').click(function () {
+        $('#main-content').load('js/admin/html/loading.html');
+        $('#main-content').load('admin/superadmin/folderadmin', function (response, status, xhr) {
+            if (status == "error") {
+                error_page();
+            } else {
+                setFunctionPopup();
+                setForm();
+            }
+        });
+    });
+
 });
