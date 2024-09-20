@@ -52,7 +52,7 @@
 
         <div class="input-group">
             <label class="label-form" for="link">Link Lain</label>
-            <input placeholder="Opsional" class="input-form" type="link" name="link" id="link">
+            <input placeholder="Opsional" class="input-form" type="text" name="link" id="link">
         </div>
 
         <div class="input-group">

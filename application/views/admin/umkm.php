@@ -42,7 +42,7 @@
               </td>
               <td><?= $p['alamat_singkat'] ?></td>
               <td><?= $p['no_telp'] ?></td>
-              <td><?= $p['link'] ?></td>
+              <td style="word-break: break-all;"><?= $p['link'] ?></td>
               <td><?= $p['maps'] ?></td>
               <td><?= $p['pemilik'] ?></td>
               <td class="desc"><?= $p['deskripsi'] ?></td>

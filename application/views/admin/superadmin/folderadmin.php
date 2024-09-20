@@ -9,7 +9,6 @@
 </div>
 
 <div class="table-div">
-    <h2>Image List</h2>
     <form loadTo="#folderadminBtn" id="form-ajax" method="GET" action="/api/admin/delimg" isDanger="true">
         <table class="product">
 

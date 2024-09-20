@@ -54,7 +54,9 @@ $route['community'] = 'Community';
 $route['about'] = 'About';
 $route['product'] = 'Product';
 $route['umkm'] = 'Umkm';
-$route['view'] = 'Umkm/viewUmkm';
+$route['umkm/view/(:num)'] = 'Umkm/viewUmkm/$1'; // method untuk menampilkan salah satu umkm
+$route['umkm/api/(:num)'] = 'Umkm/getUmkm/$1'; // get Umkm By Id (Json)
+$route['umkm/api/allumkm'] = 'Umkm/getAllUmkm'; // get All Umkm (json)
 
 $route['admin'] = 'Admin/index';
 $route['admin/login'] = 'Admin/login';

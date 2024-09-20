@@ -9,6 +9,8 @@ class Product extends CI_Controller {
 
         $this->load->model('VPageModel');
         $this->load->model('ProductModel');
+		$this->load->library('template');
+
 	}
 
 	public function index()
@@ -33,10 +35,13 @@ class Product extends CI_Controller {
 			$this->session->set_userdata($session_key, $today);
 		}
 
+
 		$this->template->set('title', $data['title']);
 		$this->template->set('page', $data['page']);
 		$this->template->set('css', $data['css']);
-		$this->template->set('getAllProduct', $data['getAllProduct']);
-		$this->template->load('templates/main2', 'product');
+		$this->template->load('templates/main2', 'product', $data);
 	}
 }
+
+
+// DATA getAllProduct tidak bisa diload di halaman layouts product

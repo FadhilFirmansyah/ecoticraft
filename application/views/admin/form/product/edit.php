@@ -57,23 +57,17 @@
                     <?php if ($variasi[0]['id'] != null) { ?>
                         <?php foreach ($variasi as $key) { ?>
                             <div class="variant">
-                                <input type="hidden" value="<?= $key['id'] ?>" name="id_variasi[]">
-                                <input value="<?= $key['harga'] ?>" type="number" name="harga[]" placeholder="Harga">
-                                <input value="<?= $key['variasi'] ?>" type="text" name="variasi[]" placeholder="Nama Variasi">
+                                <input type="hidden" value="<?= $key['id'] ?>" name="id_variasi_lama[]">
+                                <input value="<?= $key['harga'] ?>" type="number" name="harga_lama[]" placeholder="Harga">
+                                <input value="<?= $key['variasi'] ?>" type="text" name="variasi_lama[]" placeholder="Nama Variasi">
                                 <button type="button" class="variant-btn rem-var">-</button>
                             </div>
                         <?php } ?>
                     <?php }
-                } else { ?>
-                    <div class="variant">
-                        <input type="number" name="harga[]" placeholder="Harga">
-                        <input type="text" name="variasi[]" placeholder="Nama Variasi">
-                        <button type="button" class="variant-btn add-var">+</button>
-                    </div>
-                <?php } ?>
+                } ?>
                 <div class="variant">
-                    <input type="number" name="harga[]" placeholder="Harga">
-                    <input type="text" name="variasi[]" placeholder="Nama Variasi">
+                    <input type="number" name="harga_baru[]" placeholder="Harga">
+                    <input type="text" name="variasi_baru[]" placeholder="Nama Variasi">
                     <button type="button" class="variant-btn add-var">+</button>
                 </div>
             </div>

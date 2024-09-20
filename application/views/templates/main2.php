@@ -10,11 +10,11 @@
     <?php 
     if (!empty($css)) {
         foreach ($css as $style): ?>
-            <link rel="stylesheet" type="text/css" href="<?= $style ?>">
+            <link rel="stylesheet" type="text/css" href="<?= base_url($style) ?>">
         <?php endforeach;
     }
     ?>
-    <link rel="icon" href="assets/logo/logo.png">
+    <link rel="icon" href="<?= base_url("assets/logo/logo.png") ?>">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
@@ -22,7 +22,6 @@
 
     <title><?= $title ?></title>
 </head>
-<?= $getAllProduct ?>
 <body>
     
     <?php include __DIR__ . '/../layouts/navbar.php' ?>
@@ -32,9 +31,9 @@
     <?php include __DIR__ . '/../layouts/footer.php' ?>
     
 
-    <script src="js/library/live_view.js"></script>
-    <script src="js/library/umkm-footer-query.js"></script>
-    <script src="js/library/navbar.js"></script>
+    <script src="<?= base_url('js/library/live_view.js') ?>"></script>
+    <script src="<?= base_url('js/library/umkm-footer-query.js') ?>"></script>
+    <script src="<?= base_url('js/library/navbar.js') ?>"></script>
 
 </body>
 

@@ -29,7 +29,7 @@
 
         <div class="input-group">
             <label class="label-form" for="link">Link</label>
-            <input placeholder="Opsional" class="input-form" type="url" name="link" id="link">
+            <input placeholder="Opsional" class="input-form" type="text" name="link" id="link">
         </div>
 
         <div class="input-group" id="drop-area">

@@ -210,9 +210,12 @@ class ProductApi extends CI_Controller
                         }
                     }
 
-                    $getIdVariasi = $this->input->post('id_variasi');
-                    $variasi = $this->input->post('variasi');
-                    $harga = $this->input->post('harga');
+                    $getIdVariasi = $this->input->post('id_variasi_lama');
+                    $variasi = $this->input->post('variasi_lama');
+                    $harga = $this->input->post('harga_lama');
+                    
+                    $variasiBaru = $this->input->post('variasi_baru');
+                    $hargaBaru = $this->input->post('harga_baru');
 
                     $dataProduct = [
                         "nama" => $nama,
@@ -241,6 +244,20 @@ class ProductApi extends CI_Controller
                         $insertUpdateVariasi = $this->ProductModel->updateHarga($getIdVariasi, $dataVariasi);
                     } else {
                         $insertUpdateVariasi = $this->ProductModel->delHarga(null, $id_product);
+                    }
+
+                    if($variasiBaru != null || $hargaBaru != null){
+
+                        $dataVariasi = [];
+                        foreach ($variasi as $key => $value) {
+                            $dataVariasi[] = [
+                                "id_produk" => $id_product,
+                                "variasi" => $variasi[$key],
+                                "harga" => $harga[$key]
+                            ];
+                        }
+
+                        $this->ProductModel->insertHarga($dataVariasi);
                     }
 
                     if (!$insert || !$insertUpdateVariasi) {

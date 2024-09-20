@@ -1,6 +1,5 @@
-
-const urlParams = new URLSearchParams(window.location.search);
-const getId = urlParams.get('id');
+const pathSegments = window.location.pathname.split('/');
+const getId = pathSegments[pathSegments.length - 1];  // Mendapatkan segmen terakhir, yaitu ID
 
 let main = document.getElementById("main");
 
@@ -14,18 +13,20 @@ let contact_link = document.getElementById("contact-link");
 let nama_umkm = "";
 let produk_lain = {};
 
-fetch('https://haydar-hilmy.github.io/ecoticraft/umkm-data.json')
+// fetch('https://haydar-hilmy.github.io/ecoticraft/umkm-data.json')
+fetch(window.location.href + "/get")
     .then(response => {
         if (!response.ok) {
             throw new Error('Network response was not ok ' + response.statusText);
         }
         return response.json();
     })
-    .then(datas => {
-        const selectedData = datas.find(data => data.id == getId);
-        if (selectedData) {
+    .then(selectedData => {
+        // const selectedData = datas.find(data => data.id == getId);
+
+        if (selectedData.judul != undefined || selectedData.judul != null) {
             let card = `
-                        <h1>${selectedData.judul}</h1>
+            <h1>${selectedData.judul}</h1>
 
         <section class="main-content">
             <div style="background-image: url('assets/umkm/${selectedData.gambar}');" class="img-banner">
@@ -52,7 +53,11 @@ fetch('https://haydar-hilmy.github.io/ecoticraft/umkm-data.json')
             </aside>
 
 
-        </section>`;
+        </section>
+
+            `;
+            // INI DI LOAD AJAX KE FILE PHP: view-card.php
+            // DATA selectedData NYA DIKIRIM JUGA
 
             nama_umkm = selectedData.judul;
             if (selectedData.produk_lain && Object.keys(selectedData.produk_lain).length > 0) {

@@ -4,21 +4,21 @@
                 <aside>
                     <h4>Info Kontak</h4>
                     <a href="https://goo.gl/maps/4SFE6SCtnJPw8MpN7?g_st=aw" target="_blank"><img
-                            src="assets/icon/maps.png" alt="icon"> Cikal RT05 RW07 Gang Manggar 7</a>
-                    <a href="https://wa.me/6285729320717" target="_blank"><img src="assets/icon/call.png" alt="icon">
+                            src="<?= base_url('assets/icon/maps.png') ?>" alt="icon"> Cikal RT05 RW07 Gang Manggar 7</a>
+                    <a href="https://wa.me/6285729320717" target="_blank"><img src="<?= base_url('assets/icon/call.png') ?>" alt="icon">
                         +62 857-2932-0717</a>
-                    <a href="https://www.instagram.com/cikidul077/" target="_blank"><img src="assets/icon/instagram.png"
+                    <a href="https://www.instagram.com/cikidul077/" target="_blank"><img src="<?= base_url('assets/icon/instagram.png') ?>"
                             alt="icon"> @cikidul077</a>
-                    <a href="mailto:cikidul07@gmail.com" target="_blank"><img src="assets/icon/email.png" alt="icon">
+                    <a href="mailto:cikidul07@gmail.com" target="_blank"><img src="<?= base_url('assets/icon/email.png') ?>" alt="icon">
                         cikidul07@gmail.com</a>
                 </aside>
 
                 <aside>
                     <h4>Kerajinan Tuntang</h4>
-                    <a href="community">Komunitas Cikidul</a>
-                    <a href="home#eceng-gondok-explain">Tentang Eceng Gondok</a>
-                    <a href="home#edukasi-explain">Edukasi dan Kerajinan</a>
-                    <a href="product">Produk Kerajinan</a>
+                    <a href="<?= base_url('community') ?>">Komunitas Cikidul</a>
+                    <a href="<?= base_url('home#eceng-gondok-explain') ?>">Tentang Eceng Gondok</a>
+                    <a href="<?= base_url('home#edukasi-explain') ?>">Edukasi dan Kerajinan</a>
+                    <a href="<?= base_url('product') ?>">Produk Kerajinan</a>
                 </aside>
 
                 <aside>
@@ -30,17 +30,17 @@
 
                 <aside>
                     <h4>Program PPKO</h4>
-                    <a href="about">Profil Tim PPKO HM DKV</a>
-                    <a href="about#tim-anggota">Tim anggota</a>
-                    <a href="admin">Login</a>
+                    <a href="<?= base_url('about') ?>">Profil Tim PPKO HM DKV</a>
+                    <a href="<?= base_url('about#tim-anggota') ?>">Tim anggota</a>
+                    <a href="<?= base_url('admin') ?>">Login</a>
                 </aside>
             </div>
         </section>
         <section>
 
             <div class="platform-footer">
-                <a href="https://shopee.co.id/cikidul07"><img src="assets/logo/shopee.png"></a>
-                <a href="https://www.instagram.com/cikidul077/"><img src="assets/logo/instagram.png"></a>
+                <a href="https://shopee.co.id/cikidul07"><img src="<?= base_url('assets/logo/shopee.png') ?>"></a>
+                <a href="https://www.instagram.com/cikidul077/"><img src="<?= base_url('assets/logo/instagram.png') ?>"></a>
             </div>
 
             <iframe

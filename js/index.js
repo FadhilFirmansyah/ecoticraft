@@ -104,54 +104,54 @@ window.addEventListener('scroll', function () {
 
 
 // ==== QUERY PRODUCTS DATA ==== //
-let lastProduct = [];
-fetch('https://haydar-hilmy.github.io/ecoticraft/products-data.json')
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Network response was not ok ' + response.statusText);
-        }
-        return response.json();
-    })
-    .then(data => {
-        let idx = 0;
-        Array.from(card_wraps).forEach(card_wrap => {
-            let isStop = 0;
-            data.forEach(product => {
-                const getHarga = new Intl.NumberFormat("id", {
-                    style: "currency",
-                    currency: "IDR",
-                    maximumFractionDigits: 0,
-                }).format(product.harga);
-                let card = `                
-                <div class="card-product">
-                <a href="https://shopee.co.id/cikidul07" target='_blank'>
-            <div style="background-image: url('assets/products/${product.gambar}');" class="img-product"></div>
-            <div class="title-product">
-                <span>
-                    <h4>${product.nama}</h4>
-                    <h5>${product.sub_nama}</h5>
-                </span>
-                <span>
-                    <h4>${getHarga}</h4>
-                </span>
-            </div>
-            </a>
-            </div>
-            `;
+// let lastProduct = [];
+// fetch('https://haydar-hilmy.github.io/ecoticraft/products-data.json')
+//     .then(response => {
+//         if (!response.ok) {
+//             throw new Error('Network response was not ok ' + response.statusText);
+//         }
+//         return response.json();
+//     })
+//     .then(data => {
+//         let idx = 0;
+//         Array.from(card_wraps).forEach(card_wrap => {
+//             let isStop = 0;
+//             data.forEach(product => {
+//                 const getHarga = new Intl.NumberFormat("id", {
+//                     style: "currency",
+//                     currency: "IDR",
+//                     maximumFractionDigits: 0,
+//                 }).format(product.harga);
+//                 let card = `                
+//                 <div class="card-product">
+//                 <a href="https://shopee.co.id/cikidul07" target='_blank'>
+//             <div style="background-image: url('assets/products/${product.gambar}');" class="img-product"></div>
+//             <div class="title-product">
+//                 <span>
+//                     <h4>${product.nama}</h4>
+//                     <h5>${product.sub_nama}</h5>
+//                 </span>
+//                 <span>
+//                     <h4>${getHarga}</h4>
+//                 </span>
+//             </div>
+//             </a>
+//             </div>
+//             `;
 
-                if (isStop < 6) {
-                    card_wrap.insertAdjacentHTML('beforeend', card); // Tambahkan elemen ke dalam 'card_wrap'
-                    isStop++;
-                } else {
-                    lastProduct.push(card);
-                }
-            });
-            idx++;
-        });
-    })
-    .catch(error => {
-        console.error('There has been a problem with your fetch operation:', error);
-    });
+//                 if (isStop < 6) {
+//                     card_wrap.insertAdjacentHTML('beforeend', card); // Tambahkan elemen ke dalam 'card_wrap'
+//                     isStop++;
+//                 } else {
+//                     lastProduct.push(card);
+//                 }
+//             });
+//             idx++;
+//         });
+//     })
+//     .catch(error => {
+//         console.error('There has been a problem with your fetch operation:', error);
+//     });
 
 
 function removeLastProduct(params) {
@@ -194,37 +194,37 @@ window.addEventListener('resize', removeLastProduct())
 
 // ==== QUERY UMKM DATA ==== //
 
-fetch('https://haydar-hilmy.github.io/ecoticraft/umkm-data.json')
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Network response was not ok ' + response.statusText);
-        }
-        return response.json();
-    })
-    .then(datas => {
-        let idx = 0;
-        Array.from(umkm_wraps).forEach(umkm_wrap => {
-            for (let i = 0; i < 6; i++) {
-                let card = `
-                        <div class="card-product">
-                        <a href="view?id=${datas[idx].id}">
-                        <div style="background-image: url('assets/umkm/${datas[idx].gambar}');" class="img-product ${datas[idx].gambar == '' ? 'no-img-product' : ''}">${datas[idx].gambar == '' ? 'gambar tidak tersedia :(' : ''}</div>
-                        </a>
-                        <div class="title-product">
-                        <span>
-                        <h4>${datas[idx].judul}</h4>
-                        <h5>${datas[idx].alamat_singkat}</h5>
-                        </span>
-                        </div>
-                        </div>`;
-                umkm_wrap.insertAdjacentHTML('beforeend', card);
-                idx++;
-            }
-        });
+// fetch('https://haydar-hilmy.github.io/ecoticraft/umkm-data.json')
+//     .then(response => {
+//         if (!response.ok) {
+//             throw new Error('Network response was not ok ' + response.statusText);
+//         }
+//         return response.json();
+//     })
+//     .then(datas => {
+//         let idx = 0;
+//         Array.from(umkm_wraps).forEach(umkm_wrap => {
+//             for (let i = 0; i < 6; i++) {
+//                 let card = `
+//                         <div class="card-product">
+//                         <a href="view?id=${datas[idx].id}">
+//                         <div style="background-image: url('assets/umkm/${datas[idx].gambar}');" class="img-product ${datas[idx].gambar == '' ? 'no-img-product' : ''}">${datas[idx].gambar == '' ? 'gambar tidak tersedia :(' : ''}</div>
+//                         </a>
+//                         <div class="title-product">
+//                         <span>
+//                         <h4>${datas[idx].judul}</h4>
+//                         <h5>${datas[idx].alamat_singkat}</h5>
+//                         </span>
+//                         </div>
+//                         </div>`;
+//                 umkm_wrap.insertAdjacentHTML('beforeend', card);
+//                 idx++;
+//             }
+//         });
 
-    })
-    .catch(error => {
-        console.error('There has been a problem with your fetch operation:', error);
-    });
+//     })
+//     .catch(error => {
+//         console.error('There has been a problem with your fetch operation:', error);
+//     });
 
 // END OF UMKM DATA

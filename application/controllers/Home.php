@@ -8,6 +8,8 @@ class Home extends CI_Controller
 		parent::__construct();
 
 		$this->load->model('VPageModel');
+		$this->load->model('UmkmModel');
+		$this->load->model('ProductModel');
 	}
 
 	public function index()
@@ -18,7 +20,9 @@ class Home extends CI_Controller
 				"style/index/index.css",
 				"style/index/carousel.css"
 			],
-			"page" => "home"
+			"page" => "home",
+			"getAllUmkm" => $this->UmkmModel->getAllData(),
+			"getAllProduct" => $this->ProductModel->getAllData()
 		];
 
 		$session_key = 'last_access_date';
@@ -34,6 +38,6 @@ class Home extends CI_Controller
 
 		$this->template->set('title', $data['title']);
 		$this->template->set('css', $data['css']);
-		$this->template->load('templates/main', 'index');
+		$this->template->load('templates/main', 'index', $data);
 	}
 }
