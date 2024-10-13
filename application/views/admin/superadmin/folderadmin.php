@@ -91,7 +91,7 @@
                 } ?>
 
                 <?php
-                $directory = FCPATH . 'assets/umkm/produk_lain';
+                $directory = FCPATH . 'assets/umkm/produk_lain/';
                 $files = scandir($directory);
 
                 $allowed_extensions = array('jpg', 'jpeg', 'png', 'gif');
@@ -111,7 +111,7 @@
                                     <?= $file ?>
                                 </label>
                             </td>
-                            <td><img src='<?= base_url('assets/umkm/produk_lain' . $file) ?>' title='<?= $file ?>' /></td>
+                            <td><img src='<?= base_url('assets/umkm/produk_lain/' . $file) ?>' title='<?= $file ?>' /></td>
                             <td><?= $file_size_kb ?> KB</td>
                         </tr>
                 <?php }

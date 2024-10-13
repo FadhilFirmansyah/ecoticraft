@@ -53,16 +53,36 @@ function getCookie(name) {
     return null;
 }
 
-async function getIpAddress(){
+async function getIpAddress() {
     try {
         let response = await fetch('https://api.ipify.org/?format=json');
         let data = await response.json();
         return data.ip;
-      } catch (error) {
+    } catch (error) {
         return error;
-      }
+    }
 }
 
+async function insertViewPage() {
+    try {
+        let pathName = window.location.pathname;
+        let segmentsPathname = pathName.split('/').filter(Boolean);
+        let lastPartPathName = segmentsPathname.pop() || 'home';
+        let resultPathName = (lastPartPathName === 'product') ? 'product' : 'home';
+        await fetch(`${this.window.location.href}/viewpage/${resultPathName}`)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok ' + response.statusText);
+                }
+                return response.json();
+            })
+            .catch(error => {
+                console.error('There was a problem with the fetch operation:', error);
+            });
+    } catch (error) {
+        return error;
+    }
+}
 
 
 window.addEventListener('load', async function () {
@@ -72,6 +92,9 @@ window.addEventListener('load', async function () {
     let get_id, first_time_view;
 
     if (localStorage.getItem('eco') == null || localStorage.getItem('eco') == null) {
+
+        await insertViewPage();
+
         localStorage.setItem('eco', uniqueId);
         localStorage.setItem('view_at', getWaktu());
 
@@ -100,6 +123,8 @@ platform : [ ${navigator.platform} ]%0A
         get_id = localStorage.getItem('eco');
 
         if (getCookie('ecoticraft') == null || getCookie('ecoticraft') == "") {
+
+            await insertViewPage();
 
             setCookie('ecoticraft', get_id, 1);
 

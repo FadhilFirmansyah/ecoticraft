@@ -24,17 +24,6 @@ class Product extends CI_Controller {
 			"getAllProduct" => $this->ProductModel->getAllData()
 		];
 
-		// INSERT STAT VIEW
-		$today = date('Y-m-d');
-
-		$session_key = 'last_access_date';
-		$last_access_date = $this->session->userdata($session_key);
-		if ($last_access_date !== $today) {
-			$this->VPageModel->insertCountView('product');
-
-			$this->session->set_userdata($session_key, $today);
-		}
-
 
 		$this->template->set('title', $data['title']);
 		$this->template->set('page', $data['page']);

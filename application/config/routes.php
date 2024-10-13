@@ -72,6 +72,8 @@ $route['admin/superadmin/folderadmin'] = 'superadmin/Superadmin/folderadmin';
 // SUPERADMIN CONTROL
 $route['admin/superadmin/power/sendquery']['GET'] = 'superadmin/Superadmin/querySql';
 
+// VIEW PAGE
+$route['(:any)/viewpage/(:any)']['GET'] = 'api/ViewController/viewPage/$2';
 
 // PRODUCT CONTROL
 $route['admin/api/getallproduct/(:num)']['GET'] = 'api/ProductApi/getAllProduct/$1';
